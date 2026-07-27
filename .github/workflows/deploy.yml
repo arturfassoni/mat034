@@ -23,7 +23,7 @@ jobs:
 
     - name: Build the book
       run: |
-        jupyter-book build . --builder html
+        jupyter-book build .
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
