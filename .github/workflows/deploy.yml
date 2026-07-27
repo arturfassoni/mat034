@@ -4,6 +4,18 @@ on:
   push:
     branches:
     - main
+  workflow_dispatch:
+
+# Permissões necessárias para publicar no GitHub Pages nativo
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Garante que deploys concorrentes não atropelem o ambiente
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   deploy-book:
@@ -25,10 +37,6 @@ jobs:
       run: |
         jupyter-book build .
 
-    - name: Ensure build directory exists
-      run: |
-        mkdir -p _build/html
-
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
@@ -37,9 +45,6 @@ jobs:
   deploy:
     needs: deploy-book
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
