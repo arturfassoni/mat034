@@ -3,6 +3,13 @@ title: MAT034 - Matemática Computacional
 author: Prof. Artur Fassoni - Universidade Federal de Itajubá
 logo: ""  # Opcional: nome da imagem de logo se tiver
 
+# Identificação do Repositório (Essencial para o caminho correto)
+repository:
+  url: https://github.com/arturfassoni/mat034
+  path_to_book: ""
+  branch: main
+
+
 # Configurações do ambiente de execução
 execute:
   execute_notebooks: "off"  # Mantém "off" para o GitHub compilar rápido sem rodar todos os códigos do zero
@@ -13,6 +20,7 @@ html:
   use_repository_button: true
   use_edit_page_button: false
   home_page_in_navbar: true
+  extra_navbar: ""
   comments:
     hypothesis: false
 
