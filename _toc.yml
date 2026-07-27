@@ -3,9 +3,9 @@ root: intro
 
 chapters:
   - file: 01-introducao-python-jupyter
-  - file: 02-numpy-matplotlib
-  - file: 03-zeros-de-funcoes
-  - file: 04-derivacao-integracao-numerica
-  - file: 05-pvi-edos
-  - file: 06-introducao-edps
-  - file: 07-projeto-final
+  #- file: 02-numpy-matplotlib
+  #- file: 03-zeros-de-funcoes
+  #- file: 04-derivacao-integracao-numerica
+  #- file: 05-pvi-edos
+  #- file: 06-introducao-edps
+  #- file: 07-projeto-final
