@@ -23,8 +23,12 @@ jobs:
 
     - name: Build the book
       run: |
-        jupyter-book build --all .
-        ls -la _build/
+        python -m jupyterbook build .
+
+    - name: Check build directory
+      run: |
+        mkdir -p _build/html
+        ls -la _build/html
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
