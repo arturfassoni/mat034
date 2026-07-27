@@ -1,0 +1,20 @@
+# Informações do Livro
+title: MAT034 - Matemática Computacional
+author: Prof. Artur Fassoni - Universidade Federal de Itajubá
+logo: ""  # Opcional: nome da imagem de logo se tiver
+
+# Configurações do ambiente de execução
+execute:
+  execute_notebooks: "off"  # Mantém "off" para o GitHub compilar rápido sem rodar todos os códigos do zero
+
+# Recursos de interação na interface do site
+html:
+  use_issues_button: false
+  use_repository_button: true
+  use_edit_page_button: false
+  comments:
+    hypothesis: false
+
+# Opções de exportação
+launch_buttons:
+  notebook_interface: "jupyterlab"
