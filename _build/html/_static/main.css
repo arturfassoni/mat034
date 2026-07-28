@@ -57,35 +57,8 @@ nav.bd-links .caption.collapsed + ul {
   display: none !important;
 }
 
-/* Esconde o título/logo do topo do menu lateral 
-.navbar-brand,
-.sidebar-logo {
-    display: none !important;
-}*/
-
-/* Ajusta o tamanho da logo no menu lateral do Jupyter Book */
-.sidebar-logo img {
-    max-width: 30px !important;
-    height: auto !important;
-}
-
-/* Força o controle de tamanho da logo na barra lateral */
-.bd-sidebar-primary .navbar-brand img,
-.logo__image,
-img.logo {
-    width: 120px !important;
-    max-width: 120px !important;
-    height: auto !important;
-}
-
-/* Esconde o rodapé inteiro com o nome do autor e copyright 
-.bd-footer-content,
-footer {
-    display: none !important;
-}*/
-
 /* Adiciona um espaço em branco (respiro) no final de todas as páginas */
 .bd-main .bd-content,
 #main-content {
-    padding-bottom: 10px !important;
+    padding-bottom: 30px !important;
 }

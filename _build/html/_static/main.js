@@ -13,8 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Se a parte atual contém a página aberta, mantém expandida.
     var containsCurrentPage = list.querySelector("li.current, a.current") !== null;
 
-    // Restaura o estado salvo (padrão: expandido), a menos que contenha a página atual.
-    if (!containsCurrentPage && localStorage.getItem(key) === "true") {
+    // Restaura o estado salvo (AGORA O PADRÃO É: colapsado), a menos que contenha a página atual.
+    // Mudamos de (=== "true") para (!== "false")
+    if (!containsCurrentPage && localStorage.getItem(key) !== "false") {
       caption.classList.add("collapsed");
     }
 

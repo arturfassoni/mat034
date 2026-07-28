@@ -1,0 +1,738 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Projeto I &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/main.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projetos/p1';</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
+    <link rel="next" title="Projeto II" href="p2.html" />
+    <link rel="prev" title="Exercícios" href="../alglin/problemas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Matemática Computacional - Home"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="Matemática Computacional - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Básico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/funcoes.html">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lacos.html">Laços</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scipy/numpy.html">NumPy</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../scipy/matplotlib.html">Matplotlib</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resolvendo Equações</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eqs/raizes.html">Encontrando raízes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/bissec.html">Método da Bissecção</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/secante.html">Método da Secante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/newton.html">Método de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integração Numérica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../int/integrais.html">Integrais Definidas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/riemann.html">Somas de Riemann</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/trapezio.html">Regra do Trapézio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/simpson.html">Regra de Simpson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/difnum.html">Diferenciação Numérica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Equações Diferenciais</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eds/eds.html">Equações Diferenciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eds/metodos.html">Métodos Numéricos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../eds/sistemas.html">Sistemas de Equações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eds/aplicacoes.html">Aplicações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eds/problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Álgebra Linear</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../alglin/alglin.html">Álgebra Linear com SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/sistemas.html">Sistemas Lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/autovalores.html">Autovalores e Autovetores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/aplicacoes.html">Aplicações de Álgebra Linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/problemas.html">Exercícios</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projetos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Projeto I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="p2.html">Projeto II</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/projetos/p1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Projeto I</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>   </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-1-analise-da-distribuicao-de-numeros-primos"><strong>Problema 1: Análise da Distribuição de Números Primos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-2-simulacao-e-analise-de-um-passeio-aleatorio-2d"><strong>Problema 2: Simulação e Análise de um Passeio Aleatório 2D</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-3-visualizacao-do-conjunto-de-mandelbrot"><strong>Problema 3: Visualização do Conjunto de Mandelbrot</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-4-aproximacao-de-uma-onda-triangular-por-serie-de-fourier"><strong>Problema 4: Aproximação de uma Onda Triangular por Série de Fourier</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-5-analise-de-orbita-planetaria"><strong>Problema 5: Análise de Órbita Planetária</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-6-otimizacao-e-geometria-o-cone-de-volume-maximo"><strong>Problema 6: Otimização e Geometria – O Cone de Volume Máximo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-7-interseccao-de-curvas-e-analise-de-taxa-de-variacao"><strong>Problema 7: Intersecção de Curvas e Análise de Taxa de Variação</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-8-calculo-do-centro-de-massa-de-uma-placa-com-densidade-variavel"><strong>Problema 8: Cálculo do Centro de Massa de uma Placa com Densidade Variável</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-9-o-problema-da-braquistocrona-e-o-tempo-de-queda"><strong>Problema 9: O Problema da Braquistócrona e o Tempo de Queda</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-10-analise-do-potencial-de-lennard-jones"><strong>Problema 10: Análise do Potencial de Lennard-Jones</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="projeto-i">
+<h1>Projeto I<a class="headerlink" href="#projeto-i" title="Permalink to this heading">#</a></h1>
+<section id="problema-1-analise-da-distribuicao-de-numeros-primos">
+<h2><strong>Problema 1: Análise da Distribuição de Números Primos</strong><a class="headerlink" href="#problema-1-analise-da-distribuicao-de-numeros-primos" title="Permalink to this heading">#</a></h2>
+<p>Números primos são a base de muitos algoritmos em ciência da computação e criptografia. A forma como eles se distribuem na reta numérica é um tópico de intenso estudo. Nesta questão, você irá implementar um método eficiente para encontrar primos e visualizar a distribuição dos «espaços» entre eles.</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Crivo de Eratóstenes com NumPy:</strong> Escreva uma função <code class="docutils literal notranslate"><span class="pre">crivo_numpy(n)</span></code> que receba um inteiro <code class="docutils literal notranslate"><span class="pre">n</span></code> e retorne um array NumPy com todos os números primos até <code class="docutils literal notranslate"><span class="pre">n</span></code>. Utilize a técnica do Crivo de Eratóstenes com arrays booleanos do NumPy para uma implementação eficiente (evite usar loops <code class="docutils literal notranslate"><span class="pre">for</span></code> para marcar os múltiplos).</p></li>
+<li><p><strong>Geração e Cálculo dos Espaços:</strong> Use sua função para gerar todos os primos até 50.000. Em seguida, crie um novo array contendo as diferenças (os «espaços») entre cada primo consecutivo. Por exemplo, para os primos <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">7]</span></code>, os espaços são <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">2]</span></code>. (Dica: a função <code class="docutils literal notranslate"><span class="pre">np.diff()</span></code> pode ser útil aqui).</p></li>
+<li><p><strong>Visualização:</strong> Crie um histograma com <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.hist()</span></code> para visualizar a distribuição desses espaços. Use pelo menos 30 barras (<code class="docutils literal notranslate"><span class="pre">bins=30</span></code>). Adicione um título e rótulos aos eixos <code class="docutils literal notranslate"><span class="pre">x</span></code> (Tamanho do Espaço) e <code class="docutils literal notranslate"><span class="pre">y</span></code> (Frequência).</p></li>
+<li><p><strong>Análise (em uma célula de Markdown):</strong> Com base no seu histograma, qual é o espaço mais comum entre números primos consecutivos na sua amostra? O que você observa sobre a frequência de espaços maiores?</p></li>
+</ol>
+</section>
+<section id="problema-2-simulacao-e-analise-de-um-passeio-aleatorio-2d">
+<h2><strong>Problema 2: Simulação e Análise de um Passeio Aleatório 2D</strong><a class="headerlink" href="#problema-2-simulacao-e-analise-de-um-passeio-aleatorio-2d" title="Permalink to this heading">#</a></h2>
+<p>O passeio aleatório (<em>random walk</em>) é um modelo matemático usado para descrever uma ampla gama de fenômenos, desde o movimento de uma molécula em um gás até as flutuações de preços no mercado de ações.</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Geração do Passeio:</strong> Crie uma função <code class="docutils literal notranslate"><span class="pre">passeio_aleatorio_2d(passos)</span></code> que simule um passeio aleatório de <code class="docutils literal notranslate"><span class="pre">passos</span></code> etapas em um plano 2D.</p>
+<ul class="simple">
+<li><p>Comece na origem (0,0).</p></li>
+<li><p>Para cada passo, escolha aleatoriamente uma de quatro direções: para cima (+1 em y), para baixo (-1 em y), para a direita (+1 em x) ou para a esquerda (-1 em x).</p></li>
+<li><p>A função deve retornar duas arrays NumPy, <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code>, contendo as coordenadas em cada etapa do percurso. (Dica: <code class="docutils literal notranslate"><span class="pre">np.random.choice</span></code> e <code class="docutils literal notranslate"><span class="pre">np.cumsum</span></code> são muito úteis).</p></li>
+</ul>
+</li>
+<li><p><strong>Simulação e Plotagem:</strong> Gere um passeio aleatório com 2.000 passos.</p>
+<ul class="simple">
+<li><p>Plote a trajetória completa do passeio (gráfico de <code class="docutils literal notranslate"><span class="pre">y</span></code> versus <code class="docutils literal notranslate"><span class="pre">x</span></code>).</p></li>
+<li><p>Marque o ponto inicial (0,0) com um marcador verde grande.</p></li>
+<li><p>Marque o ponto final com um marcador vermelho grande.</p></li>
+</ul>
+</li>
+<li><p><strong>Análise da Distância:</strong> Calcule a distância Euclidiana final do ponto de partida, definida como <span class="math notranslate nohighlight">\(\sqrt{x_{final}^2 + y_{final}^2}\)</span>.</p></li>
+<li><p><strong>Visualização Avançada:</strong> No mesmo gráfico, use <code class="docutils literal notranslate"><span class="pre">plt.scatter()</span></code> para marcar todos os pontos do percurso onde o passeio esteve a uma distância maior que 20 da origem. Use uma cor diferente para esses pontos.</p></li>
+</ol>
+</section>
+<section id="problema-3-visualizacao-do-conjunto-de-mandelbrot">
+<h2><strong>Problema 3: Visualização do Conjunto de Mandelbrot</strong><a class="headerlink" href="#problema-3-visualizacao-do-conjunto-de-mandelbrot" title="Permalink to this heading">#</a></h2>
+<p>O <a class="reference external" href="https://pt.wikipedia.org/wiki/Conjunto_de_Mandelbrot">Conjunto de Mandelbrot</a> é um dos fractais mais famosos da matemática. Sua beleza reside em uma estrutura infinitamente complexa gerada por uma regra muito simples. Um ponto <code class="docutils literal notranslate"><span class="pre">c</span></code> no plano complexo pertence ao conjunto se a sequência definida por <span class="math notranslate nohighlight">\(z_{n+1} = z_n^2 + c\)</span>, com <span class="math notranslate nohighlight">\(z_0 = 0\)</span>, permanece limitada (ou seja, <span class="math notranslate nohighlight">\(|z_n| \leq 2\)</span>).</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Criação da Grade:</strong> Usando <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> e <code class="docutils literal notranslate"><span class="pre">np.meshgrid</span></code>, crie uma grade de números complexos <code class="docutils literal notranslate"><span class="pre">c</span></code>. O eixo real deve ir de -2 a 1, e o eixo imaginário de -1.5 a 1.5. Use uma resolução de 800x600 pontos (largura x altura).</p></li>
+<li><p><strong>Função de Iteração Vetorizada:</strong> Escreva uma função <code class="docutils literal notranslate"><span class="pre">mandelbrot(c,</span> <span class="pre">max_iter)</span></code> que receba a matriz de números complexos <code class="docutils literal notranslate"><span class="pre">c</span></code> e um número máximo de iterações <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>. A função deve:</p>
+<ul class="simple">
+<li><p>Inicializar uma matriz <code class="docutils literal notranslate"><span class="pre">z</span></code> de zeros com a mesma forma de <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
+<li><p>Inicializar uma matriz <code class="docutils literal notranslate"><span class="pre">divergencia</span></code> de inteiros (com <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> em todas as posições) para armazenar em qual iteração cada ponto divergiu.</p></li>
+<li><p>Iterar <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> vezes. Em cada iteração, para os pontos que ainda não divergiram (<span class="math notranslate nohighlight">\(|z| \leq 2\)</span>):</p>
+<ul>
+<li><p>Atualize <code class="docutils literal notranslate"><span class="pre">z</span></code> pela fórmula <span class="math notranslate nohighlight">\(z = z^2 + c\)</span>.</p></li>
+<li><p>Verifique quais novos pontos ultrapassaram o limite de 2. Para esses pontos, armazene o número da iteração atual na matriz <code class="docutils literal notranslate"><span class="pre">divergencia</span></code> e marque-os para não serem mais atualizados. (Dica: use indexação booleana do NumPy para fazer isso de forma vetorizada, sem loops <code class="docutils literal notranslate"><span class="pre">for</span></code> sobre os pixels).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Visualização:</strong> Chame sua função com <code class="docutils literal notranslate"><span class="pre">max_iter</span> <span class="pre">=</span> <span class="pre">50</span></code>. Use <code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code> para visualizar a matriz <code class="docutils literal notranslate"><span class="pre">divergencia</span></code>. Use um mapa de cores como <code class="docutils literal notranslate"><span class="pre">'plasma'</span></code> ou <code class="docutils literal notranslate"><span class="pre">'inferno'</span></code>. Adicione um título e remova os eixos (<code class="docutils literal notranslate"><span class="pre">plt.axis('off')</span></code>) para uma melhor visualização.</p></li>
+</ol>
+</section>
+<section id="problema-4-aproximacao-de-uma-onda-triangular-por-serie-de-fourier">
+<h2><strong>Problema 4: Aproximação de uma Onda Triangular por Série de Fourier</strong><a class="headerlink" href="#problema-4-aproximacao-de-uma-onda-triangular-por-serie-de-fourier" title="Permalink to this heading">#</a></h2>
+<p>Qualquer função periódica pode ser aproximada por uma soma de senos e cossenos, conhecida como Série de Fourier. A série para uma <a class="reference external" href="https://pt.wikipedia.org/wiki/Onda_triangular">onda triangular</a> com amplitude 1 e período <span class="math notranslate nohighlight">\(2\pi\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[f(t) = \frac{8}{\pi^2} \sum_{k=1, 3, 5, ...}^{\infty} \frac{(-1)^{(k-1)/2}}{k^2} \sin(k t)\]</div>
+<p>Note que a soma é apenas sobre os inteiros ímpares <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Função de Aproximação:</strong> Crie uma função <code class="docutils literal notranslate"><span class="pre">fourier_triangular(t,</span> <span class="pre">N)</span></code> que receba um array de tempo <code class="docutils literal notranslate"><span class="pre">t</span></code> e um inteiro <code class="docutils literal notranslate"><span class="pre">N</span></code> (o número de termos na soma) e retorne a aproximação da onda triangular. A sua função deve somar os <code class="docutils literal notranslate"><span class="pre">N</span></code> primeiros termos da série (ou seja, para <span class="math notranslate nohighlight">\(k = 1, 3, 5, ..., 2N-1\)</span>).</p></li>
+<li><p><strong>Criação dos Gráficos:</strong> Use <code class="docutils literal notranslate"><span class="pre">plt.subplots(2,</span> <span class="pre">2,</span> <span class="pre">...)</span></code> para criar uma grade de 4 gráficos.</p></li>
+<li><p><strong>Plotagem e Comparação:</strong></p>
+<ul class="simple">
+<li><p>Em cada um dos 4 subplots, plote a onda triangular «ideal» (você pode criá-la manualmente ou com <code class="docutils literal notranslate"><span class="pre">scipy.signal.sawtooth</span></code> com o argumento <code class="docutils literal notranslate"><span class="pre">width=0.5</span></code>). Plote-a no intervalo de <span class="math notranslate nohighlight">\(t = -2\pi\)</span> a <span class="math notranslate nohighlight">\(2\pi\)</span>.</p></li>
+<li><p>No primeiro subplot, sobreponha a aproximação de Fourier com <code class="docutils literal notranslate"><span class="pre">N=1</span></code>.</p></li>
+<li><p>No segundo, sobreponha com <code class="docutils literal notranslate"><span class="pre">N=3</span></code>.</p></li>
+<li><p>No terceiro, com <code class="docutils literal notranslate"><span class="pre">N=5</span></code>.</p></li>
+<li><p>No quarto, com <code class="docutils literal notranslate"><span class="pre">N=50</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Formatação:</strong> Dê a cada subplot um título indicando o número de termos (ex: «N=5 Termos»). Adicione um título geral à figura. Use <code class="docutils literal notranslate"><span class="pre">plt.tight_layout()</span></code> para ajustar o espaçamento.</p></li>
+</ol>
+</section>
+<section id="problema-5-analise-de-orbita-planetaria">
+<h2><strong>Problema 5: Análise de Órbita Planetária</strong><a class="headerlink" href="#problema-5-analise-de-orbita-planetaria" title="Permalink to this heading">#</a></h2>
+<p>A órbita de um planeta em torno de sua estrela pode ser descrita por uma elipse. A distância do planeta à estrela, <span class="math notranslate nohighlight">\(r\)</span>, em função do ângulo <span class="math notranslate nohighlight">\(\theta\)</span> (anomalia verdadeira) é dada por:</p>
+<div class="math notranslate nohighlight">
+\[r(\theta) = \frac{a(1 - e^2)}{1 + e \cos(\theta)}\]</div>
+<p>onde <span class="math notranslate nohighlight">\(a\)</span> é o semieixo maior e <span class="math notranslate nohighlight">\(e\)</span> é a excentricidade da órbita.</p>
+<p>Vamos analisar a órbita de um planeta hipotético com <span class="math notranslate nohighlight">\(a = 2.5\)</span> UA (Unidades Astronômicas) e <span class="math notranslate nohighlight">\(e = 0.8\)</span> (uma elipse bem «achatada»).</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Cálculo da Trajetória:</strong> Crie um array <code class="docutils literal notranslate"><span class="pre">theta</span></code> de <span class="math notranslate nohighlight">\(0\)</span> a <span class="math notranslate nohighlight">\(2\pi\)</span> com 400 pontos. Calcule a distância <code class="docutils literal notranslate"><span class="pre">r</span></code> para cada <code class="docutils literal notranslate"><span class="pre">theta</span></code>.</p></li>
+<li><p><strong>Visualização em Coordenadas Polares:</strong> Matplotlib pode criar gráficos polares.</p>
+<ul class="simple">
+<li><p>Crie um subplot usando <code class="docutils literal notranslate"><span class="pre">plt.subplot(projection='polar')</span></code>.</p></li>
+<li><p>Plote a órbita usando <code class="docutils literal notranslate"><span class="pre">ax.plot(theta,</span> <span class="pre">r)</span></code>.</p></li>
+<li><p>A estrela está em um dos focos, que na origem deste sistema de coordenadas.</p></li>
+</ul>
+</li>
+<li><p><strong>Cálculo da Velocidade (Aproximação):</strong> A velocidade de um corpo em órbita não é constante. Ela é máxima no periélio (ponto mais próximo) e mínima no afélio (ponto mais afastado). Uma aproximação para a magnitude da velocidade é a taxa de variação da distância em relação ao tempo. Se assumirmos que a velocidade angular é aproximadamente constante, podemos aproximar a velocidade radial como a derivada da distância em relação ao ângulo, <span class="math notranslate nohighlight">\(|dr/d\theta|\)</span>.</p>
+<ul class="simple">
+<li><p>Use <strong>diferenciação numérica</strong> (sua função <code class="docutils literal notranslate"><span class="pre">derivative</span></code> ou <code class="docutils literal notranslate"><span class="pre">scipy.misc.derivative</span></code>) para calcular <span class="math notranslate nohighlight">\(dr/d\theta\)</span> para cada ponto da órbita.</p></li>
+<li><p>Encontre a velocidade radial máxima e mínima.</p></li>
+</ul>
+</li>
+<li><p><strong>Análise e Anotação no Gráfico:</strong></p>
+<ul class="simple">
+<li><p>Encontre os ângulos <span class="math notranslate nohighlight">\(\theta\)</span> onde a distância <code class="docutils literal notranslate"><span class="pre">r</span></code> é mínima (periélio) e máxima (afélio) usando <code class="docutils literal notranslate"><span class="pre">np.argmin</span></code> e <code class="docutils literal notranslate"><span class="pre">np.argmax</span></code>.</p></li>
+<li><p>No seu gráfico polar, use <code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code> para marcar os pontos do periélio e afélio com marcadores distintos (ex: um “x” vermelho e um “o” azul).</p></li>
+<li><p>Adicione uma legenda para explicar os pontos.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="problema-6-otimizacao-e-geometria-o-cone-de-volume-maximo">
+<h2><strong>Problema 6: Otimização e Geometria – O Cone de Volume Máximo</strong><a class="headerlink" href="#problema-6-otimizacao-e-geometria-o-cone-de-volume-maximo" title="Permalink to this heading">#</a></h2>
+<p>Imagine que você tem uma folha de papel circular de raio <span class="math notranslate nohighlight">\(R\)</span>. Você corta uma fatia (um setor circular) com um ângulo <span class="math notranslate nohighlight">\(\theta\)</span> (em radianos) e une as bordas para formar um cone. O objetivo é encontrar o ângulo <span class="math notranslate nohighlight">\(\theta\)</span> que deve ser removido para que o cone resultante tenha o volume máximo possível.</p>
+<p><strong>Fórmulas úteis:</strong></p>
+<ul class="simple">
+<li><p>O raio da base do cone, <span class="math notranslate nohighlight">\(r\)</span>, e a altura, <span class="math notranslate nohighlight">\(h\)</span>, podem ser expressos em termos de <span class="math notranslate nohighlight">\(R\)</span> e <span class="math notranslate nohighlight">\(\theta\)</span>. O comprimento do arco da porção restante do círculo, <span class="math notranslate nohighlight">\(R(2\pi - \theta)\)</span>, torna-se a circunferência da base do cone, <span class="math notranslate nohighlight">\(2\pi r\)</span>. A geratriz do cone é <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+<li><p>Volume do cone: <span class="math notranslate nohighlight">\(V = \frac{1}{3}\pi r^2 h\)</span>.</p></li>
+</ul>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic">
+<li><p><strong>Modelagem:</strong> Usando as relações acima, mostre que o volume do cone pode ser escrito como uma função de uma única variável, por exemplo, o raio da base <span class="math notranslate nohighlight">\(r\)</span>: <span class="math notranslate nohighlight">\(V(r) = \frac{1}{3}\pi r^2 \sqrt{R^2 - r^2}\)</span>.</p></li>
+<li><p><strong>Otimização:</strong> Para maximizar o volume, precisamos encontrar a raiz da derivada <span class="math notranslate nohighlight">\(V'(r) = 0\)</span>. Calcule a derivada de <span class="math notranslate nohighlight">\(V(r)\)</span> em relação a <span class="math notranslate nohighlight">\(r\)</span> <strong>analiticamente</strong>. (Dica: para simplificar, você pode maximizar <span class="math notranslate nohighlight">\(V^2(r)\)</span> em vez de <span class="math notranslate nohighlight">\(V(r)\)</span>).</p></li>
+<li><p><strong>Busca da Raiz:</strong> A equação <span class="math notranslate nohighlight">\(V'(r) = 0\)</span> não é trivial de resolver. Use o <strong>método de Newton</strong> para encontrar o valor de <span class="math notranslate nohighlight">\(r\)</span> que maximiza o volume. Assuma <span class="math notranslate nohighlight">\(R=10\)</span> cm e use uma estimativa inicial, <span class="math notranslate nohighlight">\(x_0\)</span>, apropriada (por exemplo, <span class="math notranslate nohighlight">\(x_0 = 8\)</span>).</p></li>
+<li><p><strong>Cálculo Final:</strong> Com o valor ótimo de <span class="math notranslate nohighlight">\(r\)</span> encontrado, calcule:</p>
+<p>a) A altura <span class="math notranslate nohighlight">\(h\)</span> correspondente.</p>
+<p>b) O ângulo <span class="math notranslate nohighlight">\(\theta\)</span> (em graus) que deve ser removido.</p>
+<p>c) O volume máximo do cone.</p>
+</li>
+</ol>
+</section>
+<section id="problema-7-interseccao-de-curvas-e-analise-de-taxa-de-variacao">
+<h2><strong>Problema 7: Intersecção de Curvas e Análise de Taxa de Variação</strong><a class="headerlink" href="#problema-7-interseccao-de-curvas-e-analise-de-taxa-de-variacao" title="Permalink to this heading">#</a></h2>
+<p>Queremos encontrar o ponto de intersecção entre a curva de um oscilador amortecido, <span class="math notranslate nohighlight">\(f(x) = e^{-x/2} \cos(2\pi x)\)</span>, e uma curva de decaimento exponencial simples, <span class="math notranslate nohighlight">\(g(x) = 1.5e^{-x}\)</span>, para <span class="math notranslate nohighlight">\(x \geq 1\)</span>.</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Visualização:</strong> Plote ambas as funções, <span class="math notranslate nohighlight">\(f(x)\)</span> e <span class="math notranslate nohighlight">\(g(x)\)</span>, no mesmo gráfico no intervalo <span class="math notranslate nohighlight">\([0, 2]\)</span>. Isso ajudará a visualizar o ponto de intersecção e a escolher um bom intervalo inicial para a busca de raiz.</p></li>
+<li><p><strong>Encontrando a Intersecção:</strong> A intersecção ocorre quando <span class="math notranslate nohighlight">\(f(x) = g(x)\)</span>, ou seja, quando <span class="math notranslate nohighlight">\(H(x) = f(x) - g(x) = 0\)</span>. Use o <strong>método da secante</strong> para encontrar a coordenada <span class="math notranslate nohighlight">\(x\)</span> deste ponto de intersecção com uma precisão de <span class="math notranslate nohighlight">\(10^{-7}\)</span>. Use o gráfico da etapa 1 para definir seu intervalo inicial <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
+<li><p><strong>Análise da Derivada:</strong> No ponto de intersecção encontrado, qual das duas curvas está decaindo mais rapidamente? Para responder a isso, calcule as derivadas <span class="math notranslate nohighlight">\(f'(x)\)</span> e <span class="math notranslate nohighlight">\(g'(x)\)</span> nesse ponto usando <strong>diferenciação numérica</strong> (com a sua função <code class="docutils literal notranslate"><span class="pre">derivative</span></code> ou <code class="docutils literal notranslate"><span class="pre">scipy.misc.derivative</span></code>).</p></li>
+<li><p><strong>Apresentação:</strong> Imprima a coordenada <span class="math notranslate nohighlight">\((x, y)\)</span> da intersecção e os valores das derivadas de ambas as funções nesse ponto, explicando sua conclusão.</p></li>
+</ol>
+</section>
+<section id="problema-8-calculo-do-centro-de-massa-de-uma-placa-com-densidade-variavel">
+<h2><strong>Problema 8: Cálculo do Centro de Massa de uma Placa com Densidade Variável</strong><a class="headerlink" href="#problema-8-calculo-do-centro-de-massa-de-uma-placa-com-densidade-variavel" title="Permalink to this heading">#</a></h2>
+<p>O centro de massa <span class="math notranslate nohighlight">\((\bar{x}, \bar{y})\)</span> de uma placa (lâmina) plana que ocupa uma região <span class="math notranslate nohighlight">\(D\)</span> com uma função de densidade <span class="math notranslate nohighlight">\(\rho(x, y)\)</span> é dado por:</p>
+<div class="math notranslate nohighlight">
+\[\bar{x} = \frac{M_y}{M} \quad , \quad \bar{y} = \frac{M_x}{M}\]</div>
+<p>onde:</p>
+<ul class="simple">
+<li><p>Massa total: <span class="math notranslate nohighlight">\(M = \iint_D \rho(x, y) \,dA\)</span></p></li>
+<li><p>Momento em relação ao eixo y: <span class="math notranslate nohighlight">\(M_y = \iint_D x \rho(x, y) \,dA\)</span></p></li>
+<li><p>Momento em relação ao eixo x: <span class="math notranslate nohighlight">\(M_x = \iint_D y \rho(x, y) \,dA\)</span></p></li>
+</ul>
+<p>Considere uma placa semicircular definida por <span class="math notranslate nohighlight">\(x^2 + y^2 \leq 4\)</span> com <span class="math notranslate nohighlight">\(y \geq 0\)</span>. A densidade da placa não é uniforme e varia com a distância ao eixo y, sendo dada por <span class="math notranslate nohighlight">\(\rho(x, y) = 1 + 0.5x^2\)</span>.</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic">
+<li><p><strong>Configuração das Integrais:</strong> Converta as integrais duplas acima em integrais iteradas. Por simetria, você pode deduzir que <span class="math notranslate nohighlight">\(\bar{x} = 0\)</span>. Você precisará configurar as integrais para a massa <span class="math notranslate nohighlight">\(M\)</span> e o momento <span class="math notranslate nohighlight">\(M_x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[M = \int_{-2}^{2} \int_{0}^{\sqrt{4-x^2}} (1 + 0.5x^2) \,dy\,dx\]</div>
+<div class="math notranslate nohighlight">
+\[M_x = \int_{-2}^{2} \int_{0}^{\sqrt{4-x^2}} y(1 + 0.5x^2) \,dy\,dx\]</div>
+</li>
+<li><p><strong>Simplificação:</strong> Resolva as integrais internas (em relação a <span class="math notranslate nohighlight">\(y\)</span>) <strong>analiticamente</strong>. Isso resultará em duas integrais simples (em relação a <span class="math notranslate nohighlight">\(x\)</span>).</p></li>
+<li><p><strong>Cálculo Numérico:</strong> Use a <strong>regra de Simpson</strong> (<code class="docutils literal notranslate"><span class="pre">simps</span></code> ou <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simps</span></code>) com <code class="docutils literal notranslate"><span class="pre">N=200</span></code> para calcular os valores numéricos das duas integrais resultantes da etapa 2.</p></li>
+<li><p><strong>Resultado Final:</strong> Calcule e apresente a coordenada <span class="math notranslate nohighlight">\(\bar{y}\)</span> do centro de massa.</p></li>
+</ol>
+</section>
+<section id="problema-9-o-problema-da-braquistocrona-e-o-tempo-de-queda">
+<h2><strong>Problema 9: O Problema da Braquistócrona e o Tempo de Queda</strong><a class="headerlink" href="#problema-9-o-problema-da-braquistocrona-e-o-tempo-de-queda" title="Permalink to this heading">#</a></h2>
+<p>A <a class="reference external" href="https://pt.wikipedia.org/wiki/Braquist%C3%B3crona">braquistócrona</a> é a curva entre dois pontos que um objeto em queda livre (sem atrito, sob gravidade constante) percorre no menor tempo possível. Essa curva não é uma reta, mas sim uma cicloide.</p>
+<p>As equações paramétricas de uma cicloide (com <span class="math notranslate nohighlight">\(r=1\)</span>) que passa pela origem são:</p>
+<div class="math notranslate nohighlight">
+\[x(\theta) = r(\theta - \sin\theta), \quad y(\theta) = r(1 - \cos\theta). \]</div>
+<p>O tempo de descida ao longo de uma curva <span class="math notranslate nohighlight">\((x(\theta), y(\theta))\)</span> de <span class="math notranslate nohighlight">\(\theta_A\)</span> até <span class="math notranslate nohighlight">\(\theta_B\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[T = \int_{\theta_A}^{\theta_B} \frac{\sqrt{x'(\theta)^2 + y'(\theta)^2}}{\sqrt{2gy(\theta)}} d\theta\]</div>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Cálculo das Derivadas:</strong> Calcule as derivadas <span class="math notranslate nohighlight">\(x'(\theta)\)</span> e <span class="math notranslate nohighlight">\(y'(\theta)\)</span> <strong>analiticamente</strong>.</p></li>
+<li><p><strong>Função do Integrando:</strong> Calcule a função do integrando <span class="math notranslate nohighlight">\(f(\theta) = \frac{\sqrt{x'(\theta)^2 + y'(\theta)^2}}{\sqrt{2gy(\theta)}}\)</span> analiticamente e então a defina como uma função em Python. Assuma <span class="math notranslate nohighlight">\(r=1\)</span> e <span class="math notranslate nohighlight">\(g=9.81\)</span>.</p></li>
+<li><p><strong>Tempo na Cicloide:</strong> Calcule numericamente o tempo de descida ao longo da cicloide desde o ponto A (origem, <span class="math notranslate nohighlight">\(\theta_A = 0\)</span>) até o ponto B (<span class="math notranslate nohighlight">\(x \approx 5.14\)</span>, <span class="math notranslate nohighlight">\(y \approx 1.27\)</span>, que corresponde a <span class="math notranslate nohighlight">\(\theta_B = 2.5\)</span> radianos). Use uma <strong>técnica de integração numérica</strong> de sua escolha (por exemplo, <code class="docutils literal notranslate"><span class="pre">scipy.integrate.quad</span></code> ou sua função <code class="docutils literal notranslate"><span class="pre">simps</span></code> com N grande).</p></li>
+<li><p><strong>Comparação:</strong> Calcule o tempo de descida para um objeto que cai ao longo de uma <strong>rampa reta</strong> entre os mesmos pontos A e B. A fórmula para o tempo em uma rampa reta de comprimento <span class="math notranslate nohighlight">\(L\)</span> e inclinação <span class="math notranslate nohighlight">\(\alpha\)</span> é <span class="math notranslate nohighlight">\(T_{reta} = \sqrt{2L / (g \sin\alpha)}\)</span>.</p></li>
+<li><p><strong>Conclusão (em uma célula Markdown):</strong> Compare os dois tempos. Seu resultado confirma que a cicloide é a trajetória mais rápida?</p></li>
+</ol>
+</section>
+<section id="problema-10-analise-do-potencial-de-lennard-jones">
+<h2><strong>Problema 10: Análise do Potencial de Lennard-Jones</strong><a class="headerlink" href="#problema-10-analise-do-potencial-de-lennard-jones" title="Permalink to this heading">#</a></h2>
+<p>O <a class="reference external" href="https://pt.wikipedia.org/wiki/Potencial_de_Lennard-Jones">potencial de Lennard-Jones</a> é um modelo matemático que descreve a energia potencial <span class="math notranslate nohighlight">\(V\)</span> da interação entre duas partículas neutras em função da distância <span class="math notranslate nohighlight">\(r\)</span> entre elas:</p>
+<div class="math notranslate nohighlight">
+\[V(r) = 4\epsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^{6} \right]\]</div>
+<p>A força entre as partículas é <span class="math notranslate nohighlight">\(F(r) = -V'(r)\)</span>. Uma posição de equilíbrio estável ocorre no ponto <span class="math notranslate nohighlight">\(r_0\)</span> onde a energia potencial é mínima, ou seja, onde a força é nula, <span class="math notranslate nohighlight">\(F(r_0) = -V'(r_0) = 0\)</span>.</p>
+<p>Para esta questão, use os parâmetros para o Argônio: <span class="math notranslate nohighlight">\(\sigma = 3.4 \times 10^{-10}\)</span> m e <span class="math notranslate nohighlight">\(\epsilon = 1.65 \times 10^{-21}\)</span> J.</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic">
+<li><p><strong>Força e Equilíbrio:</strong></p>
+<p>a) Calcule a primeira derivada <span class="math notranslate nohighlight">\(V'(r)\)</span> <strong>analiticamente</strong> para obter a fórmula da força <span class="math notranslate nohighlight">\(F(r)\)</span>.</p>
+<p>b) Use um <strong>método de busca de raiz</strong> de sua escolha para encontrar a distância de equilíbrio <span class="math notranslate nohighlight">\(r_0\)</span> onde <span class="math notranslate nohighlight">\(F(r_0)=0\)</span>. Use uma tolerância de <span class="math notranslate nohighlight">\(10^{-12}\)</span>.</p>
+</li>
+<li><p><strong>Visualização:</strong> Plote o potencial <span class="math notranslate nohighlight">\(V(r)\)</span> em função de <span class="math notranslate nohighlight">\(r\)</span> (para <span class="math notranslate nohighlight">\(r\)</span> de <span class="math notranslate nohighlight">\(3 \times 10^{-10}\)</span> a <span class="math notranslate nohighlight">\(8 \times 10^{-10}\)</span> m). Marque no gráfico o ponto de mínimo <span class="math notranslate nohighlight">\((r_0, V(r_0))\)</span> que você encontrou.</p></li>
+<li><p><strong>Frequência de Oscilação:</strong> Para pequenas oscilações em torno do ponto de equilíbrio, o sistema se comporta como um oscilador harmônico com uma «constante de mola» <span class="math notranslate nohighlight">\(k = V''(r_0)\)</span>.</p>
+<p>a) Use <strong>diferenciação numérica</strong> para calcular a segunda derivada <span class="math notranslate nohighlight">\(V''(x)\)</span> no ponto de equilíbrio <span class="math notranslate nohighlight">\(r_0\)</span> para encontrar a constante <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>b) A frequência angular de oscilação é <span class="math notranslate nohighlight">\(\omega = \sqrt{k/\mu}\)</span>, onde <span class="math notranslate nohighlight">\(\mu\)</span> é a massa reduzida. Para duas partículas de Argônio, <span class="math notranslate nohighlight">\(\mu \approx 3.32 \times 10^{-26}\)</span> kg. Calcule a frequência angular <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
+</li>
+<li><p><strong>Relatório Final:</strong> Apresente a distância de equilíbrio <span class="math notranslate nohighlight">\(r_0\)</span>, a energia potencial mínima <span class="math notranslate nohighlight">\(V(r_0)\)</span>, a constante de mola efetiva <span class="math notranslate nohighlight">\(k\)</span> e a frequência de oscilação <span class="math notranslate nohighlight">\(\omega\)</span>.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./projetos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../alglin/problemas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Exercícios</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="p2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Projeto II</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-1-analise-da-distribuicao-de-numeros-primos"><strong>Problema 1: Análise da Distribuição de Números Primos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-2-simulacao-e-analise-de-um-passeio-aleatorio-2d"><strong>Problema 2: Simulação e Análise de um Passeio Aleatório 2D</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-3-visualizacao-do-conjunto-de-mandelbrot"><strong>Problema 3: Visualização do Conjunto de Mandelbrot</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-4-aproximacao-de-uma-onda-triangular-por-serie-de-fourier"><strong>Problema 4: Aproximação de uma Onda Triangular por Série de Fourier</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-5-analise-de-orbita-planetaria"><strong>Problema 5: Análise de Órbita Planetária</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-6-otimizacao-e-geometria-o-cone-de-volume-maximo"><strong>Problema 6: Otimização e Geometria – O Cone de Volume Máximo</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-7-interseccao-de-curvas-e-analise-de-taxa-de-variacao"><strong>Problema 7: Intersecção de Curvas e Análise de Taxa de Variação</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-8-calculo-do-centro-de-massa-de-uma-placa-com-densidade-variavel"><strong>Problema 8: Cálculo do Centro de Massa de uma Placa com Densidade Variável</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-9-o-problema-da-braquistocrona-e-o-tempo-de-queda"><strong>Problema 9: O Problema da Braquistócrona e o Tempo de Queda</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-10-analise-do-potencial-de-lennard-jones"><strong>Problema 10: Análise do Potencial de Lennard-Jones</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

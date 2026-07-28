@@ -1,0 +1,940 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lógica &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/main.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/logica';</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
+    <link rel="next" title="Laços" href="lacos.html" />
+    <link rel="prev" title="Funções" href="funcoes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Matemática Computacional - Home"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="Matemática Computacional - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Básico</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funcoes.html">Funções</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lacos.html">Laços</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scipy/numpy.html">NumPy</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../scipy/matplotlib.html">Matplotlib</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resolvendo Equações</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eqs/raizes.html">Encontrando raízes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/bissec.html">Método da Bissecção</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/secante.html">Método da Secante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/newton.html">Método de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integração Numérica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../int/integrais.html">Integrais Definidas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/riemann.html">Somas de Riemann</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/trapezio.html">Regra do Trapézio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/simpson.html">Regra de Simpson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/difnum.html">Diferenciação Numérica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Equações Diferenciais</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eds/eds.html">Equações Diferenciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eds/metodos.html">Métodos Numéricos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../eds/sistemas.html">Sistemas de Equações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eds/aplicacoes.html">Aplicações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eds/problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Álgebra Linear</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../alglin/alglin.html">Álgebra Linear com SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/sistemas.html">Sistemas Lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/autovalores.html">Autovalores e Autovetores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/aplicacoes.html">Aplicações de Álgebra Linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/problemas.html">Exercícios</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projetos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../projetos/p1.html">Projeto I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/p2.html">Projeto II</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/python/logica.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lógica</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>   </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-booleanos">Valores Booleanos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacao">Operadores de Comparação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-booleanos">Operadores Booleanos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracoes-if">Declarações if</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-invertivel">Matriz Invertível</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concavidade-de-um-polinomio">Concavidade de um Polinômio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="logica">
+<h1>Lógica<a class="headerlink" href="#logica" title="Permalink to this heading">#</a></h1>
+<section id="valores-booleanos">
+<h2>Valores Booleanos<a class="headerlink" href="#valores-booleanos" title="Permalink to this heading">#</a></h2>
+<p>O tipo <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#truth-value-testing">booleano</a> tem apenas dois valores: <code class="docutils literal notranslate"><span class="pre">True</span></code> e <code class="docutils literal notranslate"><span class="pre">False</span></code>. Vamos atribuir um valor booleano a uma variável e verificar o tipo usando a função embutida <code class="docutils literal notranslate"><span class="pre">type()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_is_fun</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">python_is_fun</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">python_is_fun</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python_is_fun</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">j</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">python_is_fun</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>complex
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos atribuir o valor <code class="docutils literal notranslate"><span class="pre">False</span></code> a uma variável e verificar novamente o tipo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math_is_scary</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math_is_scary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">math_is_scary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operadores-de-comparacao">
+<h2>Operadores de Comparação<a class="headerlink" href="#operadores-de-comparacao" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#comparisons">Operadores de comparação</a> produzem valores Booleanos como saída. Por exemplo, se tivermos variáveis <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> com valores numéricos, podemos avaliar a expressão <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></code> e o resultado é um valor booleano, <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operador de Comparação</p></th>
+<th class="head text-center"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td class="text-center"><p>estritamente menor que</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td class="text-center"><p>menor que ou igual a</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td class="text-center"><p>estritamente maior que</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td class="text-center"><p>maior que ou igual a</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td class="text-center"><p>igual a</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td class="text-center"><p>diferente de</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Por exemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">!=</span> <span class="mf">3.14159</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">20.00000001</span> <span class="o">&gt;=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operadores-booleanos">
+<h2>Operadores Booleanos<a class="headerlink" href="#operadores-booleanos" title="Permalink to this heading">#</a></h2>
+<p>Combinamos expressões lógicas usando os <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not">operadores booleanos</a> <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> e <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operador Booleano</p></th>
+<th class="head text-center"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">and</span> <span class="pre">B</span></code></p></td>
+<td class="text-center"><p>retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se tanto <code class="docutils literal notranslate"><span class="pre">A</span></code> quanto <code class="docutils literal notranslate"><span class="pre">B</span></code> forem <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">or</span> <span class="pre">B</span></code></p></td>
+<td class="text-center"><p>retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se <code class="docutils literal notranslate"><span class="pre">A</span></code> ou <code class="docutils literal notranslate"><span class="pre">B</span></code> for <code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">A</span></code></p></td>
+<td class="text-center"><p>retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se <code class="docutils literal notranslate"><span class="pre">A</span></code> for <code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Por exemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">3</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="mi">1000</span> <span class="o">&lt;=</span> <span class="mi">999</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="declaracoes-if">
+<h2>Declarações if<a class="headerlink" href="#declaracoes-if" title="Permalink to this heading">#</a></h2>
+<p>Uma <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#if-statements">declaração if</a> consiste em um ou mais blocos de código, de modo que apenas um bloco é executado dependendo das expressões lógicas.</p>
+<p>Por exemplo, determine se as raízes da equação polinomial <span class="math notranslate nohighlight">\(ax^2 + bx + c = 0\)</span> são reais, repetidas ou complexas usando a fórmula de Bhaskara</p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">discriminant</span> <span class="o">=</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
+<span class="k">if</span> <span class="n">discriminant</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discriminant =&quot;</span><span class="p">,</span> <span class="n">discriminant</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roots are real and distinct.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">discriminant</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># elif=else if=&quot;senão, então se&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discriminant =&quot;</span><span class="p">,</span> <span class="n">discriminant</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roots are complex.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1">#else = &quot;senão&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Discriminant =&quot;</span><span class="p">,</span> <span class="n">discriminant</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Roots are real and repeated.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Discriminant = 12
+Roots are real and distinct.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Os principais pontos a serem observados são:</p>
+<ol class="arabic simple">
+<li><p>Comece com a palavra-chave <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p></li>
+<li><p>Escreva uma expressão lógica (que retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+<li><p>Termine a linha com dois pontos <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p></li>
+<li><p>Indente o bloco com 4 espaços após a declaração <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p></li>
+<li><p>Inclua as declarações <code class="docutils literal notranslate"><span class="pre">elif</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code>, se necessário.</p></li>
+<li><p>Apenas um dos blocos <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code> é executado.</p></li>
+<li><p>O bloco que segue uma declaração <code class="docutils literal notranslate"><span class="pre">else</span></code> será executado apenas se todas as outras expressões lógicas anteriores forem <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+</ol>
+</section>
+<section id="exemplos">
+<h2>Exemplos<a class="headerlink" href="#exemplos" title="Permalink to this heading">#</a></h2>
+<section id="matriz-invertivel">
+<h3>Matriz Invertível<a class="headerlink" href="#matriz-invertivel" title="Permalink to this heading">#</a></h3>
+<p>Represente uma matriz quadrada 2 por 2 como uma lista de listas. Por exemplo, represente a matriz</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 2 &amp; -1 \\\ 5 &amp; 7 \end{bmatrix}
+\end{split}\]</div>
+<p>como a lista de listas <code class="docutils literal notranslate"><span class="pre">[[2,-1],[5,7]]</span></code>.</p>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">invertible</span></code> que receba um parâmetro de entrada <code class="docutils literal notranslate"><span class="pre">M</span></code>, uma lista de listas representando uma matriz 2 por 2, e retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> se a matriz <code class="docutils literal notranslate"><span class="pre">M</span></code> for invertível e <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">invertible</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+    <span class="s2">&quot;Determine if the matrix M = [[a,b],[c,d]] is invertible.&quot;</span>
+    <span class="n">determinant</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">determinant</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos testar nossa função:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">invertible</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">invertible</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="concavidade-de-um-polinomio">
+<h3>Concavidade de um Polinômio<a class="headerlink" href="#concavidade-de-um-polinomio" title="Permalink to this heading">#</a></h3>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">concave_up</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">p</span></code> e <code class="docutils literal notranslate"><span class="pre">a</span></code>, onde <code class="docutils literal notranslate"><span class="pre">p</span></code> é uma lista que representa um polinômio <span class="math notranslate nohighlight">\(p(x)\)</span> e <code class="docutils literal notranslate"><span class="pre">a</span></code> é um número, e retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> se a função <span class="math notranslate nohighlight">\(p(x)\)</span> tiver concavidade para cima em <span class="math notranslate nohighlight">\(x=a\)</span> (ou seja, sua segunda derivada é positiva em <span class="math notranslate nohighlight">\(x=a\)</span>, <span class="math notranslate nohighlight">\(p''(a) &gt; 0\)</span>).</p>
+<p>Usaremos o teste da segunda derivada para polinômios. Em particular, se tivermos um polinômio de grau <span class="math notranslate nohighlight">\(n\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+p(x) = c_0 + c_1 x + c_2 x^2 + \cdots + c_n x^n
+\]</div>
+<p>então a segunda derivada de <span class="math notranslate nohighlight">\(p(x)\)</span> em <span class="math notranslate nohighlight">\(x=a\)</span> é a soma</p>
+<div class="math notranslate nohighlight">
+\[
+p''(a) = 2(1) c_2 + 3(2)c_3 a + 4(3)c_4 a^2 + \cdots + n(n-1)c_n a^{n-2}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">concave_up</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+    <span class="s2">&quot;Determine if the polynomial p(x) is concave up at x=a.&quot;</span>
+    <span class="n">degree</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">degree</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Compute the second derivative p&#39;&#39;(a)</span>
+        <span class="n">DDp_a</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">p</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">a</span><span class="o">**</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">degree</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+        <span class="k">if</span> <span class="n">DDp_a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos testar nossa função em <span class="math notranslate nohighlight">\(p(x) = 1 + x - x^3\)</span> em <span class="math notranslate nohighlight">\(x=2\)</span>. Como <span class="math notranslate nohighlight">\(p''(x) = -6x\)</span> e <span class="math notranslate nohighlight">\(p''(2) = -12 &lt; 0\)</span>, o polinômio tem concavidade para baixo em <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">concavity</span> <span class="o">=</span> <span class="n">concave_up</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">concavity</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+<p><strong>Exercício 1.</strong> O <a class="reference external" href="https://en.wikipedia.org/wiki/Discriminant#Cubic">discriminante</a> de um polinômio cúbico <span class="math notranslate nohighlight">\(p(x) = ax^3 + bx^2 + cx + d\)</span> é</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta = b^2c^2 - 4ac^3 - 4b^3d - 27a^2d^2 + 18abcd
+\]</div>
+<p>O discriminante nos dá informações sobre as raízes do polinômio <span class="math notranslate nohighlight">\(p(x)\)</span>:</p>
+<ul class="simple">
+<li><p>se <span class="math notranslate nohighlight">\(\Delta &gt; 0\)</span>, então <span class="math notranslate nohighlight">\(p(x)\)</span> tem 3 raízes reais distintas</p></li>
+<li><p>se <span class="math notranslate nohighlight">\(\Delta &lt; 0\)</span>, então <span class="math notranslate nohighlight">\(p(x)\)</span> tem 2 raízes complexas distintas e 1 raiz real</p></li>
+<li><p>se <span class="math notranslate nohighlight">\(\Delta = 0\)</span>, então <span class="math notranslate nohighlight">\(p(x)\)</span> tem pelo menos 2 raízes (reais ou complexas) que são iguais</p></li>
+</ul>
+<p>Represente um polinômio cúbico <span class="math notranslate nohighlight">\(p(x) = ax^3 + bx^2 + cx + d\)</span> como uma lista <code class="docutils literal notranslate"><span class="pre">[d,c,b,a]</span></code> de números. (Note que a ordem dos coeficientes é de grau crescente.) Por exemplo, o polinômio <span class="math notranslate nohighlight">\(p(x) = x^3 - x + 1\)</span> é <code class="docutils literal notranslate"><span class="pre">[1,-1,0,1]</span></code>.</p>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">cubic_roots</span></code> que receba um parâmetro de entrada <code class="docutils literal notranslate"><span class="pre">p</span></code>, uma lista de comprimento 4 representando um polinômio cúbico, e retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> se <span class="math notranslate nohighlight">\(p(x)\)</span> tiver 3 raízes reais distintas e <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário.</p>
+<p><strong>Exercício 2.</strong> Represente uma matriz quadrada 2 por 2 como uma lista de listas. Por exemplo, represente a matriz</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 2 &amp; -1 \\\ 5 &amp; 7 \end{bmatrix}
+\end{split}\]</div>
+<p>como a lista de listas <code class="docutils literal notranslate"><span class="pre">[[2,-1],[5,7]]</span></code>. Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">inverse_a</span></code> que receba um parâmetro de entrada <code class="docutils literal notranslate"><span class="pre">a</span></code> e retorne uma lista de listas representando a <a class="reference external" href="https://en.wikipedia.org/wiki/Invertible_matrix">inversa da matriz</a></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; a \\\
+a &amp; -1
+\end{bmatrix}
+\end{split}\]</div>
+<p><strong>Exercício 3.</strong> Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">real_eigenvalues</span></code> que receba um parâmetro de entrada <code class="docutils literal notranslate"><span class="pre">M</span></code>, uma lista de listas representando uma matriz 2 por 2 (como no exercício anterior), e retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> se os <a class="reference external" href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">autovalores</a> da matriz <code class="docutils literal notranslate"><span class="pre">M</span></code> forem números reais e <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="funcoes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Funções</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lacos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Laços</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-booleanos">Valores Booleanos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacao">Operadores de Comparação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-booleanos">Operadores Booleanos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracoes-if">Declarações if</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-invertivel">Matriz Invertível</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concavidade-de-um-polinomio">Concavidade de um Polinômio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

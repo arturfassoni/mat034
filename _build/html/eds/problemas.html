@@ -1,0 +1,678 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Problemas &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/main.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eds/problemas';</script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../search.html" />
+    <link rel="next" title="Álgebra Linear com SciPy" href="../alglin/alglin.html" />
+    <link rel="prev" title="Aplicações" href="aplicacoes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Matemática Computacional - Home"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="Matemática Computacional - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter/latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Básico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/funcoes.html">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/lacos.html">Laços</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../scipy/numpy.html">NumPy</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../scipy/matplotlib.html">Matplotlib</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resolvendo Equações</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../eqs/raizes.html">Encontrando raízes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/bissec.html">Método da Bissecção</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/secante.html">Método da Secante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/newton.html">Método de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eqs/problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integração Numérica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../int/integrais.html">Integrais Definidas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/riemann.html">Somas de Riemann</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/trapezio.html">Regra do Trapézio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/simpson.html">Regra de Simpson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/difnum.html">Diferenciação Numérica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int/problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Equações Diferenciais</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="eds.html">Equações Diferenciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metodos.html">Métodos Numéricos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="sistemas.html">Sistemas de Equações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aplicacoes.html">Aplicações</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Álgebra Linear</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../alglin/alglin.html">Álgebra Linear com SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/sistemas.html">Sistemas Lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/autovalores.html">Autovalores e Autovetores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/aplicacoes.html">Aplicações de Álgebra Linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../alglin/problemas.html">Exercícios</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projetos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../projetos/p1.html">Projeto I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/p2.html">Projeto II</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/eds/problemas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problemas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>   </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-1-implementacao-e-analise-de-erro-do-metodo-runge-kutta-rk4"><strong>Problema 1: Implementação e Análise de Erro do Método Runge-Kutta (RK4)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-2-modelo-epidemiologico-sir"><strong>Problema 2: Modelo Epidemiológico SIR</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-3-equacoes-de-lorenz"><strong>Problema 3: Equações de Lorenz</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-4-oscilador-amortecido"><strong>Problema 4: Oscilador Amortecido</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problemas">
+<h1>Problemas<a class="headerlink" href="#problemas" title="Permalink to this heading">#</a></h1>
+<section id="problema-1-implementacao-e-analise-de-erro-do-metodo-runge-kutta-rk4">
+<h2><strong>Problema 1: Implementação e Análise de Erro do Método Runge-Kutta (RK4)</strong><a class="headerlink" href="#problema-1-implementacao-e-analise-de-erro-do-metodo-runge-kutta-rk4" title="Permalink to this heading">#</a></h2>
+<p>O Método de Euler é simples, mas acumula erros rapidamente. O Método de Runge-Kutta de 4ª Ordem (RK4) é um dos métodos de passo único mais populares e precisos. Ele obtém uma precisão de 4ª ordem (erro global <span class="math notranslate nohighlight">\(O(h^4)\)</span>) avaliando a derivada <span class="math notranslate nohighlight">\(f(t,y)\)</span> em quatro pontos diferentes dentro de cada passo <span class="math notranslate nohighlight">\(h\)</span>.</p>
+<p>As fórmulas de atualização do RK4 são:
+$<span class="math notranslate nohighlight">\(y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(t_{n+1} = t_n + h\)</span><span class="math notranslate nohighlight">\(
+onde:
+\)</span><span class="math notranslate nohighlight">\(k_1 = f(t_n, y_n)\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(k_2 = f(t_n + \frac{h}{2}, y_n + k_1 \frac{h}{2})\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(k_3 = f(t_n + \frac{h}{2}, y_n + k_2 \frac{h}{2})\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(k_4 = f(t_n + h, y_n + k_3 h)\)</span>$</p>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Implementação:</strong> Crie uma função <code class="docutils literal notranslate"><span class="pre">rk4(f,</span> <span class="pre">t_span,</span> <span class="pre">y0,</span> <span class="pre">h)</span></code> que receba uma EDO <span class="math notranslate nohighlight">\(f(t,y)\)</span>, um intervalo de tempo <code class="docutils literal notranslate"><span class="pre">t_span</span> <span class="pre">=</span> <span class="pre">[t0,</span> <span class="pre">tf]</span></code>, uma condição inicial <code class="docutils literal notranslate"><span class="pre">y0</span></code> e um tamanho de passo <code class="docutils literal notranslate"><span class="pre">h</span></code>. A função deve retornar dois arrays NumPy: o vetor de tempo <code class="docutils literal notranslate"><span class="pre">t</span></code> e o vetor de solução <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p><strong>Análise de Erro:</strong> Para verificar a ordem de precisão do seu método, faremos uma análise de convergência.</p>
+<ul class="simple">
+<li><p>Resolva a EDO <span class="math notranslate nohighlight">\(y' = y\)</span> com <span class="math notranslate nohighlight">\(y(0)=1\)</span> no intervalo <span class="math notranslate nohighlight">\(t \in [0, 5]\)</span>. A solução analítica é <span class="math notranslate nohighlight">\(y(t) = e^t\)</span>.</p></li>
+<li><p>Calcule o erro global no tempo final <span class="math notranslate nohighlight">\(t=5\)</span> para uma gama de tamanhos de passo, por exemplo: <code class="docutils literal notranslate"><span class="pre">h_values</span> <span class="pre">=</span> <span class="pre">[0.5,</span> <span class="pre">0.2,</span> <span class="pre">0.1,</span> <span class="pre">0.05,</span> <span class="pre">0.01]</span></code>. O erro é <code class="docutils literal notranslate"><span class="pre">E(h)</span> <span class="pre">=</span> <span class="pre">|y_numerico(5)</span> <span class="pre">-</span> <span class="pre">y_exato(5)|</span></code>.</p></li>
+<li><p>Crie um gráfico <strong>log-log</strong> do erro <span class="math notranslate nohighlight">\(E(h)\)</span> em função do passo <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
+<li><p><strong>Análise:</strong> O método RK4 tem erro <span class="math notranslate nohighlight">\(E(h) \approx C \cdot h^4\)</span>. Portanto, um gráfico log-log de <span class="math notranslate nohighlight">\(E\)</span> vs <span class="math notranslate nohighlight">\(h\)</span> deve ter uma inclinação de 4. Verifique visualmente se seu gráfico tem essa inclinação.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="problema-2-modelo-epidemiologico-sir">
+<h2><strong>Problema 2: Modelo Epidemiológico SIR</strong><a class="headerlink" href="#problema-2-modelo-epidemiologico-sir" title="Permalink to this heading">#</a></h2>
+<p>O modelo SIR é um dos modelos compartimentais mais fundamentais em epidemiologia. Ele divide a população (<span class="math notranslate nohighlight">\(N\)</span>) em três grupos:</p>
+<ul class="simple">
+<li><p><strong>S (Suscetíveis):</strong> Indivíduos que podem contrair a doença.</p></li>
+<li><p><strong>I (Infectados):</strong> Indivíduos que têm a doença e podem transmiti-la.</p></li>
+<li><p><strong>R (Removidos):</strong> Indivíduos que se recuperaram (e ganharam imunidade) ou faleceram.</p></li>
+</ul>
+<p>O modelo é descrito por um sistema de 3 EDOs não lineares:
+$<span class="math notranslate nohighlight">\(\frac{dS}{dt} = -\frac{\beta S I}{N}\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\frac{dI}{dt} = \frac{\beta S I}{N} - \gamma I\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\frac{dR}{dt} = \gamma I\)</span>$</p>
+<p>Onde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N\)</span>: População total (constante, <span class="math notranslate nohighlight">\(N = S + I + R\)</span>).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> (beta): Taxa de transmissão (quão rápido a doença se espalha).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> (gama): Taxa de recuperação (quão rápido os infectados são «removidos»).</p></li>
+</ul>
+<p><strong>Tarefas:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Implementação:</strong> Crie uma função <code class="docutils literal notranslate"><span class="pre">modelo_sir(u,</span> <span class="pre">t,</span> <span class="pre">N,</span> <span class="pre">beta,</span> <span class="pre">gamma)</span></code> que retorne as derivadas <span class="math notranslate nohighlight">\([dS/dt, dI/dt, dR/dt]\)</span>. Note a ordem dos argumentos <code class="docutils literal notranslate"><span class="pre">(u,</span> <span class="pre">t,</span> <span class="pre">...)</span></code> necessária para a função <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint</span></code>.</p></li>
+<li><p><strong>Simulação (Epidemia):</strong></p>
+<ul class="simple">
+<li><p>Defina os parâmetros: <span class="math notranslate nohighlight">\(N = 1000\)</span>, <span class="math notranslate nohighlight">\(\beta = 0.35\)</span> (transmissão alta), <span class="math notranslate nohighlight">\(\gamma = 0.1\)</span> (recuperação em 10 dias).</p></li>
+<li><p>Condições iniciais: <span class="math notranslate nohighlight">\(I_0 = 1\)</span>, <span class="math notranslate nohighlight">\(R_0 = 0\)</span>, <span class="math notranslate nohighlight">\(S_0 = N - I_0 - R_0\)</span>.</p></li>
+<li><p>Intervalo de tempo: <span class="math notranslate nohighlight">\(t = 150\)</span> dias.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint</span></code> para resolver o sistema.</p></li>
+<li><p>Plote as curvas de <span class="math notranslate nohighlight">\(S(t)\)</span>, <span class="math notranslate nohighlight">\(I(t)\)</span> e <span class="math notranslate nohighlight">\(R(t)\)</span> no mesmo gráfico.</p></li>
+</ul>
+</li>
+<li><p><strong>Análise do Pico:</strong> Para a simulação acima, encontre e imprima o número máximo de infectados (o «pico da epidemia») e o dia em que ele ocorreu.</p></li>
+<li><p><strong>Análise do <span class="math notranslate nohighlight">\(R_0\)</span>:</strong> O Número Básico de Reprodução, <span class="math notranslate nohighlight">\(R_0 = \beta / \gamma\)</span>, determina se uma epidemia ocorre. Se <span class="math notranslate nohighlight">\(R_0 &gt; 1\)</span>, a epidemia cresce; se <span class="math notranslate nohighlight">\(R_0 &lt; 1\)</span>, ela desaparece.</p>
+<ul class="simple">
+<li><p>Calcule o <span class="math notranslate nohighlight">\(R_0\)</span> para a simulação anterior.</p></li>
+<li><p><strong>Simulação 2 (Contenção):</strong> Faça uma nova simulação com <span class="math notranslate nohighlight">\(\beta = 0.05\)</span> (transmissão baixa, ex: distanciamento social) e <span class="math notranslate nohighlight">\(\gamma=0.1\)</span>. Calcule o novo <span class="math notranslate nohighlight">\(R_0\)</span>.</p></li>
+<li><p><strong>Gráfico Comparativo:</strong> Plote as curvas de <span class="math notranslate nohighlight">\(I(t)\)</span> (apenas os infectados) das duas simulações no mesmo gráfico. O que você observa?</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="problema-3-equacoes-de-lorenz">
+<h2><strong>Problema 3: Equações de Lorenz</strong><a class="headerlink" href="#problema-3-equacoes-de-lorenz" title="Permalink to this heading">#</a></h2>
+<p>As equações de Lorenz são o sistema de equações diferenciais não lineares</p>
+<div class="amsmath math notranslate nohighlight" id="equation-755f938e-6fc0-468f-ba18-ff4c7d680354">
+<span class="eqno">(23)<a class="headerlink" href="#equation-755f938e-6fc0-468f-ba18-ff4c7d680354" title="Permalink to this equation">#</a></span>\[\begin{align}
+\frac{dx}{dt} &amp;= \sigma(y - x) \\\
+\frac{dy}{dt} &amp;= x(\rho - z) - y \\\
+\frac{dz}{dt} &amp;= xy - \beta z
+\end{align}\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\sigma\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span> e <span class="math notranslate nohighlight">\(\beta\)</span> são números positivos.</p>
+<p>As Equações de Lorenz são um exemplo clássico de um sistema dinâmico caótico. Além de apenas resolver o sistema, vamos explorar visualmente as características que o tornam tão famoso.</p>
+<ol class="arabic">
+<li><p><strong>Função base:</strong> Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">lorenz</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">sigma</span></code>, <code class="docutils literal notranslate"><span class="pre">rho</span></code>, <code class="docutils literal notranslate"><span class="pre">beta</span></code>, <code class="docutils literal notranslate"><span class="pre">u0</span></code>, <code class="docutils literal notranslate"><span class="pre">t0</span></code>, <code class="docutils literal notranslate"><span class="pre">tf</span></code>, <code class="docutils literal notranslate"><span class="pre">N</span></code> e <code class="docutils literal notranslate"><span class="pre">plot_vars</span></code> (com valor padrão <code class="docutils literal notranslate"><span class="pre">[0,1]</span></code>). A função calcula e plota uma aproximação numérica da solução correspondente das equações de Lorenz usando a função <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint</span></code>. Os parâmetros de entrada são:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sigma</span></code>, <code class="docutils literal notranslate"><span class="pre">rho</span></code> e <code class="docutils literal notranslate"><span class="pre">beta</span></code> definem os parâmetros <span class="math notranslate nohighlight">\(\sigma\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span> e <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u0</span></code> é uma lista de números de comprimento 3 definindo as condições iniciais <span class="math notranslate nohighlight">\([x(t_0),y(t_0),z(t_0)]\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t0</span></code> é o início do intervalo de integração <span class="math notranslate nohighlight">\([t_0,t_f]\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tf</span></code> é o fim do intervalo de integração <span class="math notranslate nohighlight">\([t_0,t_f]\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> é um inteiro especificando o número de pontos igualmente espaçados de <span class="math notranslate nohighlight">\(t_0\)</span> a <span class="math notranslate nohighlight">\(t_f\)</span> (inclusive) sobre os quais calcular a solução do sistema</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plot_vars</span></code> é uma lista de comprimento 2 especificando quais 2 componentes plotar, onde <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(y=1\)</span> e <span class="math notranslate nohighlight">\(z=2\)</span>. Por exemplo, se <code class="docutils literal notranslate"><span class="pre">plot_vars</span></code> for <span class="math notranslate nohighlight">\([0,1]\)</span>, plote a solução <span class="math notranslate nohighlight">\(x\)</span> versus <span class="math notranslate nohighlight">\(y\)</span>. Se <code class="docutils literal notranslate"><span class="pre">plot_vars</span></code> for <span class="math notranslate nohighlight">\([1,2]\)</span>, plote a solução <span class="math notranslate nohighlight">\(y\)</span> versus <span class="math notranslate nohighlight">\(z\)</span>. Note que <span class="math notranslate nohighlight">\(x\)</span> versus <span class="math notranslate nohighlight">\(y\)</span> significa que <span class="math notranslate nohighlight">\(x\)</span> é o eixo horizontal e <span class="math notranslate nohighlight">\(y\)</span> é o vertical. O valor padrão é <code class="docutils literal notranslate"><span class="pre">[0,1]</span></code>, que plota <span class="math notranslate nohighlight">\(x\)</span> versus <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+</ul>
+<p>A função <code class="docutils literal notranslate"><span class="pre">lorenz</span></code> retorna um array NumPy 2D com 4 colunas:</p>
+<ul class="simple">
+<li><p>a coluna no índice 0 é o array de <span class="math notranslate nohighlight">\(N\)</span> valores de <span class="math notranslate nohighlight">\(t\)</span> igualmente espaçados de <span class="math notranslate nohighlight">\(t_0\)</span> a <span class="math notranslate nohighlight">\(t_f\)</span> (inclusive)</p></li>
+<li><p>a coluna no índice 1 é o array de valores de <span class="math notranslate nohighlight">\(x\)</span> da solução</p></li>
+<li><p>a coluna no índice 2 é o array de valores de <span class="math notranslate nohighlight">\(y\)</span> da solução</p></li>
+<li><p>a coluna no índice 3 é o array de valores de <span class="math notranslate nohighlight">\(z\)</span> da solução</p></li>
+</ul>
+</li>
+<li><p><strong>Visualização do Atrator 3D:</strong> O «Atrator de Lorenz» é um objeto tridimensional. Use a função <code class="docutils literal notranslate"><span class="pre">lorenz</span></code> que você criou e o kit de ferramentas <code class="docutils literal notranslate"><span class="pre">mplot3d</span></code> do Matplotlib para gerar um gráfico 3D da trajetória.</p>
+<ul class="simple">
+<li><p>Use os parâmetros clássicos do caos: <span class="math notranslate nohighlight">\(\sigma=10\)</span>, <span class="math notranslate nohighlight">\(\rho=28\)</span>, <span class="math notranslate nohighlight">\(\beta=8/3\)</span>.</p></li>
+<li><p>Condição inicial: <code class="docutils literal notranslate"><span class="pre">u0</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">1.05]</span></code>.</p></li>
+<li><p>Integre de <code class="docutils literal notranslate"><span class="pre">t0</span> <span class="pre">=</span> <span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">tf</span> <span class="pre">=</span> <span class="pre">40</span></code> com <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">10000</span></code> pontos.</p></li>
+<li><p>Plote <code class="docutils literal notranslate"><span class="pre">z(t)</span></code> versus <code class="docutils literal notranslate"><span class="pre">y(t)</span></code> versus <code class="docutils literal notranslate"><span class="pre">x(t)</span></code> para visualizar a famosa forma de «borboleta» do atrator.</p></li>
+</ul>
+</li>
+<li><p><strong>Sensibilidade às Condições Iniciais (O Efeito Borboleta):</strong> Uma marca registrada do caos é a extrema sensibilidade a pequenas perturbações nas condições iniciais. Vamos visualizar isso:</p>
+<ul class="simple">
+<li><p><strong>Simulação 1:</strong> Resolva o sistema com os mesmos parâmetros do item anterior e a condição inicial <code class="docutils literal notranslate"><span class="pre">u0_A</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">1.05]</span></code>.</p></li>
+<li><p><strong>Simulação 2:</strong> Crie uma nova condição inicial <code class="docutils literal notranslate"><span class="pre">u0_B</span></code> com uma perturbação minúscula: <code class="docutils literal notranslate"><span class="pre">u0_B</span> <span class="pre">=</span> <span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">1.05001]</span></code>. Resolva o sistema novamente com essa nova condição.</p></li>
+<li><p><strong>Gráfico Comparativo:</strong> Crie um gráfico que mostre <strong>apenas a coordenada x(t) em função do tempo t</strong> para <em>ambas</em> as simulações.</p></li>
+<li><p><strong>Análise:</strong> O que você observa? As duas trajetórias permanecem próximas por um tempo e depois divergem drasticamente, ilustrando a imprevisibilidade de longo prazo do sistema.</p></li>
+</ul>
+</li>
+<li><p><strong>Retratos de Fase (Projeções 2D):</strong> Crie uma única figura com três subplots para visualizar as «sombras» do atrator 3D nos três planos principais:</p>
+<ul class="simple">
+<li><p>Subplot 1: <code class="docutils literal notranslate"><span class="pre">y</span></code> versus <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Subplot 2: <code class="docutils literal notranslate"><span class="pre">z</span></code> versus <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Subplot 3: <code class="docutils literal notranslate"><span class="pre">z</span></code> versus <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="problema-4-oscilador-amortecido">
+<h2><strong>Problema 4: Oscilador Amortecido</strong><a class="headerlink" href="#problema-4-oscilador-amortecido" title="Permalink to this heading">#</a></h2>
+<p>A equação do oscilador amortecido não linear descreve um sistema realista onde o amortecimento depende da velocidade. Vamos analisar seu comportamento no «espaço de fase».</p>
+<ol class="arabic">
+<li><p><strong>Função base:</strong> Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">damping</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code>, <code class="docutils literal notranslate"><span class="pre">u0</span></code>, <code class="docutils literal notranslate"><span class="pre">t0</span></code>, <code class="docutils literal notranslate"><span class="pre">tf</span></code> e <code class="docutils literal notranslate"><span class="pre">N</span></code>. A função usa <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint</span></code> para calcular uma aproximação numérica da solução correspondente da equação de amortecimento não linear:
+$<span class="math notranslate nohighlight">\( m y'' + b |y'| y' + ky = F(t) \)</span>$
+Os parâmetros de entrada são:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> e <code class="docutils literal notranslate"><span class="pre">k</span></code> são números positivos na equação de amortecimento não linear</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> é uma função de uma variável <span class="math notranslate nohighlight">\(F(t)\)</span> na equação de amortecimento não linear</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u0</span></code> é uma lista de números de comprimento 2 definindo as condições iniciais <span class="math notranslate nohighlight">\([y(t_0),y'(t_0)]\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t0</span></code> é o início do intervalo de integração <span class="math notranslate nohighlight">\([t_0,t_f]\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tf</span></code> é o fim do intervalo de integração <span class="math notranslate nohighlight">\([t_0,t_f]\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> é um inteiro especificando o número de pontos igualmente espaçados de <span class="math notranslate nohighlight">\(t_0\)</span> a <span class="math notranslate nohighlight">\(t_f\)</span> (inclusive) sobre os quais calcular a solução</p></li>
+</ul>
+<p>A função <code class="docutils literal notranslate"><span class="pre">damping</span></code> plota a aproximação da solução <span class="math notranslate nohighlight">\(y(t)\)</span> e retorna um array Numpy 2D com 2 colunas:</p>
+<ul class="simple">
+<li><p>a coluna no índice 0 é o array de <span class="math notranslate nohighlight">\(N\)</span> valores de <span class="math notranslate nohighlight">\(t\)</span> igualmente espaçados de <span class="math notranslate nohighlight">\(t_0\)</span> a <span class="math notranslate nohighlight">\(t_f\)</span> (inclusive)</p></li>
+<li><p>a coluna no índice 1 é o array de valores de <span class="math notranslate nohighlight">\(y\)</span> da solução</p></li>
+</ul>
+</li>
+<li><p><strong>Construção do Retrato de Fase:</strong> O retrato de fase de um oscilador é um gráfico da sua <strong>velocidade (<span class="math notranslate nohighlight">\(y'\)</span>)</strong> em função da sua <strong>posição (<span class="math notranslate nohighlight">\(y\)</span>)</strong>. Ele mostra a evolução do estado do sistema ao longo do tempo.</p>
+<ul class="simple">
+<li><p>Modifique sua função <code class="docutils literal notranslate"><span class="pre">damping</span></code> (ou crie uma nova) para que ela retorne não apenas a posição <code class="docutils literal notranslate"><span class="pre">y(t)</span></code>, mas também a velocidade <code class="docutils literal notranslate"><span class="pre">y'(t)</span></code>. A função <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint</span></code> já calcula isso (é a segunda coluna do resultado <code class="docutils literal notranslate"><span class="pre">U</span></code>).</p></li>
+<li><p>Use os parâmetros: <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">0.5</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">10</span></code>, <code class="docutils literal notranslate"><span class="pre">F(t)</span> <span class="pre">=</span> <span class="pre">0</span></code> (sem força externa), e condição inicial <code class="docutils literal notranslate"><span class="pre">u0</span> <span class="pre">=</span> <span class="pre">[3,</span> <span class="pre">0]</span></code> (deslocamento inicial de 3, velocidade inicial zero). Integre de <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">0</span></code> a <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">=</span> <span class="pre">20</span></code>.</p></li>
+<li><p>Crie um gráfico de <code class="docutils literal notranslate"><span class="pre">y'(t)</span></code> (eixo vertical) versus <code class="docutils literal notranslate"><span class="pre">y(t)</span></code> (eixo horizontal).</p></li>
+<li><p><strong>Análise:</strong> O que a forma da trajetória (uma espiral convergindo para a origem) lhe diz sobre o comportamento de longo prazo do sistema?</p></li>
+</ul>
+</li>
+<li><p><strong>Comparação: Amortecimento Linear vs. Não Linear:</strong> A equação dada tem um amortecimento não linear (<span class="math notranslate nohighlight">\(b|y'|y'\)</span>). Como isso se compara a um amortecimento linear mais simples (<span class="math notranslate nohighlight">\(cy'\)</span>)?</p>
+<ul class="simple">
+<li><p><strong>Simulação 1 (Não Linear):</strong> Plote a solução <code class="docutils literal notranslate"><span class="pre">y(t)</span></code> em função de <code class="docutils literal notranslate"><span class="pre">t</span></code> para o sistema não linear da tarefa anterior (<code class="docutils literal notranslate"><span class="pre">m=1,</span> <span class="pre">b=0.5,</span> <span class="pre">k=10,</span> <span class="pre">u0=[3,0]</span></code>).</p></li>
+<li><p><strong>Simulação 2 (Linear):</strong> Resolva a equação do oscilador amortecido <strong>linear</strong> (<span class="math notranslate nohighlight">\(my'' + cy' + ky = 0\)</span>) com os mesmos parâmetros <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code>, e <code class="docutils literal notranslate"><span class="pre">u0</span></code>. Escolha um coeficiente de amortecimento linear <code class="docutils literal notranslate"><span class="pre">c</span></code> comparável (por exemplo, <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">1.0</span></code>). Plote a solução no mesmo gráfico.</p></li>
+<li><p><strong>Análise Comparativa:</strong> Compare as duas curvas <code class="docutils literal notranslate"><span class="pre">y(t)</span></code>. Você consegue notar alguma diferença na forma como a amplitude decai? O amortecimento não linear, que é mais forte em altas velocidades e mais fraco em baixas velocidades, produz um decaimento diferente do amortecimento linear.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./eds"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="aplicacoes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Aplicações</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../alglin/alglin.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Álgebra Linear com SciPy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-1-implementacao-e-analise-de-erro-do-metodo-runge-kutta-rk4"><strong>Problema 1: Implementação e Análise de Erro do Método Runge-Kutta (RK4)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-2-modelo-epidemiologico-sir"><strong>Problema 2: Modelo Epidemiológico SIR</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-3-equacoes-de-lorenz"><strong>Problema 3: Equações de Lorenz</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problema-4-oscilador-amortecido"><strong>Problema 4: Oscilador Amortecido</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

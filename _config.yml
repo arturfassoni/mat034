@@ -1,43 +1,23 @@
-# Informações do Livro
 title: Matemática Computacional
 author:  Artur Fassoni
-copyright: 2026
+copyright: "2026"
 logo: "_static/logo.svg"
 
-# Identificação do Repositório (Essencial para o caminho correto)
 repository:
   url: https://github.com/arturfassoni/mat034
-  path_to_book: ""
   branch: main
 
-# Configurações do ambiente de execução
 execute:
-  execute_notebooks: "off"  # Mantém "off" para o GitHub compilar rápido sem rodar todos os códigos do zero
-
-# Recursos de interação na interface do site
-html:
-  use_issues_button: false
-  use_repository_button: false
-  use_edit_page_button: false
-  use_download_button: false
-  home_page_in_navbar: true
-  extra_navbar: ""
-  show_navbar_depth: 2
-  comments:
-    hypothesis: false
+  execute_notebooks: cache  # "off" para o GitHub compilar rápido sem rodar todos os códigos do zero
 
 sphinx:
   config:
     language: pt
     html_theme_options:
       toc_title: " "
-      logo:
-        text: ""                      # Esconde o título/texto grande do topo do menu lateral
       home_page_in_toc: false  # Oculta a home do menu lateral
 
-# Opções de exportação e execução
-launch_buttons:
-  notebook_interface: "jupyterlab"
-  binderhub_url: "https://mybinder.org"             # Cria o botão do Binder
-  colab_url: "https://colab.research.google.com"    # Cria o botão do Google Colab
-  thebe: true                                       # Cria o botão "Live Code" (rodar na própria página)
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
