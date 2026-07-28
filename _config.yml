@@ -1,8 +1,8 @@
 # Informações do Livro
-title: "Matemática Computacional"
-author: "Prof. Artur Fassoni"
-copyright: "2026"
-logo: ""  # Opcional: nome da imagem de logo se tiver
+title: Matemática Computacional
+author:  Artur Fassoni
+copyright: 2026
+logo: "_static/logo.svg"
 
 # Identificação do Repositório (Essencial para o caminho correto)
 repository:
@@ -30,7 +30,7 @@ sphinx:
   config:
     language: pt
     html_theme_options:
-      toc_title: " Conteúdo"
+      toc_title: " "
       logo:
         text: ""                      # Esconde o título/texto grande do topo do menu lateral
       home_page_in_toc: false  # Oculta a home do menu lateral
