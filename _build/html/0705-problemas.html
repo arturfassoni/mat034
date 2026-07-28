@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercícios &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/main.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0705-problemas';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Prova I" href="0801-p1.html" />
+    <link rel="prev" title="Aplicações de Álgebra Linear" href="0704-aplicacoes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0000-home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="Matemática Computacional - Home"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Matemática Computacional - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0101-jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0102-markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0103-latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Básico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0104-numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0105-variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0106-sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0107-funcoes.html">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0108-logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0109-loops.html">Laços (Loops)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0201-numpy.html">NumPy</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="0202-matplotlib.html">Matplotlib</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resolvendo Equações</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0301-rootfinding.html">Encontrando raízes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0302-bissection.html">Método da Bissecção</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0303-secante.html">Método da Secante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0304-newton.html">Método de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0305-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integração Numérica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0501-integrais.html">Integrais Definidas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0502-riemann.html">Somas de Riemann</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0503-trapezio.html">Regra do Trapézio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0504-simpson.html">Regra de Simpson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0505-diffe.html">Diferenciação Numérica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0506-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Equações Diferenciais</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0601-eds.html">Equações Diferenciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0602-metodos.html">Métodos Numéricos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="0603-sistemas.html">Sistemas de Equações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0604-aplicacoes.html">Aplicações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0605-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Álgebra Linear</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0701-alglin.html">Álgebra Linear com SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0702-sistemas.html">Sistemas Lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0703-autovalores.html">Autovalores e Autovetores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0704-aplicacoes.html">Aplicações de Álgebra Linear</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercícios</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Provas Anteriores</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0801-p1.html">Prova I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0802-p2.html">Prova 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0705-problemas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercícios</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h1>
+<p><strong>Exercício 1.</strong> Escreva uma função que receba como parâmetros de entrada <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(i\)</span> e <span class="math notranslate nohighlight">\(j\)</span> e retorne o produto escalar da <span class="math notranslate nohighlight">\(i\)</span>-ésima e da <span class="math notranslate nohighlight">\(j\)</span>-ésima linha (a indexação começa em 0).</p>
+<p><strong>Exercício 2.</strong> Calcule a equação matricial <span class="math notranslate nohighlight">\(AB + 2B^2 - I\)</span> para as matrizes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix} 3 &amp; 4 \\\
+-1 &amp; 2 \end{bmatrix}\hspace{20mm} B = \begin{bmatrix} 5 &amp; 2 \\\
+8 &amp; -3 \end{bmatrix}\end{split}\]</div>
+<p><strong>Exercício 3.</strong> Análise de Circuito Elétrico (Sistemas Lineares)**</p>
+<p>A Lei das Malhas de Kirchhoff afirma que a soma das quedas de tensão em qualquer malha fechada de um circuito é igual à tensão total fornecida pelas fontes de energia nessa malha. Para um resistor, a queda de tensão é <span class="math notranslate nohighlight">\(V = IR\)</span>. Isso nos permite modelar circuitos como sistemas de equações lineares, onde as incógnitas são as correntes em cada malha.</p>
+<p>Considere um circuito com três malhas adjacentes (Malha 1, Malha 2 e Malha 3, da esquerda para a direita), com os seguintes componentes:</p>
+<ul class="simple">
+<li><p><strong>Malha 1 (Esquerda):</strong> Contém uma fonte de tensão de <strong>5V</strong>, um resistor de <strong>10Ω</strong> (apenas nesta malha) e um resistor de <strong>3Ω</strong> compartilhado com a Malha 2.</p></li>
+<li><p><strong>Malha 2 (Central):</strong> Não possui fonte de tensão. Contém o resistor de <strong>3Ω</strong> (compartilhado com a Malha 1), um resistor de <strong>5Ω</strong> (apenas nesta malha) e um resistor de <strong>2Ω</strong> compartilhado com a Malha 3.</p></li>
+<li><p><strong>Malha 3 (Direita):</strong> Contém uma fonte de tensão de <strong>2V</strong> (com polaridade oposta à da Malha 1), o resistor de <strong>2Ω</strong> (compartilhado com a Malha 2) e um resistor de <strong>8Ω</strong> (apenas nesta malha).</p></li>
+</ul>
+<p>Aplicando a Lei das Malhas para as correntes <span class="math notranslate nohighlight">\(I_1\)</span>, <span class="math notranslate nohighlight">\(I_2\)</span> e <span class="math notranslate nohighlight">\(I_3\)</span> em cada malha, obtemos o seguinte sistema:</p>
+<ul class="simple">
+<li><p><strong>Malha 1:</strong> <span class="math notranslate nohighlight">\(5V = (10\Omega)I_1 + (3\Omega)(I_1 - I_2) \implies 13I_1 - 3I_2 = 5\)</span></p></li>
+<li><p><strong>Malha 2:</strong> <span class="math notranslate nohighlight">\(0 = (3\Omega)(I_2 - I_1) + (5\Omega)I_2 + (2\Omega)(I_2 - I_3) \implies -3I_1 + 10I_2 - 2I_3 = 0\)</span></p></li>
+<li><p><strong>Malha 3:</strong> <span class="math notranslate nohighlight">\(-2V = (2\Omega)(I_3 - I_2) + (8\Omega)I_3 \implies -2I_2 + 10I_3 = -2\)</span></p></li>
+</ul>
+<p><strong>Sua tarefa:</strong></p>
+<ol class="arabic simple">
+<li><p>Monte o sistema de equações acima na forma matricial <span class="math notranslate nohighlight">\(A\mathbf{x} = \mathbf{b}\)</span>, onde <span class="math notranslate nohighlight">\(\mathbf{x} = [I_1, I_2, I_3]^T\)</span>.</p></li>
+<li><p>Use a função <code class="docutils literal notranslate"><span class="pre">scipy.linalg.solve</span></code> para encontrar o vetor <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> de correntes.</p></li>
+<li><p>Apresente os valores de <span class="math notranslate nohighlight">\(I_1\)</span>, <span class="math notranslate nohighlight">\(I_2\)</span> e <span class="math notranslate nohighlight">\(I_3\)</span> em Amperes.</p></li>
+</ol>
+<p><strong>Exercício 4.</strong> Cadeias de Markov e Estado de Equilíbrio (Autovalores)</p>
+<p>Uma <a class="reference external" href="https://pt.wikipedia.org/wiki/Cadeia_de_Markov">Cadeia de Markov</a> é um modelo matemático que descreve uma sequência de eventos onde a probabilidade de cada evento depende apenas do estado do evento anterior. Podemos usar uma matriz de transição para prever o comportamento de longo prazo de um sistema.</p>
+<p>Imagine um mercado com duas empresas, A e B. A cada ano:</p>
+<ul class="simple">
+<li><p>A empresa A retém 90% de seus clientes, e perde 10% para a empresa B.</p></li>
+<li><p>A empresa B retém 80% de seus clientes, e perde 20% para a empresa A.</p></li>
+</ul>
+<p>Isso pode ser representado pela matriz de transição <span class="math notranslate nohighlight">\(T\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} T = \begin{bmatrix} 0.90 &amp; 0.20 \\ 0.10 &amp; 0.80 \end{bmatrix} \end{split}\]</div>
+<p>Se o estado do mercado (a proporção de clientes em cada empresa) em um ano é o vetor <span class="math notranslate nohighlight">\(\mathbf{x}_k = [\%A, \%B]^T\)</span>, o estado no ano seguinte será <span class="math notranslate nohighlight">\(\mathbf{x}_{k+1} = T \mathbf{x}_k\)</span>. O <strong>estado de equilíbrio</strong> do mercado é um vetor <span class="math notranslate nohighlight">\(\mathbf{x}_{eq}\)</span> que não muda mais, ou seja, <span class="math notranslate nohighlight">\(T \mathbf{x}_{eq} = \mathbf{x}_{eq}\)</span>. Isso significa que o estado de equilíbrio é o <strong>autovetor</strong> da matriz de transição associado ao <strong>autovalor <span class="math notranslate nohighlight">\(\lambda = 1\)</span></strong>.</p>
+<p><strong>Sua tarefa:</strong></p>
+<ol class="arabic simple">
+<li><p>Defina a matriz de transição <span class="math notranslate nohighlight">\(T\)</span> usando NumPy.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">scipy.linalg.eig</span></code> para encontrar os autovalores e autovetores de <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+<li><p>Identifique qual dos autovetores corresponde ao autovalor <span class="math notranslate nohighlight">\(\lambda=1\)</span>. (Pode haver pequenas imprecisões numéricas, então procure o autovalor mais próximo de 1).</p></li>
+<li><p>O autovetor encontrado <span class="math notranslate nohighlight">\([v_1, v_2]^T\)</span> representa a razão de clientes no equilíbrio. Para convertê-lo em porcentagens, normalize o vetor para que a soma de seus componentes seja 1 (ou 100%). Calcule <span class="math notranslate nohighlight">\(A_{eq} = \frac{v_1}{v_1 + v_2}\)</span> e <span class="math notranslate nohighlight">\(B_{eq} = \frac{v_2}{v_1 + v_2}\)</span>.</p></li>
+<li><p>Apresente a distribuição de mercado (em porcentagem) que o sistema atingirá no longo prazo.</p></li>
+</ol>
+<p><strong>Exercício 5.</strong> Interpolação Polinomial (Sistemas Lineares)</p>
+<p>A interpolação polinomial consiste em encontrar um polinômio que passe exatamente por um conjunto de pontos. Para <span class="math notranslate nohighlight">\(N+1\)</span> pontos, podemos encontrar um único polinômio de grau <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>Queremos encontrar o polinômio cúbico <span class="math notranslate nohighlight">\(P(x) = c_1 x^3 + c_2 x^2 + c_3 x + c_4\)</span> que passa pelos seguintes quatro pontos: <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">-20)</span></code>, <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">4)</span></code>, <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">5)</span></code> e <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">25)</span></code>.</p>
+<p>Para cada ponto <span class="math notranslate nohighlight">\((x, y)\)</span>, podemos escrever uma equação linear substituindo os valores em <span class="math notranslate nohighlight">\(P(x) = y\)</span>. Por exemplo, para o ponto <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">-20)</span></code>:
+$<span class="math notranslate nohighlight">\(c_1(-2)^3 + c_2(-2)^2 + c_3(-2) + c_4 = -20 \implies -8c_1 + 4c_2 - 2c_3 + c_4 = -20\)</span>$</p>
+<p><strong>Sua tarefa:</strong></p>
+<ol class="arabic simple">
+<li><p>Escreva as quatro equações lineares para os quatro pontos, formando um sistema <span class="math notranslate nohighlight">\(A\mathbf{c} = \mathbf{y}\)</span>, onde <span class="math notranslate nohighlight">\(\mathbf{c} = [c_1, c_2, c_3, c_4]^T\)</span>.</p></li>
+<li><p>Crie a matriz <span class="math notranslate nohighlight">\(A\)</span> (conhecida como matriz de Vandermonde) e o vetor <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> usando NumPy.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">scipy.linalg.solve</span></code> para encontrar os coeficientes do polinômio no vetor <span class="math notranslate nohighlight">\(\mathbf{c}\)</span>.</p></li>
+<li><p><strong>Verificação Visual:</strong> Defina uma função Python <code class="docutils literal notranslate"><span class="pre">P(x)</span></code> que implemente o polinômio com os coeficientes encontrados. Em seguida, plote essa função em um gráfico de <span class="math notranslate nohighlight">\(x\)</span> entre -3 e 4, e use <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code> para marcar os quatro pontos originais, confirmando visualmente que seu polinômio passa por eles.</p></li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0704-aplicacoes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Aplicações de Álgebra Linear</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0801-p1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Prova I</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

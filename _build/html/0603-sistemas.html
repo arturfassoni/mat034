@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Sistemas de Equações &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/main.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0603-sistemas';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Aplicações" href="0604-aplicacoes.html" />
+    <link rel="prev" title="Métodos Numéricos" href="0602-metodos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0000-home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="Matemática Computacional - Home"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Matemática Computacional - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0101-jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0102-markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0103-latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Básico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0104-numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0105-variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0106-sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0107-funcoes.html">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0108-logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0109-loops.html">Laços (Loops)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0201-numpy.html">NumPy</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="0202-matplotlib.html">Matplotlib</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resolvendo Equações</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0301-rootfinding.html">Encontrando raízes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0302-bissection.html">Método da Bissecção</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0303-secante.html">Método da Secante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0304-newton.html">Método de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0305-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integração Numérica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0501-integrais.html">Integrais Definidas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0502-riemann.html">Somas de Riemann</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0503-trapezio.html">Regra do Trapézio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0504-simpson.html">Regra de Simpson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0505-diffe.html">Diferenciação Numérica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0506-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Equações Diferenciais</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0601-eds.html">Equações Diferenciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0602-metodos.html">Métodos Numéricos</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sistemas de Equações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0604-aplicacoes.html">Aplicações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0605-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Álgebra Linear</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0701-alglin.html">Álgebra Linear com SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0702-sistemas.html">Sistemas Lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0703-autovalores.html">Autovalores e Autovetores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0704-aplicacoes.html">Aplicações de Álgebra Linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0705-problemas.html">Exercícios</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Provas Anteriores</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0801-p1.html">Prova I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0802-p2.html">Prova 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0603-sistemas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sistemas de Equações</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>   </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-primeira-ordem">Sistemas de Primeira Ordem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notacao-vetorial">Notação Vetorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-euler">Método de Euler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equacoes-de-segunda-ordem">Equações de Segunda Ordem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacao">Implementação</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-odeint">scipy.integrate.odeint</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sistemas-de-equacoes">
+<h1>Sistemas de Equações<a class="headerlink" href="#sistemas-de-equacoes" title="Permalink to this heading">#</a></h1>
+<p>Um <a class="reference external" href="https://en.wikipedia.org/wiki/System_of_differential_equations">sistema de equações diferenciais</a> é um conjunto de equações envolvendo funções desconhecidas <span class="math notranslate nohighlight">\(u_0,\dots,u_{N-1}\)</span> e suas derivadas. A dimensão de um sistema é o número <span class="math notranslate nohighlight">\(N\)</span> de funções desconhecidas. A ordem do sistema é a derivada de maior ordem que aparece no conjunto de equações. Todo sistema de equações diferenciais é equivalente a um sistema de primeira ordem em uma dimensão superior.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="sistemas-de-primeira-ordem">
+<h2>Sistemas de Primeira Ordem<a class="headerlink" href="#sistemas-de-primeira-ordem" title="Permalink to this heading">#</a></h2>
+<p>Todo sistema de equações diferenciais é equivalente a um sistema de primeira ordem em uma dimensão superior. Por exemplo, considere uma equação diferencial de segunda ordem</p>
+<div class="math notranslate nohighlight">
+\[
+ay'' + by' + cy = F(t)
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(a,b,c\)</span> são constantes (com <span class="math notranslate nohighlight">\(a \ne 0\)</span>) e <span class="math notranslate nohighlight">\(F(t)\)</span> é uma função conhecida. A função desconhecida <span class="math notranslate nohighlight">\(y(t)\)</span> é de segunda ordem na equação, portanto, introduzimos duas novas variáveis <span class="math notranslate nohighlight">\(u_0 = y\)</span> e <span class="math notranslate nohighlight">\(u_1 = y'\)</span> e escrevemos a equação de segunda ordem 1-dimensional como um sistema de primeira ordem 2-dimensional</p>
+<p>\begin{align}
+u_0” &amp;= u_1 \<br />
+u_1” &amp;= (F(t) - b u_1 - c u_0)/a
+\end{align}</p>
+<p>O procedimento para qualquer sistema é semelhante:</p>
+<ol class="arabic simple">
+<li><p>Identifique a ordem de cada função desconhecida no sistema.</p></li>
+<li><p>Se <span class="math notranslate nohighlight">\(y\)</span> tem ordem <span class="math notranslate nohighlight">\(n\)</span>, então introduza <span class="math notranslate nohighlight">\(n\)</span> novas variáveis <span class="math notranslate nohighlight">\(u_0 = y,u_1=y',\dots,u_{n-1}=y^{(n-1)}\)</span>.</p></li>
+<li><p>Reescreva as equações apenas em termos das novas variáveis.</p></li>
+</ol>
+<p>Por exemplo, considere o sistema</p>
+<p>\begin{align}
+x” &amp;= x + y \<br />
+y”” &amp;= xy” + y
+\end{align}</p>
+<p>Introduza novas variáveis <span class="math notranslate nohighlight">\(u_0 = x, u_1 = y, u_2 = y'\)</span> e reescreva o sistema</p>
+<p>\begin{align}
+u_0” &amp;= u_0 + u_1 \<br />
+u_1” &amp;= u_2 \<br />
+u_2” &amp;= u_0 u_2 + u_1
+\end{align}</p>
+</section>
+<section id="notacao-vetorial">
+<h2>Notação Vetorial<a class="headerlink" href="#notacao-vetorial" title="Permalink to this heading">#</a></h2>
+<p>Um sistema de equações diferenciais de primeira ordem de dimensão <span class="math notranslate nohighlight">\(N\)</span> é da forma</p>
+<p>\begin{align}
+u_0” &amp;= f_0(t,u_0,\dots,u_{N-1}) \<br />
+u_1” &amp;= f_1(t,u_0,\dots,u_{N-1}) \<br />
+&amp; \ \ \vdots \<br />
+u_{N-1}” &amp;= f_{N-1}(t,u_0,\dots,u_{N-1})
+\end{align}</p>
+<p>Escreva o sistema em notação vetorial</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d \mathbf{u}}{dt} = \mathbf{f}(t,\mathbf{u})
+\]</div>
+<p>onde</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{u} = \begin{bmatrix} u_0 \\\ \vdots \\\ u_{N-1} \end{bmatrix}
+\hspace{10mm}
+\frac{d \mathbf{u}}{dt} = \begin{bmatrix} u_0' \\\ \vdots \\\ u_{N-1}' \end{bmatrix}
+\hspace{10mm}
+\mathbf{f}(t,\mathbf{u}) = \begin{bmatrix} f_0(t,u_0,\dots,u_{N-1}) \\\ \vdots \\\ f_{N-1}(t,u_0,\dots,u_{N-1}) \end{bmatrix}
+\end{split}\]</div>
+</section>
+<section id="metodo-de-euler">
+<h2>Método de Euler<a class="headerlink" href="#metodo-de-euler" title="Permalink to this heading">#</a></h2>
+<p>Como aplicamos o método de Euler a um sistema de equações de primeira ordem? Simplesmente aplicamos o método a cada função desconhecida no sistema.</p>
+<section id="equacoes-de-segunda-ordem">
+<h3>Equações de Segunda Ordem<a class="headerlink" href="#equacoes-de-segunda-ordem" title="Permalink to this heading">#</a></h3>
+<p>Considere uma equação diferencial de segunda ordem com coeficientes constantes</p>
+<div class="math notranslate nohighlight">
+\[
+ay'' + by' + cy = F(t) \ , \ y(0)=y_0 \ , \ y'(0)=v_0
+\]</div>
+<p>Aplique o método de Euler a <span class="math notranslate nohighlight">\(y\)</span> e <span class="math notranslate nohighlight">\(y'\)</span> simultaneamente:</p>
+<p>\begin{align}
+y_{n+1} &amp;= y_n + y_n” h \<br />
+y_{n+1}” &amp;= y_n” + y_n”” h
+\end{align}</p>
+<p>onde</p>
+<div class="math notranslate nohighlight">
+\[
+y_n'' = (F(t_n) - cy_n - by_n')/a
+\]</div>
+<p>Por exemplo, considere a equação <span class="math notranslate nohighlight">\(y'' + y = 0\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span>, <span class="math notranslate nohighlight">\(y'(0)=0\)</span>. Sabemos que a solução exata é <span class="math notranslate nohighlight">\(y(t) = \cos(t)\)</span>. Calcule a aproximação pelo método de Euler e compare com a solução exata.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">v0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">dy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">h</span>
+    <span class="n">dy</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">dy</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">*</span><span class="n">h</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$y&#39;&#39; + y = 0 , y(0) = 1 , y&#39;(0) = 1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Euler&quot;</span><span class="p">,</span><span class="s2">&quot;Exata&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="implementacao">
+<h3>Implementação<a class="headerlink" href="#implementacao" title="Permalink to this heading">#</a></h3>
+<p>Considere um sistema de primeira ordem em notação vetorial</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d \mathbf{u}}{dt} = \mathbf{f}(t,\mathbf{u})
+\]</div>
+<p>A fórmula para o método de Euler é quase exatamente a mesma que para equações escalares</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{u}_{n+1} = \mathbf{u}_n + \mathbf{f}(t_n,\mathbf{u}_n) h
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\mathbf{u}_n\)</span> é o vetor de valores no passo <span class="math notranslate nohighlight">\(n\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} u_{0,n} \\\ \vdots \\\ u_{N-1,n} \end{bmatrix}
+\end{split}\]</div>
+<p>tal que <span class="math notranslate nohighlight">\(u_{k,n} \approx u_k(t_n)\)</span> no passo <span class="math notranslate nohighlight">\(n\)</span> para <span class="math notranslate nohighlight">\(k=0,\dots,N-1\)</span>.</p>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code> e <code class="docutils literal notranslate"><span class="pre">u0</span></code> onde:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> é uma função que representa o lado direito da equação <span class="math notranslate nohighlight">\(\mathbf{u}' = \mathbf{f}(t,\mathbf{u})\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> é um array NumPy 1D</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u0</span></code> é um valor inicial <span class="math notranslate nohighlight">\(\mathbf{u}(t_0)=\mathbf{u}_0\)</span> onde <span class="math notranslate nohighlight">\(t_0\)</span> é o valor <code class="docutils literal notranslate"><span class="pre">t[0]</span></code></p></li>
+</ul>
+<p>A função <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> retorna um array NumPy 2D <code class="docutils literal notranslate"><span class="pre">U</span></code> de tamanho <code class="docutils literal notranslate"><span class="pre">(len(t),len(u0))</span></code> com valores <span class="math notranslate nohighlight">\(u_k(t_n)\)</span> na coluna <span class="math notranslate nohighlight">\(k\)</span> e linha <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u0</span><span class="p">):</span>
+    <span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">u0</span><span class="p">)))</span>
+    <span class="n">U</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">u0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+        <span class="n">k1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">U</span><span class="p">[</span><span class="n">n</span><span class="p">,:])</span>
+        <span class="n">U</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">U</span><span class="p">[</span><span class="n">n</span><span class="p">,:]</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">U</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Teste a função <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> no exemplo <span class="math notranslate nohighlight">\(y'' + y = 0, y(0)=1, y'(0)=0\)</span> e compare com a solução exata <span class="math notranslate nohighlight">\(y(t) = \cos(t)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">u</span><span class="p">):</span>
+    <span class="n">dudt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">dudt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">dudt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dudt</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">u0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">u0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">U</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$y&#39;&#39; + y = 0 , y(0) = 1 , y&#39;(0) = 1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Euler&quot;</span><span class="p">,</span><span class="s2">&quot;Exata&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="scipy-integrate-odeint">
+<h2>scipy.integrate.odeint<a class="headerlink" href="#scipy-integrate-odeint" title="Permalink to this heading">#</a></h2>
+<p>A função <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint</span></code> funciona da mesma forma que nossa função <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> acima, exceto que a ordem de <span class="math notranslate nohighlight">\(t\)</span> e <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> é invertida</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d \mathbf{u}}{dt} = \mathbf{f}(\mathbf{u},t)
+\]</div>
+<p>Por exemplo, use <code class="docutils literal notranslate"><span class="pre">odeint</span></code> para aproximar a solução da equação de segunda ordem</p>
+<div class="math notranslate nohighlight">
+\[
+y'' + y = 0 \ , \ \ y(0)=1 \ , \ \ y'(0)=0
+\]</div>
+<p>e compare com a solução exata. O resultado é muito mais preciso que o método de Euler!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">dudt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">dudt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">dudt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dudt</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">u0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">u0</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">U</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b.&#39;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="s1">&#39;r&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$y&#39;&#39; + y = 0 , y(0) = 1 , y&#39;(0) = 1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;odeint&quot;</span><span class="p">,</span><span class="s2">&quot;Exata&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0602-metodos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Métodos Numéricos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0604-aplicacoes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Aplicações</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-primeira-ordem">Sistemas de Primeira Ordem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notacao-vetorial">Notação Vetorial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-euler">Método de Euler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equacoes-de-segunda-ordem">Equações de Segunda Ordem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacao">Implementação</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-odeint">scipy.integrate.odeint</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

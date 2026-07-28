@@ -8,7 +8,7 @@ parts:
       - file: 0102-markdown
       - file: 0103-latex
 
-  - caption: Python
+  - caption: Python Básico
     chapters:
       - file: 0104-numeros
       - file: 0105-variaveis
@@ -16,3 +16,46 @@ parts:
       - file: 0107-funcoes
       - file: 0108-logica
       - file: 0109-loops
+
+  - caption: Python Científico
+    chapters:
+      - file: 0201-numpy
+      - file: 0202-matplotlib
+
+  - caption: Resolvendo Equações
+    chapters:
+      - file: 0301-rootfinding
+      - file: 0302-bissection
+      - file: 0303-secante
+      - file: 0304-newton
+      - file: 0305-problemas
+
+  - caption: Integração Numérica
+    chapters:
+      - file: 0501-integrais
+      - file: 0502-riemann
+      - file: 0503-trapezio
+      - file: 0504-simpson
+      - file: 0505-diffe
+      - file: 0506-problemas
+
+  - caption: Equações Diferenciais
+    chapters:
+      - file: 0601-eds
+      - file: 0602-metodos
+      - file: 0603-sistemas
+      - file: 0604-aplicacoes
+      - file: 0605-problemas
+
+  - caption: Álgebra Linear
+    chapters:
+      - file: 0701-alglin
+      - file: 0702-sistemas
+      - file: 0703-autovalores
+      - file: 0704-aplicacoes
+      - file: 0705-problemas
+
+  - caption: Provas Anteriores
+    chapters:
+      - file: 0801-p1
+      - file: 0802-p2

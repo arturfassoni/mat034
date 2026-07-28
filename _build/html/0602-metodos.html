@@ -1,0 +1,924 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Métodos Numéricos &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/main.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0602-metodos';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Sistemas de Equações" href="0603-sistemas.html" />
+    <link rel="prev" title="Equações Diferenciais" href="0601-eds.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0000-home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="Matemática Computacional - Home"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Matemática Computacional - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0101-jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0102-markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0103-latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Básico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0104-numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0105-variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0106-sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0107-funcoes.html">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0108-logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0109-loops.html">Laços (Loops)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0201-numpy.html">NumPy</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="0202-matplotlib.html">Matplotlib</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resolvendo Equações</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0301-rootfinding.html">Encontrando raízes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0302-bissection.html">Método da Bissecção</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0303-secante.html">Método da Secante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0304-newton.html">Método de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0305-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integração Numérica</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0501-integrais.html">Integrais Definidas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0502-riemann.html">Somas de Riemann</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0503-trapezio.html">Regra do Trapézio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0504-simpson.html">Regra de Simpson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0505-diffe.html">Diferenciação Numérica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0506-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Equações Diferenciais</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0601-eds.html">Equações Diferenciais</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Métodos Numéricos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="0603-sistemas.html">Sistemas de Equações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0604-aplicacoes.html">Aplicações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0605-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Álgebra Linear</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0701-alglin.html">Álgebra Linear com SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0702-sistemas.html">Sistemas Lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0703-autovalores.html">Autovalores e Autovetores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0704-aplicacoes.html">Aplicações de Álgebra Linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0705-problemas.html">Exercícios</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Provas Anteriores</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0801-p1.html">Prova I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0802-p2.html">Prova 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0602-metodos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Métodos Numéricos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>   </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Métodos Numéricos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracao">Configuração</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-euler">Método de Euler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-heun">Método de Heun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-de-erro">Análise de Erro</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordem-de-precisao">Ordem de Precisão</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-de-euler-e-de-ordem-1">O Método de Euler é de Ordem 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-de-heun-e-de-ordem-2">O Método de Heun é de Ordem 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-odeint">scipy.integrate.odeint</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="metodos-numericos">
+<h1>Métodos Numéricos<a class="headerlink" href="#metodos-numericos" title="Permalink to this heading">#</a></h1>
+<p>A maioria das equações diferenciais não pode ser resolvida explicitamente usando funções elementares, no entanto, sempre podemos aproximar soluções usando <a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_methods_for_ordinary_differential_equations">métodos numéricos</a>. A ordem de um método numérico descreve o quanto o erro diminui à medida que o tamanho do passo diminui. Métodos de ordem superior são mais precisos, porém exigem mais cálculos para serem implementados. O <a class="reference external" href="https://en.wikipedia.org/wiki/Euler_method">método de Euler</a> é o método mais simples, no entanto, o <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods#The_Runge%E2%80%93Kutta_method">método de Runge-Kutta (RK4)</a> é o mais comumente usado na prática.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="configuracao">
+<h2>Configuração<a class="headerlink" href="#configuracao" title="Permalink to this heading">#</a></h2>
+<p>Ao longo desta seção, seja <span class="math notranslate nohighlight">\(y(t)\)</span> a solução única de uma equação diferencial de primeira ordem com uma condição inicial:</p>
+<div class="math notranslate nohighlight">
+\[
+y' = f(t,y) \ , \ \ y(t_0) = y_0
+\]</div>
+<p>Um <a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_methods_for_ordinary_differential_equations">método numérico</a> é um algoritmo que aproxima a solução <span class="math notranslate nohighlight">\(y(t)\)</span>. Em particular, dada uma sequência de valores <span class="math notranslate nohighlight">\(t_1,t_2,t_3,\dots\)</span>, um método numérico calcula uma sequência <span class="math notranslate nohighlight">\(y_1,y_2,y_3,\dots\)</span> que aproxima a solução nos valores de <span class="math notranslate nohighlight">\(t\)</span> dados:</p>
+<div class="math notranslate nohighlight">
+\[
+y_n \approx y(t_n)
+\]</div>
+<p>Os valores de <span class="math notranslate nohighlight">\(t\)</span> são geralmente escolhidos para serem igualmente espaçados com um tamanho de passo <span class="math notranslate nohighlight">\(h\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+t_n = t_0 + n h
+\]</div>
+<p>Todos os métodos numéricos que consideramos abaixo são exemplos de <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods#Explicit_Runge%E2%80%93Kutta_methods">métodos de Runge-Kutta explícitos</a> que seguem o mesmo procedimento geral:</p>
+<ol class="arabic simple">
+<li><p>Dado um ponto <span class="math notranslate nohighlight">\((t_n,y_n)\)</span>, aproxime as inclinações <span class="math notranslate nohighlight">\(k_1,\dots,k_s\)</span> nas proximidades usando <span class="math notranslate nohighlight">\(f(t,y)\)</span>.</p></li>
+<li><p>Calcule uma média <span class="math notranslate nohighlight">\(\tilde{k}\)</span> das inclinações <span class="math notranslate nohighlight">\(k_1,\dots,k_s\)</span>.</p></li>
+<li><p>Calcule o próximo valor: <span class="math notranslate nohighlight">\(y_{n+1} = y_n + \tilde{k} h\)</span>.</p></li>
+<li><p>Repita!</p></li>
+</ol>
+<p>Um método que calcula <span class="math notranslate nohighlight">\(s\)</span> inclinações <span class="math notranslate nohighlight">\(k_1,\dots,k_s\)</span> é chamado de método de <span class="math notranslate nohighlight">\(s\)</span> estágios e a fórmula para a média <span class="math notranslate nohighlight">\(\tilde{k}\)</span> depende do método.</p>
+</section>
+<section id="metodo-de-euler">
+<h2>Método de Euler<a class="headerlink" href="#metodo-de-euler" title="Permalink to this heading">#</a></h2>
+<p>O método numérico mais simples é o <a class="reference external" href="https://en.wikipedia.org/wiki/Euler_method">método de Euler</a>, que usa a aproximação da reta tangente:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t + h) \approx y(t) + y'(t) h
+\]</div>
+<p>O método de Euler é dado pela fórmula recursiva:</p>
+<p>\begin{align}
+h &amp;= t_{n+1} - t_n \<br />
+k_1 &amp;= f(t_n,y_n) \<br />
+y_{n+1} &amp;= y_n + k_1 h
+\end{align}</p>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code> e <code class="docutils literal notranslate"><span class="pre">y0</span></code>, onde:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> é uma função que representa o lado direito da equação <span class="math notranslate nohighlight">\(y' = f(t,y)\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> é um array NumPy 1D</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code> é um valor inicial <span class="math notranslate nohighlight">\(y(t_0)=y_0\)</span> onde <span class="math notranslate nohighlight">\(t_0\)</span> é o valor <code class="docutils literal notranslate"><span class="pre">t[0]</span></code></p></li>
+</ul>
+<p>A função <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> retorna um array NumPy 1D de valores de <span class="math notranslate nohighlight">\(y\)</span> que aproximam a solução <span class="math notranslate nohighlight">\(y(t)\)</span> usando o método de Euler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y0</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+        <span class="n">k1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Considere a equação</p>
+<div class="math notranslate nohighlight">
+\[
+y' = y \cos(t) \ , \ \ y(0)=1
+\]</div>
+<p>A equação é separável e a resolvemos usando separação de variáveis:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t) = e^{\sin(t)}
+\]</div>
+<p>Plote a aproximação pelo método de Euler com um passo de tamanho <span class="math notranslate nohighlight">\(h=0.25\)</span> e plote a solução exata no intervalo <span class="math notranslate nohighlight">\(0 \leq t \leq 2 \pi\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">tf</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">;</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">tf</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;b.-&#39;</span><span class="p">)</span>
+<span class="n">t_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">y_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t_exact</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_exact</span><span class="p">,</span><span class="n">y_exact</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$y&#39; = y \, \cos(t) \ , \ y(0)=1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Euler&quot;</span><span class="p">,</span><span class="s2">&quot;Exata&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metodo-de-heun">
+<h2>Método de Heun<a class="headerlink" href="#metodo-de-heun" title="Permalink to this heading">#</a></h2>
+<p>O método de Euler usa o polinômio de Taylor de grau 1 (ou seja, a reta tangente) para aproximar <span class="math notranslate nohighlight">\(y(t)\)</span>. O <a class="reference external" href="https://en.wikipedia.org/wiki/Heun%27s_method">método de Heun</a> é construído a partir do polinômio de Taylor de grau 2:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t + h) \approx y(t) + y'(t)h + \frac{y''(t)}{2}h^2
+\]</div>
+<p>Queremos usar apenas <span class="math notranslate nohighlight">\(y' = f(t,y)\)</span> em nossa aproximação, portanto, introduzimos a fórmula de diferença progressiva para aproximar <span class="math notranslate nohighlight">\(y''\)</span> em termos de <span class="math notranslate nohighlight">\(y'\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+y''(t) \approx \frac{y'(t + h) - y'(t)}{h}
+\]</div>
+<p>Juntamos isso para aproximar <span class="math notranslate nohighlight">\(y(t + h)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t+h) \approx y(t) + \frac{y'(t + h) + y'(t)}{2}h
+\]</div>
+<p>Usamos o método de Euler <span class="math notranslate nohighlight">\(y(t+h) \approx y(t) + y'(t)h\)</span> para aproximar:</p>
+<div class="math notranslate nohighlight">
+\[
+y'(t+h) = f(t+h,y(t+h)) \approx f(t+h,y(t)+y'(t)h)
+\]</div>
+<p>O método de Heun é dado pela fórmula recursiva de 2 estágios:</p>
+<p>\begin{align}
+h &amp;= t_{n+1} - t_n \<br />
+k_1 &amp;= f(t_n,y_n) \<br />
+k_2 &amp;= f(t_n + h,y_n + k_1 h) \<br />
+y_{n+1} &amp;= y_n + \left( \frac{k_1 + k_2}{2} \right)h
+\end{align}</p>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">odeHeun</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code> e <code class="docutils literal notranslate"><span class="pre">y0</span></code>, onde:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> é uma função que representa o lado direito da equação <span class="math notranslate nohighlight">\(y' = f(t,y)\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> é um array NumPy 1D</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code> é um valor inicial <span class="math notranslate nohighlight">\(y(t_0)=y_0\)</span> onde <span class="math notranslate nohighlight">\(t_0\)</span> é o valor <code class="docutils literal notranslate"><span class="pre">t[0]</span></code></p></li>
+</ul>
+<p>A função <code class="docutils literal notranslate"><span class="pre">odeHeun</span></code> retorna um array NumPy 1D de valores de <span class="math notranslate nohighlight">\(y\)</span> que aproximam a solução <span class="math notranslate nohighlight">\(y(t)\)</span> usando o método de Heun.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">odeHeun</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y0</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+        <span class="n">k1</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+        <span class="n">k2</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">k1</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">k1</span> <span class="o">+</span> <span class="n">k2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos novamente considerar a equação</p>
+<div class="math notranslate nohighlight">
+\[
+y' = y \cos(t) \ , \ \ y(0)=1
+\]</div>
+<p>e a solução exata</p>
+<div class="math notranslate nohighlight">
+\[
+y(t) = e^{\sin(t)}
+\]</div>
+<p>Plote a aproximação usando tanto o método de Euler quanto o método de Heun com um passo de tamanho <span class="math notranslate nohighlight">\(h=0.25\)</span> e plote a solução exata no intervalo <span class="math notranslate nohighlight">\(0 \leq t \leq 2 \pi\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">tf</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">;</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">tf</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_euler</span> <span class="o">=</span> <span class="n">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y0</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_euler</span><span class="p">,</span><span class="s1">&#39;g.-&#39;</span><span class="p">);</span>
+<span class="n">y_heun</span> <span class="o">=</span> <span class="n">odeHeun</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">y0</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_heun</span><span class="p">,</span><span class="s1">&#39;b.-&#39;</span><span class="p">);</span>
+<span class="n">t_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">y_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t_exact</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_exact</span><span class="p">,</span><span class="n">y_exact</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$y&#39; = y \, \cos(t) \ , \ y(0)=1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;Euler&quot;</span><span class="p">,</span><span class="s2">&quot;Heun&quot;</span><span class="p">,</span><span class="s2">&quot;Exata&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>O método de Heun calcula uma aproximação melhor em comparação com o método de Euler, como esperado.</p>
+</section>
+<section id="analise-de-erro">
+<h2>Análise de Erro<a class="headerlink" href="#analise-de-erro" title="Permalink to this heading">#</a></h2>
+<section id="ordem-de-precisao">
+<h3>Ordem de Precisão<a class="headerlink" href="#ordem-de-precisao" title="Permalink to this heading">#</a></h3>
+<p>Seja <span class="math notranslate nohighlight">\(y_1\)</span> a aproximação de <span class="math notranslate nohighlight">\(y(t_1)\)</span> por um passo de algum método numérico usando um passo de tamanho <span class="math notranslate nohighlight">\(h = t_1 - t_0\)</span>. O <strong>erro de truncamento (local)</strong> (para a equação diferencial e método dados) é</p>
+<div class="math notranslate nohighlight">
+\[
+E(h) = | y(t_1) - y_1 |
+\]</div>
+<p>A palavra <em>local</em> significa que estamos olhando para apenas um passo do método e a palavra <em>truncamento</em> tem a ver com o truncamento da série de Taylor.</p>
+<p>A maioria dos métodos numéricos é baseada em séries de Taylor, portanto, o erro pode ser expresso em termos do teorema de Taylor. Por exemplo, considere a série de Taylor até a ordem <span class="math notranslate nohighlight">\(p\)</span> avaliada em <span class="math notranslate nohighlight">\(t_1 = t_0 + h\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t_1) = y(t_0) + y'(t_0)h + \cdots + \frac{y^{(p)}(t_0)}{p!} h^p + \frac{y^{(p+1)}(c)}{(p+1)!} h^{p+1}
+\]</div>
+<p>para algum <span class="math notranslate nohighlight">\(c \in [t_0,t_1]\)</span>. Se um método numérico calcula <span class="math notranslate nohighlight">\(y(t_1)\)</span> usando o polinômio de Taylor de grau <span class="math notranslate nohighlight">\(p\)</span>, então o erro de truncamento local é</p>
+<div class="math notranslate nohighlight">
+\[
+E(h) = | y(t_1) - y_1 | = \frac{| y^{(p+1)}(c) |}{(p+1)!} h^{p+1}
+\]</div>
+<p>Portanto, podemos dizer grosseiramente que um método numérico é de ordem <span class="math notranslate nohighlight">\(p\)</span> se o erro de truncamento local se parece com <span class="math notranslate nohighlight">\(Ch^{p+1}\)</span> para alguma constante <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p>Mais precisamente, um método numérico é de <strong>ordem</strong> <span class="math notranslate nohighlight">\(p\)</span> se o erro de truncamento local satisfaz</p>
+<div class="math notranslate nohighlight">
+\[
+E(h) \leq C h^{p+1}
+\]</div>
+<p>para <em>qualquer</em> equação <span class="math notranslate nohighlight">\(y' = f(t,y)\)</span>, <span class="math notranslate nohighlight">\(y(t_0)=y_0\)</span>. A constante <span class="math notranslate nohighlight">\(C\)</span> depende de <span class="math notranslate nohighlight">\(f\)</span>. Note que a ordem é um inteiro positivo.</p>
+<p>Geralmente é bastante difícil determinar a ordem de um método numérico dada a fórmula. Em vez disso, podemos determinar a ordem experimentalmente. A ideia é que o erro de truncamento local deve satisfazer</p>
+<div class="math notranslate nohighlight">
+\[
+E(h) \approx C h^{p+1}
+\]</div>
+<p>quando aplicado à maioria das equações diferenciais. Portanto, podemos observar a inclinação no gráfico log-log:</p>
+<div class="math notranslate nohighlight">
+\[
+\log(E(h)) \approx (p+1) \log(h) + \log(C)
+\]</div>
+<p>O procedimento para determinar experimentalmente a ordem <span class="math notranslate nohighlight">\(p\)</span> de um método numérico é:</p>
+<ol class="arabic simple">
+<li><p>Aplique o método numérico à equação <span class="math notranslate nohighlight">\(y' = y,y(0)=1\)</span> para diferentes tamanhos de passo <span class="math notranslate nohighlight">\(h_1\)</span> e <span class="math notranslate nohighlight">\(h_2\)</span>.</p></li>
+<li><p>Calcule os erros de truncamento locais <span class="math notranslate nohighlight">\(E(h_1)\)</span> e <span class="math notranslate nohighlight">\(E(h_2)\)</span> usando a solução exata <span class="math notranslate nohighlight">\(y(t)=e^t\)</span>.</p></li>
+<li><p>Calcule a inclinação do gráfico log-log:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+p+1 \approx \frac{\log(E(h_2)) - \log(E(h_1))}{\log(h_2) - \log(h_1)}
+\]</div>
+</section>
+<section id="exemplos">
+<h3>Exemplos<a class="headerlink" href="#exemplos" title="Permalink to this heading">#</a></h3>
+<section id="o-metodo-de-euler-e-de-ordem-1">
+<h4>O Método de Euler é de Ordem 1<a class="headerlink" href="#o-metodo-de-euler-e-de-ordem-1" title="Permalink to this heading">#</a></h4>
+<p>O método de Euler é construído usando o polinômio de Taylor de grau 1. O teorema de Taylor diz</p>
+<div class="math notranslate nohighlight">
+\[
+y(t_1) = y(t_0) + y'(t_0)(t_1 - t_0) + \frac{y''(c)}{2}(t_1 - t_0)^2
+\]</div>
+<p>para algum <span class="math notranslate nohighlight">\(c \in [t_0,t_1]\)</span>. Portanto, se <span class="math notranslate nohighlight">\(|y''(t)|\leq K_2\)</span> para todo <span class="math notranslate nohighlight">\(t \in [t_0,t_1]\)</span>, então</p>
+<div class="math notranslate nohighlight">
+\[
+E(h) = \left| \frac{y''(c)}{2}(t_1 - t_0)^2 \right| \leq \frac{K_2 h^2}{2}
+\]</div>
+<p>Portanto, o método de Euler é de ordem 1. Vamos verificar a ordem do método de Euler experimentalmente, plotando o erro de truncamento local para o método de Euler aplicado a <span class="math notranslate nohighlight">\(y'=y\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.005</span><span class="p">,</span><span class="mf">0.001</span><span class="p">]</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">)):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">]],</span><span class="n">y0</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">y1_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="n">E</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y1_exact</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="s1">&#39;b.-&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Método de Euler, $y&#39;=y,y(0)=1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tamanho do Passo, $h$&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Erro de Truncamento Local, $E$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">E</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">E</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A ordem do método é&quot;</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>O gráfico log-log tem inclinação 2, como esperado da fórmula de erro, e verificamos que o método de Euler é de ordem 1.</p>
+</section>
+<section id="o-metodo-de-heun-e-de-ordem-2">
+<h4>O Método de Heun é de Ordem 2<a class="headerlink" href="#o-metodo-de-heun-e-de-ordem-2" title="Permalink to this heading">#</a></h4>
+<p>O método de Heun é construído usando o polinômio de Taylor de grau 2, portanto, esperamos que o método seja de ordem 2. Vamos verificar a ordem do método de Heun experimentalmente, plotando o erro de truncamento local para o método de Heun aplicado a <span class="math notranslate nohighlight">\(y'=y\)</span>, <span class="math notranslate nohighlight">\(y(0)=1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.005</span><span class="p">,</span><span class="mf">0.001</span><span class="p">]</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">)):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">odeHeun</span><span class="p">(</span><span class="n">f</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">]],</span><span class="n">y0</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">y1_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="n">E</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y1_exact</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="s1">&#39;b.-&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Método de Heun, $y&#39;=y,y(0)=1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tamanho do Passo, $h$&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Erro de Truncamento Local, $E$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">E</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">E</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A ordem do método é&quot;</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>O gráfico log-log tem inclinação 3, portanto, o método de Heun é de ordem 2, como esperado, já que o método de Heun é construído a partir da aproximação de Taylor de grau 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">y</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.005</span><span class="p">,</span><span class="mf">0.001</span><span class="p">]</span>
+<span class="n">E1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+<span class="n">E2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">)):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">odeEuler</span><span class="p">(</span><span class="n">f</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">]],</span><span class="n">y0</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">y1_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="n">E1</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y1_exact</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">odeHeun</span><span class="p">(</span><span class="n">f</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">]],</span><span class="n">y0</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">y1_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="n">E2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y1_exact</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">E1</span><span class="p">,</span><span class="s1">&#39;b.-&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">E2</span><span class="p">,</span><span class="s1">&#39;r.-&#39;</span><span class="p">),</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Método de Euler x Método de Heun, $y&#39;=y,y(0)=1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tamanho do Passo, $h$&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Erro de Truncamento Local, $E$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="s1">&#39;b.-&#39;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Método de Euler, $y&#39;=y,y(0)=1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tamanho do Passo, $h$&quot;</span><span class="p">),</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Erro de Truncamento Local, $E$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="scipy-integrate-odeint">
+<h2>scipy.integrate.odeint<a class="headerlink" href="#scipy-integrate-odeint" title="Permalink to this heading">#</a></h2>
+<p>O principal pacote para resolver EDOs numericamente no SciPy é <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint</span></code>. Assim como nossas funções <code class="docutils literal notranslate"><span class="pre">odeEuler</span></code> e outras definidas acima, a função <code class="docutils literal notranslate"><span class="pre">odeint</span></code> recebe os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">f</span></code>, <code class="docutils literal notranslate"><span class="pre">y0</span></code> e <code class="docutils literal notranslate"><span class="pre">t</span></code>, onde:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> é uma função que representa o lado direito da equação <span class="math notranslate nohighlight">\(y' = f(y,t)\)</span> (note a ordem, <span class="math notranslate nohighlight">\(y\)</span> e depois <span class="math notranslate nohighlight">\(t\)</span>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code> é um valor inicial <span class="math notranslate nohighlight">\(y(t_0)=y_0\)</span> onde <span class="math notranslate nohighlight">\(t_0\)</span> é o valor <code class="docutils literal notranslate"><span class="pre">t[0]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code> é um array NumPy 1D</p></li>
+</ul>
+<p>A função <code class="docutils literal notranslate"><span class="pre">odeint</span></code> retorna um array NumPy 1D de valores de <span class="math notranslate nohighlight">\(y\)</span> que aproximam a solução <span class="math notranslate nohighlight">\(y(t)\)</span>. Note que nossa notação para equações de primeira ordem (e a notação usada pela maioria dos matemáticos) é <span class="math notranslate nohighlight">\(y'=f(t,y)\)</span>, com <span class="math notranslate nohighlight">\(t\)</span> aparecendo primeiro e depois <span class="math notranslate nohighlight">\(y\)</span>. A função <code class="docutils literal notranslate"><span class="pre">odeint</span></code> <strong>espera uma ordem diferente de variáveis</strong>, com <span class="math notranslate nohighlight">\(y\)</span> aparecendo primeiro e depois <span class="math notranslate nohighlight">\(t\)</span> na equação <span class="math notranslate nohighlight">\(y' = f(y,t)\)</span>.</p>
+<p>Por exemplo, use <code class="docutils literal notranslate"><span class="pre">odeint</span></code> para aproximar a solução de <span class="math notranslate nohighlight">\(y' = \sin(y^2) + \cos(t)\)</span> para vários valores iniciais.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import 1§ as spi
+
+f = lambda y,t: np.sin(y**2) + np.cos(t)
+t = np.linspace(0,10,200)
+for y0 in np.linspace(-2,2,9):
+    y = spi.odeint(f,y0,t)
+    plt.plot(t,y,&#39;b&#39;)
+
+plt.grid(True), plt.title(&quot;$y&#39; = \sin(y^2) + \cos(t)$&quot;)
+plt.show()
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h1>
+<p><strong>Exercício 1.</strong> Plote o campo de inclinação de <span class="math notranslate nohighlight">\(y' = \sin(t) + \cos(y)\)</span> no intervalo <span class="math notranslate nohighlight">\(0 \leq t \leq 2\pi\)</span>, <span class="math notranslate nohighlight">\(-2 \leq y \leq 2\)</span> com um passo de grade <span class="math notranslate nohighlight">\(h = 0.2\)</span>. Se <span class="math notranslate nohighlight">\(y(t)\)</span> é a solução com valor inicial <span class="math notranslate nohighlight">\(y(0) = 0.5\)</span>, estime o valor <span class="math notranslate nohighlight">\(y(2\pi)\)</span>.</p>
+<p><strong>Exercício 2.</strong> Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">odeMidpoint</span></code> que implemente o método do ponto médio:</p>
+<p>\begin{align}
+k_1 &amp;= f(t_n,y_n) \<br />
+k_2 &amp;= f(t_n + h/2, y_n + k_1 h/2) \<br />
+y_{n+1} &amp;= y_n + k_2 h
+\end{align}</p>
+<p>Determine a ordem do método do ponto médio.</p>
+<p><strong>Exercício 3.</strong> Use <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint</span></code> para aproximar <span class="math notranslate nohighlight">\(y(1)\)</span> onde <span class="math notranslate nohighlight">\(y(t)\)</span> é a solução das equações</p>
+<div class="math notranslate nohighlight">
+\[
+y' = t - y^3 \ , \ \ y(0)=1
+\]</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0601-eds.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Equações Diferenciais</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0603-sistemas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Sistemas de Equações</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Métodos Numéricos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuracao">Configuração</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-euler">Método de Euler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-de-heun">Método de Heun</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analise-de-erro">Análise de Erro</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordem-de-precisao">Ordem de Precisão</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-de-euler-e-de-ordem-1">O Método de Euler é de Ordem 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-de-heun-e-de-ordem-2">O Método de Heun é de Ordem 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-odeint">scipy.integrate.odeint</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,726 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Regra de Simpson &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/main.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/main.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0504-simpson';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Diferenciação Numérica" href="0505-diffe.html" />
+    <link rel="prev" title="Regra do Trapézio" href="0503-trapezio.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="0000-home.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="Matemática Computacional - Home"/>
+    <script>document.write(`<img src="_static/logo.svg" class="logo__image only-dark" alt="Matemática Computacional - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0101-jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0102-markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0103-latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Básico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0104-numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0105-variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0106-sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0107-funcoes.html">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0108-logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0109-loops.html">Laços (Loops)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Científico</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0201-numpy.html">NumPy</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="0202-matplotlib.html">Matplotlib</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resolvendo Equações</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0301-rootfinding.html">Encontrando raízes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0302-bissection.html">Método da Bissecção</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0303-secante.html">Método da Secante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0304-newton.html">Método de Newton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0305-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integração Numérica</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0501-integrais.html">Integrais Definidas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0502-riemann.html">Somas de Riemann</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0503-trapezio.html">Regra do Trapézio</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Regra de Simpson</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0505-diffe.html">Diferenciação Numérica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0506-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Equações Diferenciais</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0601-eds.html">Equações Diferenciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0602-metodos.html">Métodos Numéricos</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="0603-sistemas.html">Sistemas de Equações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0604-aplicacoes.html">Aplicações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0605-problemas.html">Problemas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Álgebra Linear</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0701-alglin.html">Álgebra Linear com SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0702-sistemas.html">Sistemas Lineares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0703-autovalores.html">Autovalores e Autovetores</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0704-aplicacoes.html">Aplicações de Álgebra Linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0705-problemas.html">Exercícios</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Provas Anteriores</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0801-p1.html">Prova I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0802-p2.html">Prova 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0504-simpson.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Regra de Simpson</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>   </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-de-erro">Fórmula de Erro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacao">Implementação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-simpson">scipy.integrate.simpson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aproximar-ln-2">Aproximar ln(2)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="regra-de-simpson">
+<h1>Regra de Simpson<a class="headerlink" href="#regra-de-simpson" title="Permalink to this heading">#</a></h1>
+<section id="definicao">
+<h2>Definição<a class="headerlink" href="#definicao" title="Permalink to this heading">#</a></h2>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Simpson%27s_rule">regra de Simpson</a> usa um polinômio quadrático em cada subintervalo de uma partição para aproximar a função <span class="math notranslate nohighlight">\(f(x)\)</span> e calcular a integral definida. Isso é uma melhoria em relação à regra do trapézio, que aproxima <span class="math notranslate nohighlight">\(f(x)\)</span> por uma linha reta em cada subintervalo de uma partição.</p>
+<p>A fórmula para a regra de Simpson é</p>
+<div class="math notranslate nohighlight">
+\[
+S_N(f) = \frac{\Delta x}{3} \sum_{i=1}^{N/2} \left( f(x_{2i-2}) + 4 f(x_{2i-1}) + f(x_{2i}) \right)
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(N\)</span> é um número <em>par</em> de subintervalos de <span class="math notranslate nohighlight">\([a,b]\)</span>, <span class="math notranslate nohighlight">\(\Delta x = (b - a)/N\)</span> e <span class="math notranslate nohighlight">\(x_i = a + i \Delta x\)</span>.</p>
+</section>
+<section id="formula-de-erro">
+<h2>Fórmula de Erro<a class="headerlink" href="#formula-de-erro" title="Permalink to this heading">#</a></h2>
+<p>Vimos que o erro em uma soma de Riemann é inversamente proporcional ao tamanho da partição <span class="math notranslate nohighlight">\(N\)</span> e a regra do trapézio é inversamente proporcional a <span class="math notranslate nohighlight">\(N^2\)</span>. A fórmula de erro no teorema abaixo mostra que a regra de Simpson é ainda melhor, pois o erro é inversamente proporcional a <span class="math notranslate nohighlight">\(N^4\)</span>.</p>
+<hr class="docutils" />
+<p><strong>Teorema</strong> Seja <span class="math notranslate nohighlight">\(S_N(f)\)</span> a regra de Simpson</p>
+<div class="math notranslate nohighlight">
+\[
+S_N(f) = \frac{\Delta x}{3} \sum_{i=1}^{N/2} \left( f(x_{2i-2}) + 4 f(x_{2i-1}) + f(x_{2i}) \right)
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(N\)</span> é um número <em>par</em> de subintervalos de <span class="math notranslate nohighlight">\([a,b]\)</span>, <span class="math notranslate nohighlight">\(\Delta x = (b - a)/N\)</span> e <span class="math notranslate nohighlight">\(x_i = a + i \Delta x\)</span>. O limite do erro é</p>
+<div class="math notranslate nohighlight">
+\[
+E_N^S(f) = \left| \ \int_a^b f(x) \, dx - S_N(f) \ \right| \leq \frac{(b-a)^5}{180N^4} K_4
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\left| \ f^{(4)}(x) \ \right| \leq K_4\)</span> para todo <span class="math notranslate nohighlight">\(x \in [a,b]\)</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="implementacao">
+<h2>Implementação<a class="headerlink" href="#implementacao" title="Permalink to this heading">#</a></h2>
+<p>Vamos escrever uma função chamada <code class="docutils literal notranslate"><span class="pre">simps</span></code> que recebe os parâmetros de entrada <span class="math notranslate nohighlight">\(f\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> e <span class="math notranslate nohighlight">\(N\)</span> e retorna a aproximação <span class="math notranslate nohighlight">\(S_N(f)\)</span>. Além disso, vamos atribuir um valor padrão <span class="math notranslate nohighlight">\(N=50\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simps</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Approximate the integral of f(x) from a to b by Simpson&#39;s rule.</span>
+
+<span class="sd">    Simpson&#39;s rule approximates the integral \int_a^b f(x) dx by the sum:</span>
+<span class="sd">    (dx/3) \sum_{k=1}^{N/2} (f(x_{2i-2} + 4f(x_{2i-1}) + f(x_{2i}))</span>
+<span class="sd">    where x_i = a + i*dx and dx = (b - a)/N.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    f : function</span>
+<span class="sd">        Vectorized function of a single variable</span>
+<span class="sd">    a , b : numbers</span>
+<span class="sd">        Interval of integration [a,b]</span>
+<span class="sd">    N : (even) integer</span>
+<span class="sd">        Number of subintervals of [a,b]</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        Approximation of the integral of f(x) from a to b using</span>
+<span class="sd">        Simpson&#39;s rule with N subintervals of equal length.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; simps(lambda x : 3*x**2,0,1,10)</span>
+<span class="sd">    1.0</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">N</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;N must be an even integer.&quot;</span><span class="p">)</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">dx</span><span class="o">/</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">S</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos testar nossa função em integrais para as quais conhecemos o valor exato. Por exemplo, sabemos</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^1 3x^2 dx = 1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simps</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Teste nossa função novamente com a integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{\pi/2} \sin(x) dx = 1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simps</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="scipy-integrate-simpson">
+<h2>scipy.integrate.simpson<a class="headerlink" href="#scipy-integrate-simpson" title="Permalink to this heading">#</a></h2>
+<p>O subpacote do <a class="reference external" href="https://scipy.org/">SciPy</a> <a class="reference external" href="https://docs.scipy.org/doc/scipy-0.18.1/reference/integrate.html">scipy.integrate</a> contém várias funções para aproximar integrais definidas e resolver numericamente equações diferenciais. Vamos importar o subpacote com o nome <code class="docutils literal notranslate"><span class="pre">spi</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">spi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A função <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simpson</span></code> calcula a aproximação de uma integral definida pela regra de Simpson. Consultando a documentação, vemos que tudo o que precisamos fazer é fornecer arrays de valores <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> para o integrando e <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simpson</span></code> retorna a aproximação da integral usando a regra de Simpson.</p>
+</section>
+<section id="exemplos">
+<h2>Exemplos<a class="headerlink" href="#exemplos" title="Permalink to this heading">#</a></h2>
+<section id="aproximar-ln-2">
+<h3>Aproximar ln(2)<a class="headerlink" href="#aproximar-ln-2" title="Permalink to this heading">#</a></h3>
+<p>Encontre um valor <span class="math notranslate nohighlight">\(N\)</span> que garanta que a aproximação pela regra de Simpson <span class="math notranslate nohighlight">\(S_N(f)\)</span> da integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_1^2 \frac{1}{x} dx
+\]</div>
+<p>satisfaça <span class="math notranslate nohighlight">\(E_N^S(f) \leq 0.0001\)</span>.</p>
+<p>Calcule</p>
+<div class="math notranslate nohighlight">
+\[
+f^{(4)}(x) = \frac{24}{x^5}
+\]</div>
+<p>portanto <span class="math notranslate nohighlight">\(\left| \, f^{(4)}(x) \, \right| \leq 24\)</span> para todo <span class="math notranslate nohighlight">\(x \in [1,2]\)</span> e então</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{180N^4} 24 \leq 0.0001 \ \Rightarrow \
+\frac{20000}{15N^4} \leq 1 \ \Rightarrow \
+\left( \frac{20000}{15} \right)^{1/4} \leq N
+\]</div>
+<p>Calcule</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">20000</span><span class="o">/</span><span class="mi">15</span><span class="p">)</span><span class="o">**</span><span class="mf">0.25</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calcule a regra de Simpson com <span class="math notranslate nohighlight">\(N=8\)</span> (o menor inteiro par maior que 6.04)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">approximation</span> <span class="o">=</span> <span class="n">simps</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">approximation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Poderíamos também usar a função <code class="docutils literal notranslate"><span class="pre">scipy.integrate.simpson</span></code> para calcular exatamente o mesmo resultado</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+<span class="n">approximation</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">approximation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verifique se <span class="math notranslate nohighlight">\(E_N^S(f) \leq 0.0001\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">approximation</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.0001</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+<p><strong>Exercício 1 (Aproximando a Curva Normal)</strong></p>
+<p>A Função Densidade de Probabilidade (FDP) da <a class="reference external" href="https://pt.wikipedia.org/wiki/Distribui%C3%A7%C3%A3o_normal">distribuição normal padrão</a> é dada por:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{\sqrt{2\pi}} e^{-x^2/2}\]</div>
+<p>A integral desta função, <span class="math notranslate nohighlight">\(\int_{-\infty}^{z} f(x) dx\)</span>, não possui uma solução analítica simples e é fundamental em estatística.</p>
+<p>a) Use a sua função <code class="docutils literal notranslate"><span class="pre">simps</span></code> para aproximar a área sob a curva de -1 a 1, ou seja, <span class="math notranslate nohighlight">\(\int_{-1}^{1} f(x) dx\)</span>. Este valor representa a probabilidade de uma variável aleatória normal padrão estar a menos de um desvio padrão da média. Use <code class="docutils literal notranslate"><span class="pre">N=100</span></code>.
+b) O valor teórico é de aproximadamente 0.6827. Compare seu resultado.</p>
+<hr class="docutils" />
+<p><strong>Exercício 2 (Convergência Rápida para Pi)</strong></p>
+<p>Uma das integrais famosas que resulta em <span class="math notranslate nohighlight">\(\pi\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 \frac{4}{1 + x^2} dx = \pi\]</div>
+<p>a) Calcule o valor desta integral usando a <strong>regra do trapézio</strong> (<code class="docutils literal notranslate"><span class="pre">trapz</span></code>) com <code class="docutils literal notranslate"><span class="pre">N=20</span></code>.
+b) Calcule o valor da mesma integral usando a <strong>regra de Simpson</strong> (<code class="docutils literal notranslate"><span class="pre">simps</span></code>) com <code class="docutils literal notranslate"><span class="pre">N=20</span></code>.
+c) Calcule o erro absoluto de cada método em relação a <code class="docutils literal notranslate"><span class="pre">np.pi</span></code>. Qual método demonstrou uma convergência muito mais rápida, como esperado pela sua fórmula de erro (<span class="math notranslate nohighlight">\(O(1/N^4)\)</span> vs <span class="math notranslate nohighlight">\(O(1/N^2)\)</span>)?</p>
+<hr class="docutils" />
+<p><strong>Exercício 3 (Volume de um Sólido de Revolução)</strong></p>
+<p>O volume de um sólido gerado pela rotação da curva <span class="math notranslate nohighlight">\(y = f(x)\)</span> em torno do eixo x, de <span class="math notranslate nohighlight">\(x=a\)</span> a <span class="math notranslate nohighlight">\(x=b\)</span>, é dado por:</p>
+<div class="math notranslate nohighlight">
+\[V = \pi \int_a^b [f(x)]^2 dx\]</div>
+<p>Vamos calcular o volume de um «vaso» gerado pela rotação da curva <span class="math notranslate nohighlight">\(f(x) = \frac{1}{\sqrt{x}} e^{\sin(x)}\)</span> no intervalo <span class="math notranslate nohighlight">\([1, 10]\)</span>.</p>
+<p>a) Defina a função do integrando, <span class="math notranslate nohighlight">\(g(x) = \pi [f(x)]^2\)</span>.
+b) Use a sua função <code class="docutils literal notranslate"><span class="pre">simps</span></code> com <code class="docutils literal notranslate"><span class="pre">N=100</span></code> para calcular o volume <span class="math notranslate nohighlight">\(V\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0503-trapezio.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Regra do Trapézio</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0505-diffe.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Diferenciação Numérica</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicao">Definição</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-de-erro">Fórmula de Erro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementacao">Implementação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-integrate-simpson">scipy.integrate.simpson</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aproximar-ln-2">Aproximar ln(2)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
