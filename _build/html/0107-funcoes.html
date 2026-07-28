@@ -1,0 +1,1265 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Funções &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/collapse-toc.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/collapse-toc.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0107-funcoes';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Lógica" href="0108-logica.html" />
+    <link rel="prev" title="Sequências" href="0106-sequencias.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00-home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Matemática Computacional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matemática Computacional</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0001-inicio.html">Início</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0101-jupyter.html">Jupyter Notebooks e Google Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0102-markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0103-latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0104-numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0105-variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0106-sequencias.html">Sequências</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0108-logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0109-loops.html">Laços (Loops)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0107-funcoes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Funções</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>  Conteúdo </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-embutidas">Funções Embutidas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-funcoes">Definindo Funções</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-de-documentacao-docstrings">Strings de Documentação (Docstrings)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumentos-de-palavra-chave-keyword-arguments">Argumentos de Palavra-chave (Keyword Arguments)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios">Comentários</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-lambda">Funções Lambda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-zeta-de-riemann">Função Zeta de Riemann</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-harmonica">Média Harmônica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#somas-de-riemann">Somas de Riemann</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="funcoes">
+<h1>Funções<a class="headerlink" href="#funcoes" title="Permalink to this heading">#</a></h1>
+<p>Uma <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#defining-functions">função</a> recebe parâmetros de entrada, executa uma série de cálculos com essas entradas e, em seguida, retorna um valor de saída final. As funções nos dão uma maneira eficiente de salvar e reutilizar um bloco de código repetidamente com diferentes valores de entrada. Existem funções embutidas na biblioteca padrão do Python e podemos definir nossas próprias funções.</p>
+<section id="funcoes-embutidas">
+<h2>Funções Embutidas<a class="headerlink" href="#funcoes-embutidas" title="Permalink to this heading">#</a></h2>
+<p>A biblioteca padrão do Python tem uma coleção de <a class="reference external" href="https://docs.python.org/3/library/functions.html">funções embutidas</a> prontas para usarmos. Já vimos algumas dessas funções em seções anteriores, como <code class="docutils literal notranslate"><span class="pre">type()</span></code>, <code class="docutils literal notranslate"><span class="pre">print()</span></code> e <code class="docutils literal notranslate"><span class="pre">sum()</span></code>. A seguir, uma lista das funções embutidas que usaremos com mais frequência:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Função</p></th>
+<th class="head text-left"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">print(objeto)</span></code></p></td>
+<td class="text-left"><p>imprime o <code class="docutils literal notranslate"><span class="pre">objeto</span></code> na saída</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">type(objeto)</span></code></p></td>
+<td class="text-left"><p>retorna o tipo do <code class="docutils literal notranslate"><span class="pre">objeto</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code></p></td>
+<td class="text-left"><p>retorna o valor absoluto de <code class="docutils literal notranslate"><span class="pre">x</span></code> (ou módulo se <code class="docutils literal notranslate"><span class="pre">x</span></code> for complexo)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">int(x)</span></code></p></td>
+<td class="text-left"><p>retorna o inteiro construído a partir do float <code class="docutils literal notranslate"><span class="pre">x</span></code> truncando a parte decimal</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">len(sequencia)</span></code></p></td>
+<td class="text-left"><p>retorna o comprimento da <code class="docutils literal notranslate"><span class="pre">sequencia</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">sum(sequencia)</span></code></p></td>
+<td class="text-left"><p>retorna a soma das entradas da <code class="docutils literal notranslate"><span class="pre">sequencia</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">max(sequencia)</span></code></p></td>
+<td class="text-left"><p>retorna o valor máximo na <code class="docutils literal notranslate"><span class="pre">sequencia</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">min(sequencia)</span></code></p></td>
+<td class="text-left"><p>retorna o valor mínimo na <code class="docutils literal notranslate"><span class="pre">sequencia</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">range(a,b,passo)</span></code></p></td>
+<td class="text-left"><p>retorna o objeto range de inteiros de <code class="docutils literal notranslate"><span class="pre">a</span></code> a <code class="docutils literal notranslate"><span class="pre">b</span></code> (exclusive) com <code class="docutils literal notranslate"><span class="pre">passo</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">list(sequencia)</span></code></p></td>
+<td class="text-left"><p>retorna uma lista construída a partir da <code class="docutils literal notranslate"><span class="pre">sequencia</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">sorted(sequencia)</span></code></p></td>
+<td class="text-left"><p>retorna a lista ordenada a partir dos itens em <code class="docutils literal notranslate"><span class="pre">sequencia</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">reversed(sequencia)</span></code></p></td>
+<td class="text-left"><p>retorna o objeto iterador reverso a partir dos itens em <code class="docutils literal notranslate"><span class="pre">sequencia</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">enumerate(sequencia)</span></code></p></td>
+<td class="text-left"><p>retorna o objeto enumerate construído a partir da <code class="docutils literal notranslate"><span class="pre">sequencia</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">zip(a,b)</span></code></p></td>
+<td class="text-left"><p>retorna um iterador que agrega itens das sequências <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">print()</span></code> para exibir valores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">type()</span></code> para ver o tipo de dado de um valor:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">abs()</span></code> para calcular o valor absoluto de um número real:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2019</span>
+<span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ou calcule a magnitude de um número complexo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">-</span> <span class="mi">4</span><span class="n">j</span>
+<span class="nb">abs</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">int()</span></code> para truncar um float para um int:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
+<span class="nb">int</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A função sempre trunca floats em direção a 0:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.2345</span>
+<span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">len()</span></code> para calcular o comprimento de uma sequência:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">37</span><span class="p">,</span><span class="mi">41</span><span class="p">]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">sum()</span></code> para calcular a soma de uma sequência:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">one_to_hundred</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">one_to_hundred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">one_to_hundred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use as funções <code class="docutils literal notranslate"><span class="pre">max()</span></code> e <code class="docutils literal notranslate"><span class="pre">min()</span></code> para calcular os valores máximo e mínimo em uma sequência.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">19</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">random</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">random</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">list()</span></code> para converter uma sequência (como um range ou uma tupla) em uma lista:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> para ordenar uma sequência:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_random</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">random</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_random</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">reversed()</span></code> para inverter a ordem de uma sequência:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reversed_random</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">random</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reversed_random</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> para enumerar uma sequência:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
+<span class="n">enum_squares</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">squares</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">enum_squares</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">zip()</span></code> para combinar sequências em uma lista de pares:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random_1</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">random_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">random_zip</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">random_1</span><span class="p">,</span><span class="n">random_2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">random_zip</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">random_1</span><span class="p">,</span><span class="n">random_2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note que nos últimos três exemplos <code class="docutils literal notranslate"><span class="pre">reversed()</span></code>, <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> e <code class="docutils literal notranslate"><span class="pre">zip()</span></code>, usamos a função <code class="docutils literal notranslate"><span class="pre">list()</span></code> para criar uma lista a partir da saída de cada função. Isso ocorre porque essas funções retornam objetos <em>iteradores</em> (semelhantes a objetos range) que só produzem valores quando explicitamente instruídos a fazê-lo.</p>
+</section>
+<section id="definindo-funcoes">
+<h2>Definindo Funções<a class="headerlink" href="#definindo-funcoes" title="Permalink to this heading">#</a></h2>
+<p>Vamos começar com um exemplo simples. Defina uma função que retorna a média de uma sequência de números:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">average</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="s2">&quot;Compute the average of the values in the sequence x.&quot;</span>
+    <span class="n">sum_x</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">length_x</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sum_x</span> <span class="o">/</span> <span class="n">length_x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Os principais pontos a serem observados são:</p>
+<ol class="arabic simple">
+<li><p>Comece a definição da função com a palavra-chave <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p></li>
+<li><p>Siga <code class="docutils literal notranslate"><span class="pre">def</span></code> com o nome da função.</p></li>
+<li><p>Siga o nome da função com a lista de parâmetros de entrada separados por vírgulas e dentro de parênteses.</p></li>
+<li><p>Termine a declaração <code class="docutils literal notranslate"><span class="pre">def</span></code> com dois pontos <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p></li>
+<li><p>Indente o corpo da função com 4 espaços.</p></li>
+<li><p>Use a palavra-chave <code class="docutils literal notranslate"><span class="pre">return</span></code> para especificar a saída da função (mas nem sempre é necessário).</p></li>
+<li><p>A segunda linha é uma <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#documentation-strings">string de documentação</a> (docstring, entre aspas » … «) que descreve a função.</p></li>
+</ol>
+<p>Em Python, blocos de código são definidos usando <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#indentation">indentação</a>. Isso significa que linhas de código com a mesma quantidade de indentação são consideradas um bloco. No exemplo acima, as quatro linhas indentadas abaixo da declaração <code class="docutils literal notranslate"><span class="pre">def</span></code> formam o corpo da função.</p>
+<p>Observe que não há saída quando executamos a célula que contém a definição da função. Isso ocorre porque apenas definimos a função e ela está esperando que a usemos! Precisamos chamar a função com valores para os parâmetros de entrada, e então a função irá calcular e retornar o valor de saída.</p>
+<p>Vamos testar nossa função:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A função retorna o valor esperado. Sucesso!</p>
+</section>
+<section id="strings-de-documentacao-docstrings">
+<h2>Strings de Documentação (Docstrings)<a class="headerlink" href="#strings-de-documentacao-docstrings" title="Permalink to this heading">#</a></h2>
+<p>A primeira linha após a declaração <code class="docutils literal notranslate"><span class="pre">def</span></code> em uma definição de função deve ser uma <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#documentation-strings">string de documentação</a> (ou docstring). Uma docstring é um texto (entre aspas duplas <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">...</span> <span class="pre">&quot;</span></code> ou aspas triplas <code class="docutils literal notranslate"><span class="pre">'''</span> <span class="pre">...</span> <span class="pre">'''</span></code>) que descreve sua função. Use aspas triplas para uma docstring de várias linhas. Veja a <a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">documentação do Python</a> para todas as convenções relacionadas a strings de documentação.</p>
+<p>Um recurso útil do notebook Jupyter é o operador de ponto de interrogação <code class="docutils literal notranslate"><span class="pre">?</span></code>. Ele exibirá a docstring de uma função. Tenha isso em mente ao escrever suas docstrings: outras pessoas lerão sua docstring para aprender a usar sua função.</p>
+<p>Por exemplo, use o ponto de interrogação <code class="docutils literal notranslate"><span class="pre">?</span></code> para ver a documentação da função embutida <code class="docutils literal notranslate"><span class="pre">sum()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>sum?
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eu recomendo (mas a decisão é sua) um estilo semelhante ao guia de estilo do NumPy para docstrings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">nome_da_funcao</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span><span class="n">param2</span><span class="p">,</span><span class="n">param3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;A primeira linha é um resumo geral de uma linha.</span>
+
+<span class="sd">    Um parágrafo mais longo descrevendo a função e</span>
+<span class="sd">    equações ou algoritmos relevantes usados na</span>
+<span class="sd">    função.</span>
+
+<span class="sd">    Parâmetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    param1 : tipo_de_dado</span>
+<span class="sd">        Descreva o parâmetro.</span>
+<span class="sd">    param2 : tipo_de_dado</span>
+<span class="sd">        Descreva o parâmetro.</span>
+<span class="sd">    param3 : tipo_de_dado</span>
+<span class="sd">        Descreva os parâmetros e continue com mais</span>
+<span class="sd">        detalhes, se necessário, em um novo conjunto de linhas indentadas.</span>
+
+<span class="sd">    Retorna</span>
+<span class="sd">    -------</span>
+<span class="sd">    tipo_de_dado</span>
+<span class="sd">        Uma descrição da saída da função e também</span>
+<span class="sd">        descreva comportamentos especiais.</span>
+
+<span class="sd">    Exemplos</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; nome_da_funcao(1,2,3)</span>
+<span class="sd">    1.2345</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+</pre></div>
+</div>
+<p>Veja estes <a class="reference external" href="http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">exemplos</a> e estes <a class="reference external" href="https://google.github.io/styleguide/pyguide.html?showone=Comments#Comments">exemplos</a>.</p>
+</section>
+<section id="argumentos-de-palavra-chave-keyword-arguments">
+<h2>Argumentos de Palavra-chave (Keyword Arguments)<a class="headerlink" href="#argumentos-de-palavra-chave-keyword-arguments" title="Permalink to this heading">#</a></h2>
+<p>Quando definimos funções, listamos os parâmetros de entrada. Estes são chamados de parâmetros posicionais (ou argumentos posicionais) porque a posição na declaração <code class="docutils literal notranslate"><span class="pre">def</span></code> determina qual parâmetro é qual.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">poly</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="s2">&quot;Compute x + y**2.&quot;</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um <a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments">argumento de palavra-chave</a> nos permite inserir valores padrão para alguns parâmetros e podemos chamá-los pelo nome, e a ordem não importa.</p>
+<p>Por exemplo, vamos escrever uma função chamada <code class="docutils literal notranslate"><span class="pre">psum</span></code> que recebe os números <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> e o argumento de palavra-chave <code class="docutils literal notranslate"><span class="pre">p</span></code> (com valor padrão <code class="docutils literal notranslate"><span class="pre">p=1</span></code>) e retorna a soma das potências</p>
+<div class="math notranslate nohighlight">
+\[
+x^p + y^p
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">psum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="n">p</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="n">p</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nesta função, <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> são argumentos posicionais e <code class="docutils literal notranslate"><span class="pre">p</span></code> é um argumento de palavra-chave.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">psum2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">q</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="s2">&quot;uma função com dois parâmetros&quot;</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="n">p</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="n">q</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psum2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">q</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comentarios">
+<h2>Comentários<a class="headerlink" href="#comentarios" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html">Comentários</a> em um programa Python são descrições em texto simples do código Python que explicam o código para o leitor. O Python ignorará as linhas que começam com o símbolo de hash <code class="docutils literal notranslate"><span class="pre">#</span></code> e, portanto, usamos o símbolo de hash para escrever comentários para explicar os passos em um programa. Veja os exemplos abaixo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># x=-1 this is the first comment</span>
+<span class="n">spam</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># and this is the second comment</span>
+          <span class="c1"># ... and now a third!</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;# This is not a comment because it&#39;s inside quotes.&quot;</span><span class="c1">#coment</span>
+<span class="n">var</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># mais um comentário</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funcoes-lambda">
+<h2>Funções Lambda<a class="headerlink" href="#funcoes-lambda" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions">Funções Lambda</a> são pequenas funções anônimas criadas com a palavra-chave <code class="docutils literal notranslate"><span class="pre">lambda</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nome_da_funcao</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">parametro</span><span class="p">:</span> <span class="n">valor_de_retorno</span>
+</pre></div>
+</div>
+<p>A expressão do lado direito do operador de atribuição <code class="docutils literal notranslate"><span class="pre">=</span></code> é uma função lambda anônima e nós a atribuímos ao nome de variável <code class="docutils literal notranslate"><span class="pre">nome_da_funcao</span></code>. As funções Lambda são úteis de pelo menos duas maneiras:</p>
+<ul class="simple">
+<li><p>Definir uma função curta em uma única linha de código</p></li>
+<li><p>Definir uma função <em>dentro</em> de alguma outra expressão Python</p></li>
+</ul>
+<p>Por exemplo, a função de média definida acima pode ser escrita em uma única linha concisa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A palavra-chave <code class="docutils literal notranslate"><span class="pre">lambda</span></code> indica que o que se segue é uma definição de função. O nome da variável <code class="docutils literal notranslate"><span class="pre">x</span></code> antes dos dois pontos é o parâmetro de entrada e a expressão após os dois pontos é o valor de retorno. Vamos verificar se nossa função lambda retorna os valores corretos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">custo</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="n">custo</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Crie funções lambda com vários parâmetros de entrada listando nomes de variáveis separados por vírgulas. Por exemplo, vamos criar uma função chamada <code class="docutils literal notranslate"><span class="pre">hipotenusa</span></code> que recebe os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code> e retorna o comprimento da <a class="reference external" href="https://en.wikipedia.org/wiki/Hypotenuse">hipotenusa</a> do triângulo retângulo com lados <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hypotenuse</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verifique se nossa função retorna os valores corretos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hypotenuse</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hypotenuse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hypotenusep</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">p</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hypotenusep</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplos">
+<h2>Exemplos<a class="headerlink" href="#exemplos" title="Permalink to this heading">#</a></h2>
+<section id="funcao-zeta-de-riemann">
+<h3>Função Zeta de Riemann<a class="headerlink" href="#funcao-zeta-de-riemann" title="Permalink to this heading">#</a></h3>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_zeta_function">função zeta de Riemann</a> é a soma infinita</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(s) = \sum_{n = 1}^{\infty} \frac{1}{n^s}
+\]</div>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">zeta</span></code> que receba 2 parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">s</span></code> e <code class="docutils literal notranslate"><span class="pre">N</span></code> e retorne a soma parcial:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^N \frac{1}{n^s}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zeta</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="s2">&quot;Compute the Nth partial sum of the zeta function at s.&quot;</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="n">s</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="n">partial_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">partial_sum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos testar nossa função com valores de entrada para os quais conhecemos o resultado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zeta</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zeta</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Agora vamos usar nossa função para aproximar <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_zeta_function#Specific_values">valores especiais da função zeta de Riemann</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(2) = \frac{\pi^2}{6} \hspace{10mm} \text{e} \hspace{10mm} \zeta(4) = \frac{\pi^4}{90}
+\]</div>
+<p>Calcule a soma parcial para <span class="math notranslate nohighlight">\(s=2\)</span> e <span class="math notranslate nohighlight">\(N=100000\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zeta</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">100000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare com uma aproximação do valor especial <span class="math notranslate nohighlight">\(\pi^2/6\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi100</span><span class="o">=</span><span class="mf">3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679</span>
+<span class="n">pi100</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calcule a soma parcial para <span class="math notranslate nohighlight">\(s=4\)</span> e <span class="math notranslate nohighlight">\(N=100000\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zeta</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">100000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare com uma aproximação do valor especial <span class="math notranslate nohighlight">\(\pi^4/90\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pi100</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="mi">90</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="media-harmonica">
+<h3>Média Harmônica<a class="headerlink" href="#media-harmonica" title="Permalink to this heading">#</a></h3>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">harmonic_mean</span></code> que receba um parâmetro de entrada <code class="docutils literal notranslate"><span class="pre">s</span></code>, uma lista de números <span class="math notranslate nohighlight">\(x_1, \dots, x_n\)</span> de comprimento <span class="math notranslate nohighlight">\(n\)</span>, e retorne a <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_mean">média harmônica</a> da sequência:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{n}{\frac{1}{x_1} + \frac{1}{x_2} + \cdots + \frac{1}{x_n}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">harmonic_mean</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="s2">&quot;Compute the harmonic mean of the numbers in the sequence s.&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">aritmetic_mean</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="s2">&quot;Compute the aritmetic mean of the numbers in the sequence s.&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos definir a média geométrica usando uma propriedade de logaritmo para reduzir um produtório em somatório: se <span class="math notranslate nohighlight">\(a=x_1 ... x_n\)</span>, então</p>
+<div class="math notranslate nohighlight">
+\[a=e^{(ln\, x_1 + ln\, x_2+...+ ln\, x_n)}\]</div>
+<p>Logo, se <span class="math notranslate nohighlight">\(s=(x_1, ..., x_n)\)</span>, então a média geométrica de <span class="math notranslate nohighlight">\(s\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[ (x_1 ... x_n)^{(1/n)} = e^{\dfrac{ln\, x_1 + ln\, x_2+...+ ln\, x_n}{n}} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">geometric_mean</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="s2">&quot;Compute the geometric mean of the numbers in the sequence s.&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="c1"># math.log(x) calcula o logaritmo natural de x</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span>
+    <span class="c1"># math.exp(x) calcula e^x</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">geometric_mean2</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="s2">&quot;Compute the geometric mean of the numbers in the sequence s.&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="c1"># math.prod(s) retorna o produto dos elementos de s</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos testar nossa função:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">harmonic_mean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">harmonic_mean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">aritmetic_mean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometric_mean</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometric_mean</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometric_mean2</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="somas-de-riemann">
+<h3>Somas de Riemann<a class="headerlink" href="#somas-de-riemann" title="Permalink to this heading">#</a></h3>
+<p>Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">mn_integral</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> e <code class="docutils literal notranslate"><span class="pre">N</span></code> e retorne a <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_sum">soma de Riemann</a> à direita:
+$<span class="math notranslate nohighlight">\(
+\int_a^b f(x) \, dx \approx \sum_{k=1}^N f(x_k) \Delta x \ \ , \ \ f(x) = \frac{x^m + 1}{x^n + 1}
+\)</span>$</p>
+<p>e <span class="math notranslate nohighlight">\(\Delta x = (b-a)/N\)</span> e <span class="math notranslate nohighlight">\(x_k = a + k \Delta x\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">delta_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">k</span><span class="o">*</span><span class="n">delta_x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mn_integral</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Compute the right Riemann sum for the function f(x) = (x^m + 1)/(x^n + 1)</span>
+<span class="sd">    on interval [a,b] with a partition of N subintervals of equal size.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">delta_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+    <span class="c1"># lista de valores x_k:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="o">+</span> <span class="n">k</span><span class="o">*</span><span class="n">delta_x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="c1"># lista de valores f(x_k)\Delta_x:</span>
+    <span class="n">terms</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">**</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">delta_x</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="n">riemann_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">terms</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">riemann_sum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos testar nossa função com uma entrada para a qual conhecemos o resultado. Seja <span class="math notranslate nohighlight">\(m=0\)</span>, <span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(a=0\)</span>, <span class="math notranslate nohighlight">\(b=1\)</span> e <span class="math notranslate nohighlight">\(N=2\)</span>. Então <span class="math notranslate nohighlight">\(x_0 = 0\)</span>, <span class="math notranslate nohighlight">\(x_1 = 1/2\)</span>, <span class="math notranslate nohighlight">\(x_2 = 1\)</span> e <span class="math notranslate nohighlight">\(\Delta x = 1/2\)</span>, e calculamos:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\sum_{k=1}^N f(x_k) \Delta x &amp;= \sum_{k=1}^2 \frac{x_k^0 + 1}{x_k^1 + 1} \Delta x \\\
+&amp;= \frac{2}{(1/2) + 1} \cdot \frac{1}{2} + \frac{2}{1 + 1} \cdot \frac{1}{2} \\\
+&amp;= \frac{7}{6}
+\end{aligned}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mn_integral</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span><span class="o">/</span><span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos testar nossa função em outro exemplo. Seja <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(a=0\)</span> e <span class="math notranslate nohighlight">\(b=1\)</span>. Podemos resolver esta integral exatamente:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\int_0^1 \frac{x + 1}{x^2 + 1} dx &amp;= \int_0^1 \frac{x}{x^2 + 1} dx + \int_0^1 \frac{1}{x^2 + 1} dx \\\
+&amp;= \left. \left( \frac{1}{2} \ln(x^2 + 1) + \arctan x \right) \right|_0^1 \\\
+&amp;= \frac{1}{2} \ln(2) + \frac{\pi}{4}
+\end{aligned}
+\end{split}\]</div>
+<p>Aproxime esta integral com uma soma de Riemann para <span class="math notranslate nohighlight">\(N=100000\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mn_integral</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">100000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como <span class="math notranslate nohighlight">\(\pi \approx 3.14159265\)</span> e <span class="math notranslate nohighlight">\(\ln(2) \approx 0.69314718\)</span>, comparamos com a aproximação:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">0.5</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nossa função calcula os valores esperados!</p>
+</section>
+</section>
+<section id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+<p><strong>Exercício 1.</strong> Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">p_norm</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">sequencia</span></code> e <code class="docutils literal notranslate"><span class="pre">p</span></code>, onde <code class="docutils literal notranslate"><span class="pre">sequencia</span></code> é uma lista de números <span class="math notranslate nohighlight">\(x_1, \dots, x_n\)</span> e <code class="docutils literal notranslate"><span class="pre">p</span></code> é um número diferente de zero. A função retorna a <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_(mathematics)#p-norm"><span class="math notranslate nohighlight">\(p\)</span>-norma</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{1}{n} \sum_{i=1}^n | x_i |^p \right)^{1/p}
+\]</div>
+<p>Use valores positivos grandes de <code class="docutils literal notranslate"><span class="pre">p</span></code> e várias listas de números para verificar que</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{p \to \infty} \left( \frac{1}{n} \sum_{i=1}^n | x_i |^p \right)^{1/p} = \max \{ |x_1| , \dots, |x_n| \}
+\]</div>
+<p>Use valores negativos grandes de <code class="docutils literal notranslate"><span class="pre">p</span></code> e várias listas de números para verificar que</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{p \to -\infty} \left( \frac{1}{n} \sum_{i=1}^n |x_i|^p \right)^{1/p} = \min \{ |x_1| , \dots, |x_n| \}
+\]</div>
+<p><strong>Exercício 2.</strong> Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">arctan_taylor</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">x</span></code> e <code class="docutils literal notranslate"><span class="pre">N</span></code> e retorne o polinômio de Taylor de grau <span class="math notranslate nohighlight">\(N\)</span> da função <span class="math notranslate nohighlight">\(\arctan x\)</span> avaliado em <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{k=0}^N (-1)^k \frac{x^{2k + 1}}{2k + 1}
+\]</div>
+<p><strong>Exercício 3.</strong> Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">zips</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code>, onde <code class="docutils literal notranslate"><span class="pre">a</span></code> e <code class="docutils literal notranslate"><span class="pre">b</span></code> são listas de igual comprimento, e retorne a lista de tuplas que agrega a sequência. (Em outras palavras, escreva sua própria versão da função embutida <code class="docutils literal notranslate"><span class="pre">zip()</span></code>… sem usar <code class="docutils literal notranslate"><span class="pre">zip()</span></code>, é claro.) Por exemplo, <code class="docutils literal notranslate"><span class="pre">zips([-1,3,4,0],[5,7,1,-9])</span></code> retorna a lista <code class="docutils literal notranslate"><span class="pre">[(-1,</span> <span class="pre">5),</span> <span class="pre">(3,</span> <span class="pre">7),</span> <span class="pre">(4,</span> <span class="pre">1),</span> <span class="pre">(0,</span> <span class="pre">-9)]</span></code>.</p>
+<p><strong>Exercício 4.</strong> Escreva uma função chamada <code class="docutils literal notranslate"><span class="pre">sqrt_integral</span></code> que receba os parâmetros de entrada <code class="docutils literal notranslate"><span class="pre">u</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code> e <code class="docutils literal notranslate"><span class="pre">N</span></code> e retorne a soma de Riemann (usando os <em>pontos médios</em> <span class="math notranslate nohighlight">\(x_k^*\)</span> de uma partição de tamanho <span class="math notranslate nohighlight">\(N\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^u \frac{1}{\sqrt{1 + x^p}} dx \approx \sum_{k=1}^N \frac{1}{\sqrt{1 + (x_k^*)^p}} \Delta x
+\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\Delta x = u/N\)</span> e <span class="math notranslate nohighlight">\(x_k^* = (x_k + x_{k-1})/2\)</span> para os pontos finais <span class="math notranslate nohighlight">\(x_k = k \Delta x\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0106-sequencias.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Sequências</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0108-logica.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Lógica</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  Conteúdo
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-embutidas">Funções Embutidas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-funcoes">Definindo Funções</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-de-documentacao-docstrings">Strings de Documentação (Docstrings)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumentos-de-palavra-chave-keyword-arguments">Argumentos de Palavra-chave (Keyword Arguments)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comentarios">Comentários</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-lambda">Funções Lambda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcao-zeta-de-riemann">Função Zeta de Riemann</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#media-harmonica">Média Harmônica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#somas-de-riemann">Somas de Riemann</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Prof. Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

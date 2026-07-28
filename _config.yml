@@ -1,6 +1,7 @@
 # Informações do Livro
-title: "MAT034 - Matemática Computacional"
-author: "Prof. Artur Fassoni - Universidade Federal de Itajubá"
+title: "Matemática Computacional"
+author: "Prof. Artur Fassoni"
+copyright: "2026"
 logo: ""  # Opcional: nome da imagem de logo se tiver
 
 # Identificação do Repositório (Essencial para o caminho correto)
@@ -9,7 +10,6 @@ repository:
   path_to_book: ""
   branch: main
 
-
 # Configurações do ambiente de execução
 execute:
   execute_notebooks: "off"  # Mantém "off" para o GitHub compilar rápido sem rodar todos os códigos do zero
@@ -17,13 +17,27 @@ execute:
 # Recursos de interação na interface do site
 html:
   use_issues_button: false
-  use_repository_button: true
+  use_repository_button: false
   use_edit_page_button: false
+  use_download_button: false
   home_page_in_navbar: true
   extra_navbar: ""
+  show_navbar_depth: 2
   comments:
     hypothesis: false
 
-# Opções de exportação
+sphinx:
+  config:
+    language: pt
+    html_theme_options:
+      toc_title: " Conteúdo"
+      logo:
+        text: ""                      # Esconde o título/texto grande do topo do menu lateral
+      home_page_in_toc: false  # Oculta a home do menu lateral
+
+# Opções de exportação e execução
 launch_buttons:
   notebook_interface: "jupyterlab"
+  binderhub_url: "https://mybinder.org"             # Cria o botão do Binder
+  colab_url: "https://colab.research.google.com"    # Cria o botão do Google Colab
+  thebe: true                                       # Cria o botão "Live Code" (rodar na própria página)

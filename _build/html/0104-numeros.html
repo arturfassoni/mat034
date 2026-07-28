@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Números &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/collapse-toc.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/collapse-toc.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0104-numeros';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Variáveis" href="0105-variaveis.html" />
+    <link rel="prev" title="LaTeX" href="0103-latex.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00-home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Matemática Computacional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matemática Computacional</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0001-inicio.html">Início</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0101-jupyter.html">Jupyter Notebooks e Google Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0102-markdown.html">Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0103-latex.html">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0105-variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0106-sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0107-funcoes.html">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0108-logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0109-loops.html">Laços (Loops)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0104-numeros.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Números</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>  Conteúdo </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inteiros">Inteiros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-de-ponto-flutuante">Números de Ponto Flutuante</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-complexos">Números Complexos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aproximacao-de-taylor">Aproximação de Taylor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-pi-de-ramanujan">Fórmula Pi de Ramanujan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="numeros">
+<h1>Números<a class="headerlink" href="#numeros" title="Permalink to this heading">#</a></h1>
+<p>Os principais <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex">tipos numéricos</a> em Python são inteiros, números de ponto flutuante (ou floats) e números complexos. A sintaxe para operadores aritméticos é: adição <code class="docutils literal notranslate"><span class="pre">+</span></code>, subtração <code class="docutils literal notranslate"><span class="pre">-</span></code>, multiplicação <code class="docutils literal notranslate"><span class="pre">*</span></code>, divisão <code class="docutils literal notranslate"><span class="pre">/</span></code> e exponenciação <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p>
+<section id="inteiros">
+<h2>Inteiros<a class="headerlink" href="#inteiros" title="Permalink to this heading">#</a></h2>
+<p>Adicione inteiros:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span> <span class="o">+</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Subtraia inteiros:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2019</span> <span class="o">-</span> <span class="mi">21</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Multiplique inteiros:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">45</span> <span class="o">*</span> <span class="mi">11</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Divida inteiros (e observe que a divisão de inteiros <em>sempre</em> retorna um float):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="o">/</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calcule potências de inteiros:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função embutida <code class="docutils literal notranslate"><span class="pre">type()</span></code> para verificar o tipo de um objeto Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numeros-de-ponto-flutuante">
+<h2>Números de Ponto Flutuante<a class="headerlink" href="#numeros-de-ponto-flutuante" title="Permalink to this heading">#</a></h2>
+<p>Um número de ponto flutuante (ou float) é um número real escrito na forma decimal. Python armazena floats e inteiros de maneiras diferentes e, se combinarmos inteiros e floats usando operações aritméticas, o resultado é sempre um float.</p>
+<p>Aproxime <span class="math notranslate nohighlight">\(\sqrt{2} \,\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aproxime <span class="math notranslate nohighlight">\(2 \pi\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="mf">3.14159</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use notação científica para criar <span class="math notranslate nohighlight">\(0.00001\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">1e-5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Novamente, use a função <code class="docutils literal notranslate"><span class="pre">type()</span></code> para verificar o tipo de um número:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">42.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numeros-complexos">
+<h2>Números Complexos<a class="headerlink" href="#numeros-complexos" title="Permalink to this heading">#</a></h2>
+<p>Use a função embutida <code class="docutils literal notranslate"><span class="pre">complex()</span></code> para criar um número complexo em Python ou use a letra <code class="docutils literal notranslate"><span class="pre">j</span></code> para <span class="math notranslate nohighlight">\(j = \sqrt{-1}\)</span>. A função embutida <code class="docutils literal notranslate"><span class="pre">complex()</span></code> recebe 2 parâmetros que definem a parte real e a parte imaginária do número complexo.</p>
+<p>Crie o número complexo <span class="math notranslate nohighlight">\(1 + j\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adicione números complexos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Multiplique números complexos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use a função <code class="docutils literal notranslate"><span class="pre">type()</span></code> para verificar o tipo de um número:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">7</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operadores-aritmeticos">
+<h2>Operadores Aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this heading">#</a></h2>
+<p>A sintaxe para operadores aritméticos em Python é:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operador</p></th>
+<th class="head text-center"><p>Descrição</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td class="text-center"><p>adição</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td class="text-center"><p>subtração</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td class="text-center"><p>multiplicação</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td class="text-center"><p>divisão</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">**</span></code></p></td>
+<td class="text-center"><p>exponenciação</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">%</span></code></p></td>
+<td class="text-center"><p>resto (ou módulo)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">//</span></code></p></td>
+<td class="text-center"><p>divisão de inteiros</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Observe que a divisão de inteiros sempre retorna um float:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Mesmo que o resultado matemático seja um inteiro:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use parênteses para agrupar combinações de operações aritméticas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uma potência inteira positiva de um inteiro é novamente um inteiro:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uma potência inteira negativa de um inteiro é um float:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um expoente envolvendo um float é um float:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>O operador de resto calcula o resto da divisão de inteiros:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span> <span class="o">%</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A divisão de inteiros é:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span> <span class="o">//</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplos">
+<h2>Exemplos<a class="headerlink" href="#exemplos" title="Permalink to this heading">#</a></h2>
+<section id="aproximacao-de-taylor">
+<h3>Aproximação de Taylor<a class="headerlink" href="#aproximacao-de-taylor" title="Permalink to this heading">#</a></h3>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Taylor_series">série de Taylor</a> da função exponencial <span class="math notranslate nohighlight">\(e^x\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[
+e^x = \sum_{k=0}^{\infty} \frac{x^k}{k!}
+\]</div>
+<p>Calcule o polinômio de Taylor de grau 5 avaliado em <span class="math notranslate nohighlight">\(x = 1\)</span> para encontrar uma aproximação de <span class="math notranslate nohighlight">\(e\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+e \approx \frac{1}{0!} + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \frac{1}{5!}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="formula-pi-de-ramanujan">
+<h3>Fórmula Pi de Ramanujan<a class="headerlink" href="#formula-pi-de-ramanujan" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Srinivasa_Ramanujan#Mathematical_achievements">Srinivasa Ramanujan</a> descobriu a seguinte bela (e de convergência muito rápida) representação em série de <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\pi} = \frac{2 \sqrt{2}}{99^2} \sum_{k = 0}^{\infty} \frac{(4k)!}{k!^4} \frac{1103 + 26390k}{396^{4k}}
+\]</div>
+<p>Vamos encontrar uma aproximação de <span class="math notranslate nohighlight">\(\pi\)</span> calculando o recíproco da soma dos 3 primeiros termos da série:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi \approx \frac{99^2}{2 \sqrt{2}} \frac{1}{\left( 1103 + 4! \frac{1103 + 26390}{396^{4}} + \frac{8!}{2^4} \frac{1103 + 26390(2)}{396^{8}} \right)}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">99</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1103</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">26390</span> <span class="o">+</span> <span class="mi">1103</span><span class="p">)</span> <span class="o">/</span> <span class="mi">396</span><span class="o">**</span><span class="mi">4</span>
+                       <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">6</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="mi">26390</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1103</span><span class="p">)</span> <span class="o">/</span> <span class="mi">396</span><span class="o">**</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Estes são exatamente os primeiros 16 dígitos de <a class="reference external" href="https://en.wikipedia.org/wiki/Pi"><span class="math notranslate nohighlight">\(\pi\)</span></a>.</p>
+</section>
+</section>
+<section id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+<p><strong>Exercício 1.</strong> A <a class="reference external" href="https://en.wikipedia.org/wiki/Taylor_series">série de Taylor</a> de <span class="math notranslate nohighlight">\(\cos x\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[
+\cos x = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{(2k)!}
+\]</div>
+<p>Calcule o polinômio de Taylor de grau 6 avaliado em <span class="math notranslate nohighlight">\(x=2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\cos(2) \approx 1 - \frac{2^2}{2!} + \frac{2^4}{4!} - \frac{2^6}{6!}
+\]</div>
+<p><strong>Exercício 2.</strong> A <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_zeta_function">função zeta de Riemann</a> é a série infinita:</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}
+\]</div>
+<p>e está intimamente relacionada aos números primos pela <a class="reference external" href="https://en.wikipedia.org/wiki/Riemann_zeta_function#Euler_product_formula">fórmula do produto de Euler</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_p \left( \frac{1}{1 - p^{-s}} \right)
+\]</div>
+<p>onde o produto é sobre todos os primos <span class="math notranslate nohighlight">\(p = 2,3,5,7,11,13,\dots\)</span></p>
+<p>Calcule a 5ª soma parcial para <span class="math notranslate nohighlight">\(s=2\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+1 + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2}
+\]</div>
+<p>Calcule o 5º produto parcial para <span class="math notranslate nohighlight">\(s=2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{1}{1 - 2^{-2}} \right) \left( \frac{1}{1 - 3^{-2}} \right) \left( \frac{1}{1 - 5^{-2}} \right) \left( \frac{1}{1 - 7^{-2}} \right) \left( \frac{1}{1 - 11^{-2}} \right)
+\]</div>
+<p>Dada a <a class="reference external" href="https://en.wikipedia.org/wiki/Basel_problem">fórmula de valor especial de Euler</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta(2) = \frac{\pi^2}{6}
+\]</div>
+<p>qual converge mais rapidamente: a série infinita ou o produto?</p>
+<p><strong>Exercício 3.</strong> A <a class="reference external" href="https://en.wikipedia.org/wiki/Continued_fraction#Square_roots">fração contínua</a> para <span class="math notranslate nohighlight">\(\sqrt{2}\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{2} = 1 + \frac{1}{2 + \frac{1}{2 + \frac{1}{2 + \frac{1}{2 + \ddots}}}}
+\]</div>
+<p>Calcule a seguinte fração contínua (parcial) para aproximar <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{2} \approx 1 + \frac{1}{2 + \frac{1}{2 + \frac{1}{2 + \frac{1}{2}}}}
+\]</div>
+<p><strong>Exercício 4.</strong> Suponha que <code class="docutils literal notranslate"><span class="pre">type(x)</span></code> seja <code class="docutils literal notranslate"><span class="pre">int</span></code> e <code class="docutils literal notranslate"><span class="pre">type(y)</span></code> seja <code class="docutils literal notranslate"><span class="pre">float</span></code>. Determine:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">/</span> <span class="pre">y)</span></code> se <code class="docutils literal notranslate"><span class="pre">y</span></code> for diferente de zero</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">*</span> <span class="pre">y)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">+</span> <span class="pre">y)</span></code></p></li>
+</ul>
+<p><strong>Exercício 5.</strong> Suponha que <code class="docutils literal notranslate"><span class="pre">type(x)</span></code> e <code class="docutils literal notranslate"><span class="pre">type(y)</span></code> sejam <code class="docutils literal notranslate"><span class="pre">int</span></code>. Determine:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">/</span> <span class="pre">y)</span></code> se <code class="docutils literal notranslate"><span class="pre">y</span></code> for diferente de zero</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">*</span> <span class="pre">y)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">+</span> <span class="pre">y)</span></code></p></li>
+</ul>
+<p><strong>Exercício 6.</strong> Suponha que <code class="docutils literal notranslate"><span class="pre">type(x)</span></code> seja <code class="docutils literal notranslate"><span class="pre">float</span></code> e <code class="docutils literal notranslate"><span class="pre">type(y)</span></code> seja <code class="docutils literal notranslate"><span class="pre">int</span></code>. Determine <code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">**</span> <span class="pre">y)</span></code>.</p>
+<p><strong>Exercício 7.</strong> Suponha que <code class="docutils literal notranslate"><span class="pre">type(x)</span></code> seja <code class="docutils literal notranslate"><span class="pre">int</span></code> e <code class="docutils literal notranslate"><span class="pre">type(y)</span></code> seja <code class="docutils literal notranslate"><span class="pre">float</span></code>. Determine <code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">**</span> <span class="pre">y)</span></code>.</p>
+<p><strong>Exercício 8.</strong> Suponha que <code class="docutils literal notranslate"><span class="pre">type(x)</span></code> e <code class="docutils literal notranslate"><span class="pre">type(y)</span></code> sejam <code class="docutils literal notranslate"><span class="pre">int</span></code>. Determine <code class="docutils literal notranslate"><span class="pre">type(x</span> <span class="pre">**</span> <span class="pre">y)</span></code>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0103-latex.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">LaTeX</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0105-variaveis.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Variáveis</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  Conteúdo
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inteiros">Inteiros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-de-ponto-flutuante">Números de Ponto Flutuante</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeros-complexos">Números Complexos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-aritmeticos">Operadores Aritméticos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aproximacao-de-taylor">Aproximação de Taylor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-pi-de-ramanujan">Fórmula Pi de Ramanujan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Prof. Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

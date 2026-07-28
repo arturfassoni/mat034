@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="pt" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>LaTeX &#8212; Matemática Computacional</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/collapse-toc.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Clique para mostrar';</script>
+    <script>let toggleHintHide = 'Clique para ocultar';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/collapse-toc.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0103-latex';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Números" href="0104-numeros.html" />
+    <link rel="prev" title="Markdown" href="0102-markdown.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="00-home.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Matemática Computacional</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matemática Computacional</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0001-inicio.html">Início</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Jupyter</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0101-jupyter.html">Jupyter Notebooks e Google Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0102-markdown.html">Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">LaTeX</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="0104-numeros.html">Números</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0105-variaveis.html">Variáveis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0106-sequencias.html">Sequências</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0107-funcoes.html">Funções</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0108-logica.html">Lógica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0109-loops.html">Laços (Loops)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Baixe esta página">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0103-latex.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Baixar arquivo fonte"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir em PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo tela cheia"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Pesquisar" aria-label="Pesquisar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>LaTeX</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2>  Conteúdo </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matematica-em-linha-e-em-destaque">Matemática Em Linha e em Destaque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolos-comuns">Símbolos Comuns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrizes-e-parenteses">Matrizes e Parênteses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada">Derivada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidade">Continuidade</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-de-maclaurin">Série de MacLaurin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-jacobiana">Matriz Jacobiana</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="latex">
+<h1>LaTeX<a class="headerlink" href="#latex" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.latex-project.org/">LaTeX</a> é um ambiente de programação para a produção de documentos científicos. O Jupyter Notebook reconhece o código LaTeX escrito em células de markdown e renderiza os símbolos matemáticos no navegador usando a biblioteca JavaScript <a class="reference external" href="https://www.mathjax.org/">MathJax</a>.</p>
+<section id="matematica-em-linha-e-em-destaque">
+<h2>Matemática Em Linha e em Destaque<a class="headerlink" href="#matematica-em-linha-e-em-destaque" title="Permalink to this heading">#</a></h2>
+<p>Envolva o código LaTeX com cifrões <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">...</span> <span class="pre">$</span></code> para exibir matemática em linha. Por exemplo, o código <code class="docutils literal notranslate"><span class="pre">$\int_a^b</span> <span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">F(b)</span> <span class="pre">-</span> <span class="pre">F(a)$</span></code> é renderizado em linha como <span class="math notranslate nohighlight">\( \int_a^b f(x) dx = F(b) - F(a) \)</span>.</p>
+<p>Envolva o código LaTeX com cifrões duplos <code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">...</span> <span class="pre">$$</span></code> para exibir expressões em um parágrafo centralizado. Por exemplo:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb">f&#39;</span><span class="o">(</span><span class="nb">a</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\lim</span><span class="nb">_{x </span><span class="nv">\to</span><span class="nb"> a} </span><span class="nv">\frac</span><span class="nb">{f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">-</span><span class="nb"> f</span><span class="o">(</span><span class="nb">a</span><span class="o">)</span><span class="nb">}{x</span><span class="o">-</span><span class="nb">a}</span><span class="s">$$</span>
+</pre></div>
+</div>
+<p>é renderizado como</p>
+<div class="math notranslate nohighlight">
+\[f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x-a}\]</div>
+<p>Consulte o <a class="reference external" href="https://en.wikibooks.org/wiki/LaTeX">LaTeX WikiBook</a> para mais informações (especialmente a seção sobre <a class="reference external" href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">matemática</a>).</p>
+</section>
+<section id="simbolos-comuns">
+<h2>Símbolos Comuns<a class="headerlink" href="#simbolos-comuns" title="Permalink to this heading">#</a></h2>
+<p>Abaixo, fornecemos uma lista de símbolos matemáticos comumente usados. A maioria dos outros símbolos pode ser inferida a partir destes exemplos. Consulte o <a class="reference external" href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX WikiBook (Matemática)</a> e o aplicativo <a class="reference external" href="http://detexify.kirelabs.org/classify.html">Detexify</a> para encontrar qualquer símbolo que você possa imaginar!</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Sintaxe</p></th>
+<th class="head text-center"><p>Saída</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$x_n$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x_n\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$x^2$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x^2\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\infty$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\infty\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\frac{a}{b}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\frac{a}{b}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\partial$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\partial\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\alpha$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\alpha\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\beta$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\beta\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\gamma$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\gamma\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\Gamma$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Gamma\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\Delta$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Delta\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\sin$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\sin\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\cos$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\cos\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\tan$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\tan\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\sum_{n=0}^{\infty}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\sum_{n=0}^{\infty}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\prod_{n=0}^{\infty}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\prod_{n=0}^{\infty}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\int_a^b$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\int_a^b\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\lim_{x</span> <span class="pre">\to</span> <span class="pre">a}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\lim_{x \to a}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\mathrm{Hom}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mathrm{Hom}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\mathbf{v}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mathbf{v}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\mathbb{Z}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mathbb{Z}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\mathscr{L}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mathscr{L}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\mathfrak{g}$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\mathfrak{g}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\dots$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dots\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\vdots$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\vdots\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">$\ddots$</span></code></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\ddots\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="matrizes-e-parenteses">
+<h2>Matrizes e Parênteses<a class="headerlink" href="#matrizes-e-parenteses" title="Permalink to this heading">#</a></h2>
+<p>Crie uma matriz sem parênteses:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nv">\begin</span><span class="nb">{matrix} a &amp; b </span><span class="nv">\\</span><span class="nb"> c &amp; d </span><span class="nv">\end</span><span class="nb">{matrix}</span><span class="s">$$</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{matrix} a &amp; b \\\ c &amp; d \end{matrix}
+\end{split}\]</div>
+<p>Crie uma matriz com parênteses redondos:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nv">\begin</span><span class="nb">{pmatrix} a &amp; b </span><span class="nv">\\</span><span class="nb"> c &amp; d </span><span class="nv">\end</span><span class="nb">{pmatrix}</span><span class="s">$$</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix} a &amp; b \\\ c &amp; d \end{pmatrix}
+\end{split}\]</div>
+<p>Crie uma matriz com colchetes:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nv">\begin</span><span class="nb">{bmatrix} </span><span class="m">1</span><span class="nb"> &amp; </span><span class="m">2</span><span class="nb"> &amp; </span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"> </span><span class="m">3</span><span class="nb"> &amp; </span><span class="m">0</span><span class="nb"> &amp; </span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"> </span><span class="m">0</span><span class="nb"> &amp; </span><span class="m">2</span><span class="nb"> &amp; </span><span class="m">4</span><span class="nb"> </span><span class="nv">\end</span><span class="nb">{bmatrix}</span><span class="s">$$</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 \\\
+3 &amp; 0 &amp; 1 \\\
+0 &amp; 2 &amp; 4
+\end{bmatrix}
+\end{split}\]</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">\left</span></code> e <code class="docutils literal notranslate"><span class="pre">\right</span></code> para envolver qualquer expressão em parênteses/colchetes:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{p}{q} </span><span class="nv">\right</span><span class="o">)</span><span class="s">$$</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\left( \frac{p}{q} \right)\]</div>
+</section>
+<section id="exemplos">
+<h2>Exemplos<a class="headerlink" href="#exemplos" title="Permalink to this heading">#</a></h2>
+<section id="derivada">
+<h3>Derivada<a class="headerlink" href="#derivada" title="Permalink to this heading">#</a></h3>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Derivative">derivada</a> <span class="math notranslate nohighlight">\(f'(a)\)</span> da função <span class="math notranslate nohighlight">\(f(x)\)</span> no ponto <span class="math notranslate nohighlight">\(x=a\)</span> é o limite:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb">f&#39;</span><span class="o">(</span><span class="nb">a</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\lim</span><span class="nb">_{x </span><span class="nv">\to</span><span class="nb"> a} </span><span class="nv">\frac</span><span class="nb">{f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">-</span><span class="nb"> f</span><span class="o">(</span><span class="nb">a</span><span class="o">)</span><span class="nb">}{x </span><span class="o">-</span><span class="nb"> a}</span><span class="s">$$</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}\]</div>
+</section>
+<section id="continuidade">
+<h3>Continuidade<a class="headerlink" href="#continuidade" title="Permalink to this heading">#</a></h3>
+<p>Uma função <span class="math notranslate nohighlight">\(f(x)\)</span> é <a class="reference external" href="https://en.wikipedia.org/wiki/Continuous_function">contínua</a> em um ponto <span class="math notranslate nohighlight">\(x=a\)</span> se:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nv">\lim</span><span class="nb">_{x </span><span class="nv">\to</span><span class="nb"> a^</span><span class="o">-</span><span class="nb">} f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> f</span><span class="o">(</span><span class="nb">a</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\lim</span><span class="nb">_{x </span><span class="nv">\to</span><span class="nb"> a^</span><span class="o">+</span><span class="nb">} f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="s">$$</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a^-} f(x) = f(a) = \lim_{x \to a^+} f(x)\]</div>
+</section>
+<section id="serie-de-maclaurin">
+<h3>Série de MacLaurin<a class="headerlink" href="#serie-de-maclaurin" title="Permalink to this heading">#</a></h3>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Taylor_series">série de MacLaurin</a> para <span class="math notranslate nohighlight">\(e^x\)</span> é:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb">e^x </span><span class="o">=</span><span class="nb"> </span><span class="nv">\sum</span><span class="nb">_{k</span><span class="o">=</span><span class="m">0</span><span class="nb">}^{</span><span class="nv">\infty</span><span class="nb">} </span><span class="nv">\frac</span><span class="nb">{x^k}{k</span><span class="o">!</span><span class="nb">}</span><span class="s">$$</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[e^x = \sum_{k=0}^{\infty} \frac{x^k}{k!}\]</div>
+</section>
+<section id="matriz-jacobiana">
+<h3>Matriz Jacobiana<a class="headerlink" href="#matriz-jacobiana" title="Permalink to this heading">#</a></h3>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant">matriz Jacobiana</a> da função <span class="math notranslate nohighlight">\(\mathbf{f}(x_1, \dots, x_n)\)</span> é:</p>
+<div class="highlight-LaTeX notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span>
+<span class="nv">\mathbf</span><span class="nb">{J}</span>
+<span class="o">=</span>
+<span class="nv">\frac</span><span class="nb">{d </span><span class="nv">\mathbf</span><span class="nb">{f}}{d </span><span class="nv">\mathbf</span><span class="nb">{x}}</span>
+<span class="o">=</span>
+<span class="nv">\left</span><span class="o">[</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\partial</span><span class="nb"> </span><span class="nv">\mathbf</span><span class="nb">{f}}{</span><span class="nv">\partial</span><span class="nb"> x_</span><span class="m">1</span><span class="nb">}</span>
+<span class="nv">\cdots</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{</span><span class="nv">\partial</span><span class="nb"> </span><span class="nv">\mathbf</span><span class="nb">{f}}{</span><span class="nv">\partial</span><span class="nb"> x_n} </span><span class="nv">\right</span><span class="o">]</span>
+<span class="o">=</span>
+<span class="nv">\begin</span><span class="nb">{bmatrix}</span>
+<span class="nv">\frac</span><span class="nb">{</span><span class="nv">\partial</span><span class="nb"> f_</span><span class="m">1</span><span class="nb">}{</span><span class="nv">\partial</span><span class="nb"> x_</span><span class="m">1</span><span class="nb">} &amp; </span><span class="nv">\cdots</span><span class="nb"> &amp;</span>
+<span class="nv">\frac</span><span class="nb">{</span><span class="nv">\partial</span><span class="nb"> f_</span><span class="m">1</span><span class="nb">}{</span><span class="nv">\partial</span><span class="nb"> x_n} </span><span class="nv">\\</span>
+<span class="nv">\vdots</span><span class="nb"> &amp; </span><span class="nv">\ddots</span><span class="nb"> &amp; </span><span class="nv">\vdots</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="nv">\frac</span><span class="nb">{</span><span class="nv">\partial</span><span class="nb"> f_m}{</span><span class="nv">\partial</span><span class="nb"> x_</span><span class="m">1</span><span class="nb">} &amp; </span><span class="nv">\cdots</span><span class="nb"> &amp;</span>
+<span class="nv">\frac</span><span class="nb">{</span><span class="nv">\partial</span><span class="nb"> f_m}{</span><span class="nv">\partial</span><span class="nb"> x_n}</span>
+<span class="nv">\end</span><span class="nb">{bmatrix}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{J} = \frac{d \mathbf{f}}{d \mathbf{x}} =
+\left[ \frac{\partial \mathbf{f}}{\partial x_1}
+\cdots \frac{\partial \mathbf{f}}{\partial x_n} \right] =
+\begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} \\\
+\vdots &amp; \ddots &amp; \vdots \\\
+\frac{\partial f_m}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_m}{\partial x_n}
+\end{bmatrix}
+\end{split}\]</div>
+</section>
+</section>
+<section id="exercicios">
+<h2>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this heading">#</a></h2>
+<p><strong>Exercício 1</strong>. Escreva o código LaTeX para exibir a <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_trigonometric_identities#Angle_sum_and_difference_identities">identidade da soma de ângulos</a></p>
+<div class="math notranslate nohighlight">
+\[\cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta\]</div>
+<p><strong>Exercício 2.</strong> Escreva o código LaTeX para exibir a <a class="reference external" href="https://en.wikipedia.org/wiki/Lists_of_integrals">integral indefinida</a></p>
+<div class="math notranslate nohighlight">
+\[\int \frac{1}{1 + x^2} \, dx = \arctan x + C\]</div>
+<p><strong>Exercício 3.</strong> Escreva o código LaTeX para exibir a <a class="reference external" href="https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations">Equação de Navier-Stokes para Escoamento Incompressível</a></p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla) \mathbf{u} - \nu \nabla^2 \mathbf{u} = - \nabla w + \mathbf{g}\]</div>
+<p><strong>Exercício 4.</strong> Escreva o código LaTeX para exibir o <a class="reference external" href="https://en.wikipedia.org/wiki/Green%27s_theorem">Teorema de Green</a></p>
+<div class="math notranslate nohighlight">
+\[\oint_C (L dx + M dy) = \iint_D \left( \frac{\partial M}{\partial x} - \frac{\partial L}{\partial y} \right) dx \, dy\]</div>
+<p><strong>Exercício 5.</strong> Escreva o código LaTeX para exibir o <a class="reference external" href="https://en.wikipedia.org/wiki/Prime_number_theorem">Teorema do Número Primo</a></p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} \frac{\pi(x)}{ \frac{x}{\log(x)}} = 1\]</div>
+<p><strong>Exercício 6.</strong> Escreva o código LaTeX para exibir a fórmula geral da <a class="reference external" href="https://en.wikipedia.org/wiki/Taylor_series">série de Taylor</a></p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^n\]</div>
+<p><strong>Exercício 7.</strong> Escreva o código LaTeX para exibir o <a class="reference external" href="https://en.wikipedia.org/wiki/Stokes%27_theorem">Teorema de Stokes</a></p>
+<div class="math notranslate nohighlight">
+\[\int_{\partial \Omega} \omega = \int_{\Omega} d \omega\]</div>
+<p><strong>Exercício 8.</strong> Escreva o código LaTeX para exibir a propriedade adjunta do <a class="reference external" href="https://en.wikipedia.org/wiki/Tensor_product">produto tensorial</a></p>
+<div class="math notranslate nohighlight">
+\[\mathrm{Hom}(U \otimes V,W) \cong \mathrm{Hom}(U, \mathrm{Hom}(V,W))\]</div>
+<p><strong>Exercício 9.</strong> Escreva o código LaTeX para exibir a definição da <a class="reference external" href="https://en.wikipedia.org/wiki/Laplace_transform">transformada de Laplace</a></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathscr{L} \\{ f(t) \\} = F(s) = \int_0^{\infty} f(t) e^{-st} dt\end{split}\]</div>
+<p><strong>Exercício 10.</strong> Escreva o código LaTeX para exibir a fórmula da <a class="reference external" href="https://en.wikipedia.org/wiki/Invertible_matrix">matriz inversa</a></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} a &amp; b \\\ c &amp; d \end{bmatrix}^{-1} = \frac{1}{ad - bc} \begin{bmatrix} d &amp; -b \\\ -c &amp; a \end{bmatrix}\end{split}\]</div>
+<p><strong>Exercício 11.</strong> Escreva o código LaTeX para exibir a <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_trigonometric_identities#Infinite_product_formulae">fórmula do produto infinito</a></p>
+<div class="math notranslate nohighlight">
+\[\sin x = x \prod_{n=1}^{\infty} \left( 1 - \frac{x^2}{\pi^2 n^2} \right)\]</div>
+<p><strong>Exercício 12.</strong> Escolha seu curso de matemática favorito e escreva as anotações da sua última aula em LaTeX.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="0102-markdown.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Markdown</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="0104-numeros.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">próximo</p>
+        <p class="prev-next-title">Números</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i>  Conteúdo
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matematica-em-linha-e-em-destaque">Matemática Em Linha e em Destaque</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolos-comuns">Símbolos Comuns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrizes-e-parenteses">Matrizes e Parênteses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplos">Exemplos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada">Derivada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidade">Continuidade</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-de-maclaurin">Série de MacLaurin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-jacobiana">Matriz Jacobiana</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios">Exercícios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+De Prof. Artur Fassoni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

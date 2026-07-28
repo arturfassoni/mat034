@@ -1,0 +1,76 @@
+/* Torna os "caption" (partes) do índice lateral esquerdo retráteis,
+   com uma seta indicando o estado expandido/colapsado. */
+
+.bd-sidebar-primary .caption,
+#bd-docs-nav .caption,
+nav.bd-links .caption {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* A seta agora fica "colada" ao texto (não na borda direita da sidebar) */
+.bd-sidebar-primary .caption .caption-text,
+#bd-docs-nav .caption .caption-text,
+nav.bd-links .caption .caption-text {
+  position: relative;
+  padding-right: 1.1em;
+}
+
+.bd-sidebar-primary .caption .caption-text::after,
+#bd-docs-nav .caption .caption-text::after,
+nav.bd-links .caption .caption-text::after {
+  content: "";
+  position: absolute;
+  right: 0.1em;
+  top: 0.35em;
+  width: 0.45em;
+  height: 0.45em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.bd-sidebar-primary .caption.collapsed .caption-text::after,
+#bd-docs-nav .caption.collapsed .caption-text::after,
+nav.bd-links .caption.collapsed .caption-text::after {
+  transform: rotate(-45deg);
+}
+
+.bd-sidebar-primary .caption + ul,
+#bd-docs-nav .caption + ul,
+nav.bd-links .caption + ul {
+  overflow: hidden;
+  max-height: 2000px;
+  transition: max-height 0.25s ease;
+}
+
+.bd-sidebar-primary .caption.collapsed + ul,
+#bd-docs-nav .caption.collapsed + ul,
+nav.bd-links .caption.collapsed + ul {
+  max-height: 0;
+}
+
+/* Esconde a barra de botões no topo do artigo (download, fullscreen, etc.),
+   mantendo o botão de abrir/fechar a sidebar esquerda (útil no celular). */
+.article-header-buttons {
+  display: none !important;
+}
+
+/* Esconde o título/logo do topo do menu lateral */
+.navbar-brand,
+.sidebar-logo {
+    display: none !important;
+}
+
+/* Esconde o rodapé inteiro com o nome do autor e copyright */
+.bd-footer-content,
+footer {
+    display: none !important;
+}
+
+/* Adiciona um espaço em branco (respiro) no final de todas as páginas */
+.bd-main .bd-content,
+#main-content {
+    padding-bottom: 50px !important;
+}

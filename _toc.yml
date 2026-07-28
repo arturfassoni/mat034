@@ -1,5 +1,22 @@
 format: jb-book
-root: intro
+root: 00-home
 
-chapters:
-  - file: 01-introducao-python-jupyter
+parts:
+  - caption: Matemática Computacional
+    chapters:
+      - file: 0001-inicio
+
+  - caption: Jupyter
+    chapters:
+      - file: 0101-jupyter
+      - file: 0102-markdown
+      - file: 0103-latex
+
+  - caption: Python
+    chapters:
+      - file: 0104-numeros
+      - file: 0105-variaveis
+      - file: 0106-sequencias
+      - file: 0107-funcoes
+      - file: 0108-logica
+      - file: 0109-loops
