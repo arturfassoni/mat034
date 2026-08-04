@@ -417,8 +417,8 @@ document.write(`
 ay'' + by' + cy = F(t)
 \]</div>
 <p>onde <span class="math notranslate nohighlight">\(a,b,c\)</span> são constantes (com <span class="math notranslate nohighlight">\(a \ne 0\)</span>) e <span class="math notranslate nohighlight">\(F(t)\)</span> é uma função conhecida. A função desconhecida <span class="math notranslate nohighlight">\(y(t)\)</span> é de segunda ordem na equação, portanto, introduzimos duas novas variáveis <span class="math notranslate nohighlight">\(u_0 = y\)</span> e <span class="math notranslate nohighlight">\(u_1 = y'\)</span> e escrevemos a equação de segunda ordem 1-dimensional como um sistema de primeira ordem 2-dimensional</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cac6126f-c215-462b-a2cd-0613a1ba2269">
-<span class="eqno">(14)<a class="headerlink" href="#equation-cac6126f-c215-462b-a2cd-0613a1ba2269" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2def0410-b800-4080-ae63-838291d12a23">
+<span class="eqno">(14)<a class="headerlink" href="#equation-2def0410-b800-4080-ae63-838291d12a23" title="Permalink to this equation">#</a></span>\[\begin{align}
 u_0' &amp;= u_1 \\\
 u_1' &amp;= (F(t) - b u_1 - c u_0)/a
 \end{align}\]</div>
@@ -429,14 +429,14 @@ u_1' &amp;= (F(t) - b u_1 - c u_0)/a
 <li><p>Reescreva as equações apenas em termos das novas variáveis.</p></li>
 </ol>
 <p>Por exemplo, considere o sistema</p>
-<div class="amsmath math notranslate nohighlight" id="equation-306f61da-409d-4e43-ab04-ede36b8831e9">
-<span class="eqno">(15)<a class="headerlink" href="#equation-306f61da-409d-4e43-ab04-ede36b8831e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bf7dda81-8ab2-4f00-bd75-592cff2c72fa">
+<span class="eqno">(15)<a class="headerlink" href="#equation-bf7dda81-8ab2-4f00-bd75-592cff2c72fa" title="Permalink to this equation">#</a></span>\[\begin{align}
 x' &amp;= x + y \\\
 y'' &amp;= xy' + y
 \end{align}\]</div>
 <p>Introduza novas variáveis <span class="math notranslate nohighlight">\(u_0 = x, u_1 = y, u_2 = y'\)</span> e reescreva o sistema</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9594849f-582d-4a9b-9a30-a4b7330203bf">
-<span class="eqno">(16)<a class="headerlink" href="#equation-9594849f-582d-4a9b-9a30-a4b7330203bf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-03a353fb-171b-472d-941e-fdbe381c7b16">
+<span class="eqno">(16)<a class="headerlink" href="#equation-03a353fb-171b-472d-941e-fdbe381c7b16" title="Permalink to this equation">#</a></span>\[\begin{align}
 u_0' &amp;= u_0 + u_1 \\\
 u_1' &amp;= u_2 \\\
 u_2' &amp;= u_0 u_2 + u_1
@@ -445,8 +445,8 @@ u_2' &amp;= u_0 u_2 + u_1
 <section id="notacao-vetorial">
 <h2>Notação Vetorial<a class="headerlink" href="#notacao-vetorial" title="Permalink to this heading">#</a></h2>
 <p>Um sistema de equações diferenciais de primeira ordem de dimensão <span class="math notranslate nohighlight">\(N\)</span> é da forma</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6ae9bdce-d8dd-4210-9bf9-72ff65290e92">
-<span class="eqno">(17)<a class="headerlink" href="#equation-6ae9bdce-d8dd-4210-9bf9-72ff65290e92" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ce816b58-8873-4909-97e6-ea9989dc7c40">
+<span class="eqno">(17)<a class="headerlink" href="#equation-ce816b58-8873-4909-97e6-ea9989dc7c40" title="Permalink to this equation">#</a></span>\[\begin{align}
 u_0' &amp;= f_0(t,u_0,\dots,u_{N-1}) \\\
 u_1' &amp;= f_1(t,u_0,\dots,u_{N-1}) \\\
 &amp; \ \ \vdots \\\
@@ -478,8 +478,8 @@ u_{N-1}' &amp;= f_{N-1}(t,u_0,\dots,u_{N-1})
 ay'' + by' + cy = F(t) \ , \ y(0)=y_0 \ , \ y'(0)=v_0
 \]</div>
 <p>Aplique o método de Euler a <span class="math notranslate nohighlight">\(y\)</span> e <span class="math notranslate nohighlight">\(y'\)</span> simultaneamente:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82867ee7-0378-4c63-80a1-15cdc70dcbb6">
-<span class="eqno">(18)<a class="headerlink" href="#equation-82867ee7-0378-4c63-80a1-15cdc70dcbb6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f5a85372-9af3-4f10-9c4e-ad0bced27b4a">
+<span class="eqno">(18)<a class="headerlink" href="#equation-f5a85372-9af3-4f10-9c4e-ad0bced27b4a" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{n+1} &amp;= y_n + y_n' h \\\
 y_{n+1}' &amp;= y_n' + y_n'' h
 \end{align}\]</div>
