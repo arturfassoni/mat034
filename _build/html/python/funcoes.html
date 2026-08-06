@@ -1419,6 +1419,29 @@ $<span class="math notranslate nohighlight">\(
 \int_0^u \frac{1}{\sqrt{1 + x^p}} dx \approx \sum_{k=1}^N \frac{1}{\sqrt{1 + (x_k^*)^p}} \Delta x
 \]</div>
 <p>onde <span class="math notranslate nohighlight">\(\Delta x = u/N\)</span> e <span class="math notranslate nohighlight">\(x_k^* = (x_k + x_{k-1})/2\)</span> para os pontos finais <span class="math notranslate nohighlight">\(x_k = k \Delta x\)</span>.</p>
+<p><strong>Exercício 5.</strong> Considere a função <code class="docutils literal notranslate"><span class="pre">misteriosa</span></code> definida na célula de código abaixo.</p>
+<p><strong>a)</strong> Quais são os parâmetros de entrada da função? Qual é o tipo de dado e o significado de cada um?</p>
+<p><strong>b)</strong> Qual é a saída da função? Qual é o seu tipo?</p>
+<p><strong>c)</strong> Descreva, passo a passo, o que cada linha do código faz.</p>
+<p><strong>d)</strong> Qual operação matemática essa função calcula? Justifique testando a função com pelo menos três valores de entrada diferentes e comparando o resultado com alguma função conhecida.</p>
+<p><strong>e)</strong> O que aconteceria se você chamasse <code class="docutils literal notranslate"><span class="pre">misteriosa(-4)</span></code>? E <code class="docutils literal notranslate"><span class="pre">misteriosa(0)</span></code>? Explique o papel de cada uma das duas primeiras linhas do corpo da função.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">misteriosa</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;x deve ser não negativo&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">chute</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">chute</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="n">it</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
+        <span class="n">chute</span> <span class="o">=</span> <span class="p">(</span><span class="n">chute</span> <span class="o">+</span> <span class="n">x</span><span class="o">/</span><span class="n">chute</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">it</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">chute</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
