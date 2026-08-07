@@ -412,8 +412,8 @@ document.write(`
 my'' + cy' + ky = F(t)
 \]</div>
 <p>onde <span class="math notranslate nohighlight">\(m &gt; 0, c \geq 0, k \geq 0\)</span>, e <span class="math notranslate nohighlight">\(F(t)\)</span> é a função de força externa. Escreva a equação como um sistema de primeira ordem 2-dimensional introduzindo novas variáveis <span class="math notranslate nohighlight">\(u_0 = y\)</span> e <span class="math notranslate nohighlight">\(u_1 = y'\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f3206b5-acab-456e-9de9-c07926da7c4b">
-<span class="eqno">(19)<a class="headerlink" href="#equation-8f3206b5-acab-456e-9de9-c07926da7c4b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9ce1c739-4aaf-4ee7-9838-0b2861439d3b">
+<span class="eqno">(19)<a class="headerlink" href="#equation-9ce1c739-4aaf-4ee7-9838-0b2861439d3b" title="Permalink to this equation">#</a></span>\[\begin{align}
 u'_0 &amp;= u_1 \\\
 u'_1 &amp;= (F(t)-ku_0-cu_1)/m
 \end{align}\]</div>
@@ -618,14 +618,14 @@ m_P \frac{d^2 \mathbf{p}}{dt^2} = \mathbf{F}
 \]</div>
 <p>onde <span class="math notranslate nohighlight">\(|| \mathbf{p} || = \sqrt{x^2 + y^2}\)</span> é a distância entre a estrela e o planeta, e <span class="math notranslate nohighlight">\(-\mathbf{p} / || \mathbf{p} ||\)</span> é o vetor unitário que aponta na direção do planeta para a estrela.</p>
 <p>Juntando essas equações, obtemos um sistema bidimensional de equações diferenciais de segunda ordem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-49ea2242-02a7-4879-80a7-6d5237090742">
-<span class="eqno">(20)<a class="headerlink" href="#equation-49ea2242-02a7-4879-80a7-6d5237090742" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d151836a-dfae-4602-a173-061da27c92b7">
+<span class="eqno">(20)<a class="headerlink" href="#equation-d151836a-dfae-4602-a173-061da27c92b7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{d^2 x}{dt^2} &amp;= - \frac{G m_S x }{ (x^2 + y^2)^{3/2} } \\\
 \frac{d^2 y}{dt^2} &amp;= - \frac{G m_S y }{ (x^2 + y^2)^{3/2} }
 \end{align}\]</div>
 <p>Escreva o sistema como um sistema de primeira ordem introduzindo novas variáveis: <span class="math notranslate nohighlight">\(u_0 = x\)</span>, <span class="math notranslate nohighlight">\(u_1 = x'\)</span>, <span class="math notranslate nohighlight">\(u_2 = y\)</span> e <span class="math notranslate nohighlight">\(u_3 = y'\)</span>. O sistema se torna</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4dbb7135-b473-4c3a-b2da-a95dd196003b">
-<span class="eqno">(21)<a class="headerlink" href="#equation-4dbb7135-b473-4c3a-b2da-a95dd196003b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-14766c89-6061-4bb3-ac15-d30ba46e19a8">
+<span class="eqno">(21)<a class="headerlink" href="#equation-14766c89-6061-4bb3-ac15-d30ba46e19a8" title="Permalink to this equation">#</a></span>\[\begin{align}
 u_0' &amp;= u_1 \\\
 u_1' &amp;= - \frac{G m_S u_0 }{ (u_0^2 + u_2^2)^{3/2} } \\\
 u_2' &amp;= u_3 \\\
@@ -705,8 +705,8 @@ u_3' &amp;= - \frac{G m_S u_2 }{ (u_0^2 + u_2^2)^{3/2} }
 \frac{d^2 y_P}{dt^2} = - \frac{ G m_{S_1} (y_P - y_{S_1}) }{ || \mathbf{d_1} ||^3} - \frac{ G m_{S_2} (y_P - y_{S_2}) }{ || \mathbf{d_2} ||^3}
 \]</div>
 <p>Para plotar as trajetórias do planeta usando <code class="docutils literal notranslate"><span class="pre">odeint</span></code>, primeiro precisamos escrever o sistema como um sistema de primeira ordem. Introduza novas variáveis <span class="math notranslate nohighlight">\(u_1 = x_P\)</span>, <span class="math notranslate nohighlight">\(u_2 = x_P'\)</span>, <span class="math notranslate nohighlight">\(u_3 = y_P\)</span> e <span class="math notranslate nohighlight">\(u_4 = y_P'\)</span> e escreva</p>
-<div class="amsmath math notranslate nohighlight" id="equation-451e5bb6-cc6e-44aa-be3e-397dec740b79">
-<span class="eqno">(22)<a class="headerlink" href="#equation-451e5bb6-cc6e-44aa-be3e-397dec740b79" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ac919950-47ec-4e1b-b3e7-5a30fb3a6850">
+<span class="eqno">(22)<a class="headerlink" href="#equation-ac919950-47ec-4e1b-b3e7-5a30fb3a6850" title="Permalink to this equation">#</a></span>\[\begin{align}
 u_1' &amp;= u_2 \\\
 u_2' &amp;= - \frac{ G m_{S_1} (u_1 - x_{S_1}) }{ || \mathbf{d_1} ||^3} - \frac{ G m_{S_2} (u_1 - x_{S_2}) }{ || \mathbf{d_2} ||^3} \\\
 u_3' &amp;= u_4 \\\
